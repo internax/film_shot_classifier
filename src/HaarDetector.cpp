@@ -5,16 +5,16 @@
 //  Main developer: Mateusz Miroslaw Lis
 //
 
-#include "FeatureDetector.hpp"
+#include "HaarDetector.hpp"
 #include <algorithm>
 
-FeatureDetector::FeatureDetector(std::string& cascade_path) {
+HaarDetector::HaarDetector(std::string& cascade_path) {
     if (!cascade.load(cascade_path)) {
         throw std::runtime_error("Failed to load Haar cascade from: " + cascade_path);
     }
 }
 
-std::vector<cv::Rect> FeatureDetector::detect(const cv::Mat& image) {
+std::vector<cv::Rect> HaarDetector::detect(const cv::Mat& image) {
     std::vector<cv::Rect> faces;
     cv::Mat gray;
 

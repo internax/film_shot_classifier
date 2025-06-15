@@ -1,16 +1,8 @@
-//
-//  FeatureDetector.hpp
-//  Film_type_classifier
-//
-//  Created by Miroslaw on 20.05.2025.
-//
-
 #ifndef FeatureDetector_hpp
 #define FeatureDetector_hpp
 
 #include <stdio.h>
 #include <opencv2/opencv.hpp>
-#include "UserStructs.hpp"
 
 /**
  * @class FeatureDetector
@@ -34,7 +26,8 @@ public:
      * @brief Constructs the detector and immediately loads the model.
      * @param modelPath Path to the Haar cascade XML model file.
      */
-    FeatureDetector(std::string& modelPath) { loadModel(modelPath); }
+    FeatureDetector(std::string& modelPath);
+
 
     /**
      * @brief Constructs the detector without loading a model initially.
@@ -59,10 +52,9 @@ public:
      * returns a list of bounding boxes with associated labels.
      *
      * @param image The image in which to detect features.
-     * @return A vector of `DetectedFeature` representing all detected objects.
+     * @return A vector of `std::vector<cv::Rect>` representing all detected faces.
      */
-    std::vector<DetectedFeature> detect(const cv::Mat& image); // maybe it will be fine to sort the vector from biggest BB, so we gonna have easier job afterwards
+    std::vector<cv::Rect> detect(const cv::Mat& image); // maybe it will be fine to sort the vector from biggest BB, so we gonna have easier job afterwards
 };
 
 #endif /* FeatureDetector_hpp */
-

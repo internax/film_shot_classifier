@@ -12,8 +12,7 @@ int main(int argc, char* argv[])
     }
 
     try {
-        std::cout << "Testing image loader..." << std::endl;
-        
+
         // Use the command line argument as the image path
         ImageLoader loader(argv[1]);
         
@@ -29,18 +28,18 @@ int main(int argc, char* argv[])
                 return -1;
             }
             
-            std::cout << "Successfully loaded frame with size: " << frame.size().width 
-                      << "x" << frame.size().height << std::endl;
-            
             // Create a preprocessing instance
             Preprocessing processor;
             processor.LoadFrame(frame);
             
             // Get the processed frame
             cv::Mat processed = processor.GetProcessedImage();
+
+            std::cout << "Successfully resized frame to: " << processed.size().width 
+                      << "x" << processed.size().height << std::endl;
             
             // Display the image (optional)
-            cv::imshow("Loaded Image", frame);
+            cv::imshow("Loaded Image", processed);
             cv::waitKey(0);
         } else {
             std::cout << "No frame available" << std::endl;

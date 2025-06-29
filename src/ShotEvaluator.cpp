@@ -5,7 +5,7 @@ ShotEvaluator::ShotEvaluator(HaarDetector& frontal, HaarDetector& profile, HaarD
     : frontal_face_detector(frontal), profile_face_detector(profile), eye_detector(eye),
       face_classifier(faceClassifier), eye_classifier(0, eyeThreshold) {}
 
-int ShotEvaluator::evaluate(const cv::Mat& image, std::vector<cv::Rect>& allFaces, std::vector<cv::Rect>& eyes) {
+ClassificationResult ShotEvaluator::evaluate(const cv::Mat& image, std::vector<cv::Rect>& allFaces, std::vector<cv::Rect>& eyes) {
     // Assume image is already resized externally
     std::vector<cv::Rect> frontal_faces = frontal_face_detector.detect(image);
     eyes = eye_detector.detect(image);
@@ -35,5 +35,43 @@ int ShotEvaluator::evaluate(const cv::Mat& image, std::vector<cv::Rect>& allFace
         }
     }
 
-    return classification;
+    // Construct the ClassificationResult using one-hot encoding
+    ClassificationResult result;
+    switch (classification) {
+        case 0:
+            result.predictedType = ShotType::WIDE;
+            result.probabilities = {
+                {ShotType::WIDE, 1.0},
+                {ShotType::MEDIUM, 0.0},
+                {ShotType::CLOSE_UP, 0.0}
+            };
+            break;
+        case 1:
+            result.predictedType = ShotType::MEDIUM;
+            result.probabilities = {
+                {ShotType::WIDE, 0.0},
+                {ShotType::MEDIUM, 1.0},
+                {ShotType::CLOSE_UP, 0.0}
+            };
+            break;
+        case 2:
+            result.predictedType = ShotType::CLOSE_UP;
+            result.probabilities = {
+                {ShotType::WIDE, 0.0},
+                {ShotType::MEDIUM, 0.0},
+                {ShotType::CLOSE_UP, 1.0}
+            };
+            break;
+        default:
+            result.predictedType = ShotType::UNKNOWN;
+            result.probabilities = {
+                {ShotType::WIDE, 0.0},
+                {ShotType::MEDIUM, 0.0},
+                {ShotType::CLOSE_UP, 0.0},
+                {ShotType::UNKNOWN, 1.0}
+            };
+            break;
+    }
+
+    return result;
 }

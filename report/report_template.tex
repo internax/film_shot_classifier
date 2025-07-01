@@ -1,0 +1,194 @@
+\documentclass[english]{article}
+\usepackage[english]{babel} 
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{float}
+\usepackage{graphicx}
+
+
+\makeatletter
+\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{epstopdf}
+\usepackage{fancyhdr}
+\usepackage{booktabs,array}
+
+\hyphenation{english}
+\makeatother
+
+\usepackage{babel}
+
+
+\usepackage{listings}
+\usepackage{xcolor} % for setting colors
+
+% set the default code style
+\lstset{
+    frame=tb, % draw a frame at the top and bottom of the code block
+    tabsize=4, % tab space width
+    showstringspaces=false, % don't mark spaces in strings
+    numbers=left, % display line numbers on the left
+    commentstyle=\color{gray}, % comment color
+    keywordstyle=\color{blue}, % keyword color
+    stringstyle=\color{red} % string color
+}
+
+
+\begin{document}
+\begin{titlepage}
+
+	\begin{center}
+		\begin{Large} \textbf{UNIVERSITY OF PADOVA} \\
+		\end{Large} \vspace{1cm}
+		\vspace{3cm}
+		\begin{Large} Computer Vision \end{Large}
+		\par\end{center}
+
+	\begin{center}
+		\begin{Large}Intermediate project report\\
+		\end{Large}
+		\par\end{center}
+
+	\begin{center}
+		\vspace{2cm}
+		\begin{figure}[!htb]
+			\centering \includegraphics[width=8cm]{figures/unipd-logo.png}\\
+
+		\end{figure}
+
+		\par\end{center}
+
+	\begin{center}
+		\vspace{2cm}
+		\begin{Large} Marek Tatýrek  \\
+					Mateusz Miroslaw Lis   \\
+					Abioye Obaloluwa Peter \\
+		\end{Large} \vspace{2cm}
+		\begin{Large} Academic Year 2024-2025 \end{Large}
+		\par\end{center}
+
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% \section{Project overview}
+% 	\paragraph{}
+% 		The objective of this project was to develop an algorithm capable of detecting objects within a scene.
+% The provided data included a training set consisting of images of the target objects, binary masks for separating the objects from the background, and a set of test scenes.
+% The expected output of the algorithm was a bounding box surrounding the detected object in the image, along with its corresponding coordinates.
+
+% \section{Theory}
+% 	\paragraph{}
+% For the purposes of object detection, the Scale-Invariant Feature Transform (SIFT) algorithm was selected.
+% Although SIFT is more computationally intensive than alternatives such as SURF, real-time performance was not a requirement for this project. Consequently, the advantages offered by SIFT, particularly its robustness to scale and rotation, could be fully utilized.
+% Following the extraction of keypoints and descriptors, a matching process was carried out between features from the training images and those from the test scenes.
+% To assess the validity of a match, the distances between each keypoint’s two best matches were calculated. If the ratio of these distances satisfied a predefined threshold, the match was considered valid.
+% The number of valid matches was counted for each training image, and the image with the highest number of valid matches was selected as the most probable candidate.
+% An alternative approach, which involved computing the squared sum of distances of successful matches, was also evaluated. However, as no significant improvement in performance was observed, the simpler method based on the number of matches was adopted.
+
+% 	\paragraph{}
+% 		 Subsequently, k-means clustering was employed to remove outliers among the matched keypoints and to compute the centroid of the resulting cluster.
+% Given that the objects in the test images exhibited relatively consistent sizes, a fixed-size bounding box centered at the computed centroid was used to localize the detected object.
+
+% \section{Design}
+% 	\paragraph{}
+%  The software architecture consists of two primary classes: \texttt{FileLoader()} and \texttt{ObjectDetector()}.
+% The \texttt{FileLoader()} class is responsible for loading and organizing all input images, while the \texttt{ObjectDetector()} class handles the detection process.
+% The \texttt{ObjectDetector()} class maintains internally the data loaded by \texttt{FileLoader()}. Both the original and monochromatic versions of the images are preserved to allow preprocessing prior to SIFT feature extraction.
+% Given the availability of multiple training samples, the images are stored using \texttt{std::vector<>}.
+% Once the data has been loaded, users can invoke detection methods on the instances without needing to manage internal data representation explicitly.
+% While the \texttt{ObjectDetector()} class includes numerous methods, not all of them were utilized in the final version of the project.
+% All class instances are invoked through the \texttt{evaluate()} function, located in the \texttt{EvaluateExtraFunctions} file. This file also contains auxiliary functions for evaluating the accuracy of bounding box placement.
+% For a more detailed overview of the project structure, readers are referred to the accompanying Doxygen documentation.
+
+% 	\section{Metrics}
+
+
+%  \begin{table}[h]
+% 	\centering
+% 	\renewcommand{\arraystretch}{1.5} % Zvýšení vertikálního rozestupu mezi řádky
+% 	\begin{tabular}{|l|c|c|c|}
+% 	\hline
+% 			  & Sugar Box & Mustard Bottle & Power Drill \\ \hline
+% 	Accuracy  & 50 \%     & 40 \%           & 30 \%       \\ \hline
+% 	mIoU      & 0.501918  & 0.421096        & 0.314737    \\ \hline
+% 	\end{tabular}
+% 	\caption{Metrics for different objects.}
+% 	\label{tab:vysledky}
+% 	\end{table}
+	
+	
+% 	\section{Conclusion}
+% 	\paragraph{}
+% The project proved to be highly time-consuming; we estimate that approximately 40 hours of work were invested. Despite this, the final results are still far from ideal.
+% Initially, we developed two classes for handling data loading and object detection. Although these classes functioned correctly, we quickly realized that the detection results were unsatisfactory.
+% To address this, we implemented a callback function linked to a taskbar interface to dynamically tune the parameters of the SIFT algorithm.
+% This approach significantly improved feature description quality.
+% Additionally, we enhanced the matching process by enforcing exclusive matching, meaning that each keypoint could be matched to only one counterpart.
+% After parameter tuning and implementing exclusive matching, the quality of the matches improved, although some images still yielded suboptimal results.
+% One of the main challenges was the difficulty in reliably detecting the keypoints of primary interest.
+% We addressed this by increasing the total number of keypoints extracted, thereby increasing the likelihood of capturing the important features.
+% While this strategy improved detection performance, it also substantially increased computational complexity, as every keypoint from the test image had to be matched against all keypoints from every training image.
+% However, since real-time performance was not a priority and higher accuracy was desired, the increased computational load was deemed acceptable.
+
+% 	\paragraph{}
+% Once a satisfactory matching procedure was established, attention shifted to bounding box generation.
+% Although achieving good matches was relatively straightforward, we often observed that matches corresponded only to parts of the object rather than the entire object.
+% Several strategies were explored, including k-means clustering, mean shift clustering, and simple centroid computation.
+% Among these, k-means clustering produced the most promising results; however, reliably creating a bounding box around the full object remained challenging.
+% Ultimately, a decision was made to use a fixed-size bounding box centered on the centroid of the most significant k-means cluster, balancing simplicity and robustness.
+
+% 	\paragraph{}
+% Although the final results are not perfect, this project provided a valuable opportunity to gain practical experience in computer vision techniques and to collaborate effectively within a group setting.
+
+% \section{Contributions}
+% 		\paragraph{Marek Tatýrek:}
+% 		\begin{itemize}
+% 			\item objectDetector() class
+% 			\item FileLoader() class
+% 			\item tunning of the algorithm
+% 			\item final report
+% 		\end{itemize}
+
+% 		\paragraph{Miroslaw Mateusz Lis:}
+% 		\begin{itemize}
+% 			\item EvaluateExtraFunctions
+% 			\item main()
+% 			\item testing
+% 			\item final report
+% 		\end{itemize}
+
+% 		\paragraph{Abioye Obaloluwa Peter}
+% 		\begin{itemize}
+% 			\item vlab machine testing
+% 			\item tunning of the parameters
+% 			\item FileLoader() class
+% 		\end{itemize}
+% 	\section{Results}
+% 		\subsection{Sugar box}
+% 		\begin{figure}[H]
+% 			\centering
+% 			\includegraphics[width=0.5\textwidth]{figures/sugar/sugar2.png}
+% 			\caption{Sugar 2}
+% 			\label{fig:sugar2}
+% 		\end{figure}
+
+		
+	
+		
+
+
+% \begin{thebibliography}{1}
+	
+% 	\bibitem{sx1509}
+% 	SX1507/SX1508/SX1509. 2025. \textit{Sparkfun} [online]. [accessed 2025-4-22]. Available at: https://cdn.sparkfun.com/datasheets/BreakoutBoards/sx1509.pdf
+	
+% 	\bibitem{line_sensor}
+% 	Pololu line sensor. 2025. \textit{Pololu.com} [online]. [accessed 2025-4-22]. Available at: https://www.pololu.com/docs/pdf/0J12/QTR-8x.pdf
+
+%\end{thebibliography}
+\end{document}

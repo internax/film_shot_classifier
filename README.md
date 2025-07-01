@@ -18,6 +18,7 @@ The application processes input frame-by-frame, extracts spatial and geometric f
 ### Miroslaw
 - `FeatureDetector` – Object detection using Haar cascades  
 - `FeatureProcessorAndClassifier` – Feature extraction and shot type classification logic  
+-
 
 ### Peter
 - `FileLoader` – Abstract interface for loading images or video  
@@ -36,7 +37,7 @@ The application processes input frame-by-frame, extracts spatial and geometric f
 # 📄 Final Project Report 
 *Here is report structure derived from example project in moodle*
 
-## 1. Title Page
+## 1. Title Page - Marek
 - **Project title**: Film Shot Type Classification  
 - **Course**: Computer Vision  
 - **Authors**: [Your Name(s)]  
@@ -44,14 +45,14 @@ The application processes input frame-by-frame, extracts spatial and geometric f
 
 ---
 
-## 2. Introduction
+## 2. Introduction - Miroslaw
 - Brief background on the problem domain (e.g., film analysis, automatic metadata generation)  
 - Motivation for choosing this topic  
 - Main objectives and intended use of the system  
 
 ---
 
-## 3. System Overview
+## 3. System Overview - Marek
 - High-level description of the system pipeline  
 - Diagram or figure (optional)  
 - Brief description of each major module:
@@ -64,7 +65,7 @@ The application processes input frame-by-frame, extracts spatial and geometric f
 
 ---
 
-## 4. Implementation Details
+## 4. Implementation Details - Everyone describes his part
 - Technical breakdown of each module  
 - Algorithms and techniques used (e.g., Haar cascades, OpenCV features)  
 - Programming language and tools used  
@@ -72,7 +73,7 @@ The application processes input frame-by-frame, extracts spatial and geometric f
 
 ---
 
-## 5. Evaluation
+## 5. Evaluation - Peter
 
 ### Quantitative Evaluation
 - Accuracy, confusion matrix, or class-wise performance  
@@ -87,7 +88,7 @@ The application processes input frame-by-frame, extracts spatial and geometric f
 
 ---
 
-## 6. Dataset Description
+## 6. Dataset Description - Miroslaw
 - Source of the dataset (test images, videos, ground truth)  
 - Label definitions (e.g., CLOSE_UP, MEDIUM, WIDE)  
 - Preprocessing steps applied  
@@ -95,7 +96,7 @@ The application processes input frame-by-frame, extracts spatial and geometric f
 
 ---
 
-## 7. Results Summary
+## 7. Results Summary - Peter
 - General observations  
 - Performance comparison if multiple methods were tested  
 - Strengths and weaknesses of the current implementation  
@@ -111,7 +112,7 @@ The application processes input frame-by-frame, extracts spatial and geometric f
 
 ---
 
-## 9. Conclusion
+## 9. Conclusion - Marek
 - Final thoughts and achievements  
 - Summary of results and project goals met  
 - Ideas for improvement or future extensions  

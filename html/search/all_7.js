@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hasnextframe_0',['hasNextFrame',['../class_input_source.html#abaec18bf62eec4100d689ad576b9169f',1,'InputSource::hasNextFrame()'],['../class_image_loader.html#a5302ba92a32276ac9a23f859b62abb51',1,'ImageLoader::hasNextFrame()']]]
+  ['8_20individual_20contributions_0',['8. Individual Contributions',['../md__r_e_a_d_m_e.html#autotoc_md25',1,'']]]
 ];

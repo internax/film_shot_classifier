@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nextframe_0',['nextFrame',['../class_input_source.html#a46c3be398eac73b3b8d836c03ddcf351',1,'InputSource::nextFrame()'],['../class_image_loader.html#aae65387f71c9cc119c94db147b077708',1,'ImageLoader::nextFrame()']]]
+  ['boundingbox_0',['boundingBox',['../struct_detected_feature.html#a5d0ac2221b1e9277cbb06ae2f2472043',1,'DetectedFeature']]]
 ];

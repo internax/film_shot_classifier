@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['predictedtype_0',['predictedType',['../struct_classification_result.html#ac7b40d6ec2a43fd56da9eb53d5a6c5cf',1,'ClassificationResult']]],
-  ['probabilities_1',['probabilities',['../struct_classification_result.html#a9afe45a7f13bdb8e65b865df9108355d',1,'ClassificationResult']]]
+  ['label_0',['label',['../struct_detected_feature.html#a9e848d9e5561e71b1ab8f6985233225d',1,'DetectedFeature']]],
+  ['largest_5fobject_5farea_1',['largest_object_area',['../struct_shot_features.html#ae666409f1b873e0fd73580447de4e880',1,'ShotFeatures']]]
 ];

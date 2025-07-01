@@ -1,0 +1,66 @@
+\doxysection{Film\+Statistics\+Eval\+Config Struct Reference}
+\hypertarget{struct_film_statistics_eval_config}{}\label{struct_film_statistics_eval_config}\index{FilmStatisticsEvalConfig@{FilmStatisticsEvalConfig}}
+
+
+Configuration structure for controlling statistical evaluation of film analysis.  
+
+
+
+
+{\ttfamily \#include $<$User\+Structs.\+hpp$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_film_statistics_eval_config_a2d5bdc88d82f11440608b4459a85b1b0}\label{struct_film_statistics_eval_config_a2d5bdc88d82f11440608b4459a85b1b0} 
+size\+\_\+t {\bfseries input\+\_\+step} = 1
+\begin{DoxyCompactList}\small\item\em Frame step size – how many frames to skip during analysis (e.\+g., 1 = every frame, 2 = every second frame) \end{DoxyCompactList}\item 
+\Hypertarget{struct_film_statistics_eval_config_a4f254e4691f3aadc7834dec7bf5d5c5a}\label{struct_film_statistics_eval_config_a4f254e4691f3aadc7834dec7bf5d5c5a} 
+size\+\_\+t {\bfseries input\+\_\+oversample} = 1
+\begin{DoxyCompactList}\small\item\em Number of frames to buffer for oversampling before producing aggregate result. \end{DoxyCompactList}\item 
+\Hypertarget{struct_film_statistics_eval_config_a52dc5ae19bce51f288a9381172ea2047}\label{struct_film_statistics_eval_config_a52dc5ae19bce51f288a9381172ea2047} 
+size\+\_\+t {\bfseries entropy\+\_\+window\+\_\+size} = 20
+\begin{DoxyCompactList}\small\item\em Window size for calculating mean entropy over time. \end{DoxyCompactList}\item 
+\Hypertarget{struct_film_statistics_eval_config_aed916d1a588b22279343d652acc0b9c3}\label{struct_film_statistics_eval_config_aed916d1a588b22279343d652acc0b9c3} 
+size\+\_\+t {\bfseries entropy\+\_\+variance\+\_\+window\+\_\+size} = 30
+\begin{DoxyCompactList}\small\item\em Window size for entropy variance calculation (0 = disabled) \end{DoxyCompactList}\item 
+\Hypertarget{struct_film_statistics_eval_config_a29bd5b942971359276fb81a3b129eed6}\label{struct_film_statistics_eval_config_a29bd5b942971359276fb81a3b129eed6} 
+double {\bfseries cut\+\_\+detect\+\_\+entropy\+\_\+threshold} = 1
+\begin{DoxyCompactList}\small\item\em Threshold value for absolute entropy to trigger cut detection. \end{DoxyCompactList}\item 
+\Hypertarget{struct_film_statistics_eval_config_aa023f7cac3c0bf19bad849daa584838f}\label{struct_film_statistics_eval_config_aa023f7cac3c0bf19bad849daa584838f} 
+bool {\bfseries output\+\_\+ratios\+\_\+series} = false
+\begin{DoxyCompactList}\small\item\em Whether to output ratio data (e.\+g., object area / frame area) \end{DoxyCompactList}\item 
+\Hypertarget{struct_film_statistics_eval_config_a4f6d1a70a9c270583e765980dc817519}\label{struct_film_statistics_eval_config_a4f6d1a70a9c270583e765980dc817519} 
+size\+\_\+t {\bfseries output\+\_\+shot\+\_\+type\+\_\+time\+\_\+series}
+\item 
+\Hypertarget{struct_film_statistics_eval_config_abbab314f7fae681a4ee072f5c7cd6538}\label{struct_film_statistics_eval_config_abbab314f7fae681a4ee072f5c7cd6538} 
+size\+\_\+t {\bfseries output\+\_\+prob\+\_\+time\+\_\+series} = 1
+\begin{DoxyCompactList}\small\item\em Interval for outputting classification probability time series (0 = disabled) \end{DoxyCompactList}\item 
+\Hypertarget{struct_film_statistics_eval_config_a5b3952947349ff56a000bcb11230f637}\label{struct_film_statistics_eval_config_a5b3952947349ff56a000bcb11230f637} 
+size\+\_\+t {\bfseries output\+\_\+entropy\+\_\+time\+\_\+series} = 1
+\begin{DoxyCompactList}\small\item\em Interval for exporting entropy over time (0 = disabled) \end{DoxyCompactList}\item 
+\Hypertarget{struct_film_statistics_eval_config_a631bfd76f94560352987e71837ac0000}\label{struct_film_statistics_eval_config_a631bfd76f94560352987e71837ac0000} 
+size\+\_\+t {\bfseries output\+\_\+entropy\+\_\+variance\+\_\+time\+\_\+series} = 1
+\begin{DoxyCompactList}\small\item\em Interval for exporting entropy variance over time (0 = disabled) \end{DoxyCompactList}\item 
+\Hypertarget{struct_film_statistics_eval_config_acc057be4031a9f04ff4a37e5af47217f}\label{struct_film_statistics_eval_config_acc057be4031a9f04ff4a37e5af47217f} 
+size\+\_\+t {\bfseries output\+\_\+cut\+\_\+detection\+\_\+time\+\_\+series} = 1
+\begin{DoxyCompactList}\small\item\em Interval for exporting detected cuts (0 = disabled) \end{DoxyCompactList}\item 
+\Hypertarget{struct_film_statistics_eval_config_a08cf6a9269e8113d73ed712a038a7527}\label{struct_film_statistics_eval_config_a08cf6a9269e8113d73ed712a038a7527} 
+double {\bfseries cut\+\_\+detection\+\_\+entropy\+\_\+treshold} = 1.\+3
+\begin{DoxyCompactList}\small\item\em Absolute entropy value required to consider cut (used as hard trigger) \end{DoxyCompactList}\item 
+\Hypertarget{struct_film_statistics_eval_config_a7c5b42fd50a152b8e47c3e2fa4d4d6bf}\label{struct_film_statistics_eval_config_a7c5b42fd50a152b8e47c3e2fa4d4d6bf} 
+size\+\_\+t {\bfseries cut\+\_\+detection\+\_\+history\+\_\+window\+\_\+size} = 15
+\begin{DoxyCompactList}\small\item\em Number of previous frames to consider for cut decision history. \end{DoxyCompactList}\item 
+\Hypertarget{struct_film_statistics_eval_config_a50b6a479b7bec5093987c49f70a68063}\label{struct_film_statistics_eval_config_a50b6a479b7bec5093987c49f70a68063} 
+double {\bfseries cut\+\_\+detection\+\_\+entropy\+\_\+diff\+\_\+treshold} = 0.\+3
+\begin{DoxyCompactList}\small\item\em Required difference in entropy between frames to confirm a cut. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configuration structure for controlling statistical evaluation of film analysis. 
+
+This structure allows customization of how the statistical evaluator processes and outputs data derived from frame-\/by-\/frame shot classification. It includes control parameters for sampling, entropy analysis, cut detection, and export settings. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/User\+Structs.\+hpp\end{DoxyCompactItemize}

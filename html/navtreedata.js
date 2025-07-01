@@ -25,6 +25,29 @@
 var NAVTREE =
 [
   [ "openCV_test", "index.html", [
+    [ "🎬 Film Shot Type Classification", "md__r_e_a_d_m_e.html", [
+      [ "📂 Tasks", "md__r_e_a_d_m_e.html#autotoc_md2", [
+        [ "Miroslaw", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
+        [ "Peter", "md__r_e_a_d_m_e.html#autotoc_md4", null ],
+        [ "Marek", "md__r_e_a_d_m_e.html#autotoc_md5", null ]
+      ] ],
+      [ "Notes", "md__r_e_a_d_m_e.html#autotoc_md7", null ],
+      [ "📄 Final Project Report", "md__r_e_a_d_m_e.html#autotoc_md8", [
+        [ "Title Page", "md__r_e_a_d_m_e.html#autotoc_md9", null ],
+        [ "Introduction", "md__r_e_a_d_m_e.html#autotoc_md11", null ],
+        [ "System Overview", "md__r_e_a_d_m_e.html#autotoc_md13", null ],
+        [ "Implementation Details", "md__r_e_a_d_m_e.html#autotoc_md15", null ],
+        [ "Evaluation", "md__r_e_a_d_m_e.html#autotoc_md17", [
+          [ "Quantitative Evaluation", "md__r_e_a_d_m_e.html#autotoc_md18", null ],
+          [ "Qualitative Evaluation", "md__r_e_a_d_m_e.html#autotoc_md19", null ]
+        ] ],
+        [ "Dataset Description", "md__r_e_a_d_m_e.html#autotoc_md21", null ],
+        [ "Results Summary", "md__r_e_a_d_m_e.html#autotoc_md23", null ],
+        [ "Individual Contributions", "md__r_e_a_d_m_e.html#autotoc_md25", null ],
+        [ "Conclusion", "md__r_e_a_d_m_e.html#autotoc_md27", null ],
+        [ "References", "md__r_e_a_d_m_e.html#autotoc_md29", null ]
+      ] ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

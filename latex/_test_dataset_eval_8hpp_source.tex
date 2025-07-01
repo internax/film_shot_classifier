@@ -1,0 +1,36 @@
+\doxysection{Test\+Dataset\+Eval.\+hpp}
+\hypertarget{_test_dataset_eval_8hpp_source}{}\label{_test_dataset_eval_8hpp_source}\index{include/TestDatasetEval.hpp@{include/TestDatasetEval.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ \ TestDatasetEval.hpp}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ \ Film\_type\_classifier}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ \ Created\ by\ Marek\ Tatýrek\ on\ 06.06.2025.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ TestDatasetEval\_hpp}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ TestDatasetEval\_hpp}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <opencv2/opencv.hpp>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}UserStructs.hpp"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ TestDatasetEval\_hpp\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_dataset_eval}{TestDatasetEval}}}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ std::vector<classification\_result>\ \mbox{\hyperlink{class_test_dataset_eval_ac9f0fb2ccc90c9b454b7421a198c7819}{GroundTruth}};\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_dataset_eval_a81506ede54245109b6f927f6aeb3d126}{loadGroundTruth}}(std::string\ load\_path);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_dataset_eval_a2830727a817e6f6700a432d1009c573b}{addImageSample}}(cv::Mat\ Image);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_test_dataset_eval_ad22f6195a81ee64d7054135078fbd540}{GetEvalResult}}();}
+\DoxyCodeLine{00065\ \};}
+
+\end{DoxyCode}

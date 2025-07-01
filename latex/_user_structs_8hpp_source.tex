@@ -1,0 +1,69 @@
+\doxysection{User\+Structs.\+hpp}
+\hypertarget{_user_structs_8hpp_source}{}\label{_user_structs_8hpp_source}\index{include/UserStructs.hpp@{include/UserStructs.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ \ UserStructs.hpp}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ \ Film\_type\_classifier}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ \ Created\ by\ Marek\ Tatýrek\ on\ 06.06.2025.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ UserStructs\_hpp}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ UserStructs\_hpp}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <opencv2/opencv.hpp>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_detected_feature}{DetectedFeature}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_detected_feature_a9e848d9e5561e71b1ab8f6985233225d}{label}};\ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ cv::Rect\ \mbox{\hyperlink{struct_detected_feature_a5d0ac2221b1e9277cbb06ae2f2472043}{boundingBox}};\ }
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_shot_features}{ShotFeatures}}\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_shot_features_a52eb1566c46ae6d19318e25507d5679a}{object\_count}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_shot_features_ae666409f1b873e0fd73580447de4e880}{largest\_object\_area}}\ =\ 0.;\ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_shot_features_a7751cb00e4a77b4f5fcd5ab733ff04ec}{total\_object\_area}}\ =\ 0.;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_shot_features_aec98631daf90df3107f149515a4970dc}{total\_area}}\ =\ 0.;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ for\ good\ shot\ classification\ +\ we\ can\ add\ some\ statistical\ metrics}}
+\DoxyCodeLine{00045\ \ \ \ \ std::vector<cv::Point2f>\ \mbox{\hyperlink{struct_shot_features_adfbe739db9033296f8741c11631af9b0}{object\_centers}};\ }
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{enum\ class}\ ShotType\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ CLOSE\_UP,\ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ MEDIUM,\ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ WIDE,\ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ UNKNOWN\ \ \ \ \ }
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structclassification__result}{classification\_result}}\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ ShotType\ \mbox{\hyperlink{structclassification__result_aaf00dc0ed9f9c132fea15a6f296a5262}{predictedType}}\ =\ ShotType::UNKNOWN;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ std::map<ShotType,\ double>\ \mbox{\hyperlink{structclassification__result_a487c16e75bc6d9a15379f0d781cbf94d}{probabilities}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_film_statistics_eval_config}{FilmStatisticsEvalConfig}}\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_film_statistics_eval_config_a2d5bdc88d82f11440608b4459a85b1b0}{input\_step}}\ =\ 1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_film_statistics_eval_config_a4f254e4691f3aadc7834dec7bf5d5c5a}{input\_oversample}}\ =\ 1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_film_statistics_eval_config_a52dc5ae19bce51f288a9381172ea2047}{entropy\_window\_size}}\ =\ 20;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_film_statistics_eval_config_aed916d1a588b22279343d652acc0b9c3}{entropy\_variance\_window\_size}}\ =\ 30;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_film_statistics_eval_config_a29bd5b942971359276fb81a3b129eed6}{cut\_detect\_entropy\_threshold}}\ =\ 1;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_film_statistics_eval_config_aa023f7cac3c0bf19bad849daa584838f}{output\_ratios\_series}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ output\_shot\_type\_time\_series;}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_film_statistics_eval_config_abbab314f7fae681a4ee072f5c7cd6538}{output\_prob\_time\_series}}\ =\ 1;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_film_statistics_eval_config_a5b3952947349ff56a000bcb11230f637}{output\_entropy\_time\_series}}\ =\ 1;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_film_statistics_eval_config_a631bfd76f94560352987e71837ac0000}{output\_entropy\_variance\_time\_series}}\ =\ 1;\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_film_statistics_eval_config_acc057be4031a9f04ff4a37e5af47217f}{output\_cut\_detection\_time\_series}}\ =\ 1;\ \ \ \ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_film_statistics_eval_config_a08cf6a9269e8113d73ed712a038a7527}{cut\_detection\_entropy\_treshold}}\ =\ 1.3;\ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_film_statistics_eval_config_a7c5b42fd50a152b8e47c3e2fa4d4d6bf}{cut\_detection\_history\_window\_size}}\ =\ 15;\ \ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_film_statistics_eval_config_a50b6a479b7bec5093987c49f70a68063}{cut\_detection\_entropy\_diff\_treshold}}\ =\ 0.3;\ }
+\DoxyCodeLine{00102\ \};}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ UserStructs\_hpp\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

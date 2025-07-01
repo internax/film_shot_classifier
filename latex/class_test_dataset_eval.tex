@@ -1,0 +1,105 @@
+\doxysection{Test\+Dataset\+Eval Class Reference}
+\hypertarget{class_test_dataset_eval}{}\label{class_test_dataset_eval}\index{TestDatasetEval@{TestDatasetEval}}
+
+
+Evaluates classification accuracy against a labeled test dataset.  
+
+
+
+
+{\ttfamily \#include $<$Test\+Dataset\+Eval.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_test_dataset_eval_a81506ede54245109b6f927f6aeb3d126}{load\+Ground\+Truth}} (std\+::string load\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Loads the ground truth classification labels from a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_test_dataset_eval_a2830727a817e6f6700a432d1009c573b}{add\+Image\+Sample}} (cv\+::\+Mat Image)
+\begin{DoxyCompactList}\small\item\em Adds a predicted image classification result to the evaluation set. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_test_dataset_eval_ad22f6195a81ee64d7054135078fbd540}{Get\+Eval\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Computes and returns the evaluation result (e.\+g., accuracy). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_test_dataset_eval_ac9f0fb2ccc90c9b454b7421a198c7819}\label{class_test_dataset_eval_ac9f0fb2ccc90c9b454b7421a198c7819} 
+std\+::vector$<$ \mbox{\hyperlink{structclassification__result}{classification\+\_\+result}} $>$ {\bfseries Ground\+Truth}
+\begin{DoxyCompactList}\small\item\em Ground truth classification results for comparison. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Evaluates classification accuracy against a labeled test dataset. 
+
+The {\ttfamily \doxylink{class_test_dataset_eval}{Test\+Dataset\+Eval}} class is designed to compare predicted classification results with a predefined set of ground truth labels. It supports loading the ground truth data, adding prediction samples, and computing an evaluation score (e.\+g., accuracy).
+
+This is useful for testing and validating the performance of the shot classifier on labeled datasets.
+
+Example usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{TestDatasetEval\ evaluator;}
+\DoxyCodeLine{evaluator.\mbox{\hyperlink{class_test_dataset_eval_a81506ede54245109b6f927f6aeb3d126}{loadGroundTruth}}(\textcolor{stringliteral}{"{}ground\_truth.csv"{}});}
+\DoxyCodeLine{evaluator.\mbox{\hyperlink{class_test_dataset_eval_a2830727a817e6f6700a432d1009c573b}{addImageSample}}(predictedLabel);}
+\DoxyCodeLine{\textcolor{keywordtype}{double}\ accuracy\ =\ evaluator.\mbox{\hyperlink{class_test_dataset_eval_ad22f6195a81ee64d7054135078fbd540}{GetEvalResult}}();}
+
+\end{DoxyCode}
+
+
+\begin{DoxyAuthor}{Author}
+Marek Tatýrek 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See also}
+\doxylink{struct_classification_result}{Classification\+Result} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_test_dataset_eval_a2830727a817e6f6700a432d1009c573b}\index{TestDatasetEval@{TestDatasetEval}!addImageSample@{addImageSample}}
+\index{addImageSample@{addImageSample}!TestDatasetEval@{TestDatasetEval}}
+\doxysubsubsection{\texorpdfstring{addImageSample()}{addImageSample()}}
+{\footnotesize\ttfamily \label{class_test_dataset_eval_a2830727a817e6f6700a432d1009c573b} 
+void Test\+Dataset\+Eval\+::add\+Image\+Sample (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{Image}{}\end{DoxyParamCaption})}
+
+
+
+Adds a predicted image classification result to the evaluation set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Image} & The image to be evaluated (prediction logic assumed to be applied externally). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_test_dataset_eval_ad22f6195a81ee64d7054135078fbd540}\index{TestDatasetEval@{TestDatasetEval}!GetEvalResult@{GetEvalResult}}
+\index{GetEvalResult@{GetEvalResult}!TestDatasetEval@{TestDatasetEval}}
+\doxysubsubsection{\texorpdfstring{GetEvalResult()}{GetEvalResult()}}
+{\footnotesize\ttfamily \label{class_test_dataset_eval_ad22f6195a81ee64d7054135078fbd540} 
+double Test\+Dataset\+Eval\+::\+Get\+Eval\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Computes and returns the evaluation result (e.\+g., accuracy). 
+
+\begin{DoxyReturn}{Returns}
+A floating-\/point score representing classifier performance. 
+\end{DoxyReturn}
+\Hypertarget{class_test_dataset_eval_a81506ede54245109b6f927f6aeb3d126}\index{TestDatasetEval@{TestDatasetEval}!loadGroundTruth@{loadGroundTruth}}
+\index{loadGroundTruth@{loadGroundTruth}!TestDatasetEval@{TestDatasetEval}}
+\doxysubsubsection{\texorpdfstring{loadGroundTruth()}{loadGroundTruth()}}
+{\footnotesize\ttfamily \label{class_test_dataset_eval_a81506ede54245109b6f927f6aeb3d126} 
+void Test\+Dataset\+Eval\+::load\+Ground\+Truth (\begin{DoxyParamCaption}\item[{std\+::string}]{load\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Loads the ground truth classification labels from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em load\+\_\+path} & Path to the CSV or data file containing ground truth labels. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Test\+Dataset\+Eval.\+hpp\end{DoxyCompactItemize}

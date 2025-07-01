@@ -14,30 +14,93 @@
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <opencv2/opencv.hpp>}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}FeatureProccesorAndClassifier.hpp"{}}}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_film_statistics_a1d383997c5e40127f0f1eb53a6e4daf4}{FilmStatistics}}}
-\DoxyCodeLine{00044\ \{}
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_film_statistics_a4acf2ba4efa2c3daa697d1769146daaa}{step}}\ =\ 1;\ }
-\DoxyCodeLine{00046\ \ \ \ \ std::map<ShotType,\ int>\ \mbox{\hyperlink{class_film_statistics_a94f2720dab851559ae134d9a749a4ab7}{shot\_counts}};\ }
-\DoxyCodeLine{00047\ \ \ \ \ std::vector<std::pair<double,\ ShotType>>\ \mbox{\hyperlink{class_film_statistics_a64c4cb404baa09d471d1061ea2910005}{timeline}};\ }
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_film_statistics_ab64b6098fc68ba0e97841eb055fd03e9}{totalFrames}}\ =\ 0;\ }
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_film_statistics_a1d383997c5e40127f0f1eb53a6e4daf4}{FilmStatistics}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_film_statistics_a430510040632f0f5e03d26bff9a2ad6b}{FilmStatistics}}(\textcolor{keywordtype}{size\_t}\ stride)\ :\ \mbox{\hyperlink{class_film_statistics_a4acf2ba4efa2c3daa697d1769146daaa}{step}}(stride)\ \{\};}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_a332ff57847146069f1e68d664a8ac06f}{addFrameResult}}(\textcolor{keywordtype}{double}\ timestampMs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_classification_result}{ClassificationResult}}\&\ result);}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_ac263d689c6b770ac8de7db3f2a81a988}{setFrameStep}}(\textcolor{keywordtype}{size\_t}\ stride);}
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_a96df1a57a7848b604518bd8a0eb27b71}{exportToCSV}}(\textcolor{keyword}{const}\ std::string\&\ path)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_a179f692db9d5bf9784e67092c1f2d7be}{printSummary}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00090\ \};}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ FilmStatisticEval\_hpp\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <numeric>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}UserStructs.hpp"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_film_statistics_a1d383997c5e40127f0f1eb53a6e4daf4}{FilmStatistics}}}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ std::map<ShotType,\ int>\ \mbox{\hyperlink{class_film_statistics_a94f2720dab851559ae134d9a749a4ab7}{shot\_counts}};}
+\DoxyCodeLine{00054\ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ std::vector<std::pair<double,\ std::map<ShotType,\ double>>>\ \mbox{\hyperlink{class_film_statistics_ac3761e802821fc8626e26552b7a6757e}{prob\_timeline}};}
+\DoxyCodeLine{00060\ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ std::vector<std::pair<double,\ ShotType>>\ \mbox{\hyperlink{class_film_statistics_a13f33560f14dc8a5754647119bb8f0f5}{shot\_type\_timeline}};}
+\DoxyCodeLine{00066\ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ std::vector<std::pair<double,\ double>>\ \mbox{\hyperlink{class_film_statistics_a531606cba04d7e4c2ffda57b6f0b1324}{enthropy\_timeline}};}
+\DoxyCodeLine{00072\ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ std::vector<std::pair<double,\ double>>\ \mbox{\hyperlink{class_film_statistics_a36ab9cdd335f9e4884cca8be667ae165}{enthropy\_variance\_timeline}};}
+\DoxyCodeLine{00078\ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ std::vector<std::pair<double,\ bool>>\ \mbox{\hyperlink{class_film_statistics_a9e8b09391abd96b4272e4704f898031c}{cut\_detection\_timeline}};}
+\DoxyCodeLine{00084\ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ std::deque<classification\_result>\ \mbox{\hyperlink{class_film_statistics_af686ff8e1b6a5e2254e60a0b9369f7e0}{oversampling\_sliding\_window}};}
+\DoxyCodeLine{00089\ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ std::deque<classification\_result>\ \mbox{\hyperlink{class_film_statistics_a249a2965029b9cdf8456ceb82f08b5ab}{entropy\_sliding\_window}};}
+\DoxyCodeLine{00094\ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ std::deque<double>\ \mbox{\hyperlink{class_film_statistics_aa1a0ff2b1ec5d637bf0a11bda40090f8}{entropy\_variance\_sliding\_window}};}
+\DoxyCodeLine{00099\ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_film_statistics_ac17c7e155c3770ebfeea33d95e0b8ada}{total\_frames}}\ =\ 0;}
+\DoxyCodeLine{00104\ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_film_statistics_a49ae808728298283c5ae0205b839d98e}{evaluated\_frames}}\ =\ 0;}
+\DoxyCodeLine{00109\ \ \ \ \ }
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{structclassification__result}{classification\_result}}\ \mbox{\hyperlink{class_film_statistics_a8bd79c0fd3d7a7f14eef6bcc5bcedab1}{current\_sample\_oversampled}};}
+\DoxyCodeLine{00114\ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_film_statistics_ab49a90ba0ee00a25c711b224e8eaf616}{entropy}}\ =\ 0.0;}
+\DoxyCodeLine{00119\ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_film_statistics_a79139e0e945f986a28ca53ad9a1cfdc9}{timestamp\_ms}}\ =\ 0.0;}
+\DoxyCodeLine{00124\ \ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_film_statistics_a15257c877874773c1f81db966fa25a4f}{entropy\_variance}}\ =\ 0.0;}
+\DoxyCodeLine{00129\ \ \ \ \ }
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{struct_film_statistics_eval_config}{FilmStatisticsEvalConfig}}\ \mbox{\hyperlink{class_film_statistics_ad6c3cbc02e1bd032813a17eaf6cd6d93}{config}};}
+\DoxyCodeLine{00134\ \ \ \ \ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_film_statistics_a7a0701220e79c1fe5d6fd5e4a80fef17}{start\_delay}}\ =\ 0;}
+\DoxyCodeLine{00139\ \ \ \ \ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_film_statistics_a92cf3f91334dc7bac80e0460e680c637}{frame\_time\_measurement}};}
+\DoxyCodeLine{00144\ \ \ \ \ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_ac6ca8de76bd78a50a2380c7ceb30ca7a}{normalizeProbs}}(std::map<ShotType,\ double>\ \&\ aggregated\_probs);}
+\DoxyCodeLine{00150\ \ \ \ \ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_aab7b11bf4851767877e302cbded9c790}{aggregateSlidingWindowProbs}}(std::deque<classification\_result>\ \&\ sliding\_window,\ std::map<ShotType,\ double>\ \&\ aggregated\_probs);}
+\DoxyCodeLine{00157\ \ \ \ \ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_ab6e08c0876613733d85886378ef1eb20}{findShotTypeMaxProb}}(std::map<ShotType,\ double>\ \&\ aggregated\_probs,\ \mbox{\hyperlink{structclassification__result}{classification\_result}}\ \&\ sample);}
+\DoxyCodeLine{00164\ \ \ \ \ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_a0db3c6c590435d26d69d2548f9234102}{oversampleInputData}}();}
+\DoxyCodeLine{00169\ \ \ \ \ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_a22cd4c95af44566e6c58db390a1697a8}{computeEntropy}}();}
+\DoxyCodeLine{00174\ \ \ \ \ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_ad1555cd3ba8b4ce8959ce6b13ef11cc0}{computeEntropyVariance}}();}
+\DoxyCodeLine{00179\ \ \ \ \ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_acfb9a85b54499a52bb1e973ad839e51b}{outputStatistics}}();}
+\DoxyCodeLine{00184\ \ \ \ \ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_adc7f9fd90bf26e0d33518b296831afbf}{appendSampleToTimeline}}(std::vector<std::pair<\textcolor{keywordtype}{double},\ std::map<ShotType,\ double>>>\ \&\ timeline);}
+\DoxyCodeLine{00190\ \ \ \ \ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_adc7f9fd90bf26e0d33518b296831afbf}{appendSampleToTimeline}}(std::vector<std::pair<double,\ ShotType>>\ \&\ timeline);}
+\DoxyCodeLine{00196\ \ \ \ \ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_aa012383f4bb42705e01718197775e38d}{appendEntropyToTimeline}}(std::vector<std::pair<double,\ double>>\ \&\ timeline);}
+\DoxyCodeLine{00202\ \ \ \ \ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_adcb8d25b5e6af99172db42a46ac0d058}{appendEntropyVarianceToTimeline}}(std::vector<std::pair<double,\ double>>\ \&\ timeline);}
+\DoxyCodeLine{00208\ \ \ \ \ }
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_a54bcb7a6d7ca568dfd5f9db378d3cf9c}{appendCutDetectionToTimeline}}(std::vector<std::pair<double,\ bool>>\ \&\ timeline);}
+\DoxyCodeLine{00214\ \ \ \ \ }
+\DoxyCodeLine{00215\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00219\ \ \ \ \ \mbox{\hyperlink{class_film_statistics_a1d383997c5e40127f0f1eb53a6e4daf4}{FilmStatistics}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_acb7f83bb659b3891872efb394ed4c8b2}{addConfigurationStruct}}(\mbox{\hyperlink{struct_film_statistics_eval_config}{FilmStatisticsEvalConfig}}\ \textcolor{keyword}{const}\ \&\ cfg);}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_a9defb8fa801d41bf211cfc52c2e9ee21}{addFrameResult}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ timestampMs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structclassification__result}{classification\_result}}\ \&\ result);}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_a96df1a57a7848b604518bd8a0eb27b71}{exportToCSV}}(\textcolor{keyword}{const}\ std::string\&\ path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_film_statistics_a179f692db9d5bf9784e67092c1f2d7be}{printSummary}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00248\ \ \ \ \ }
+\DoxyCodeLine{00249\ \ \ \ \ }
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{comment}{//\ -\/-\/\ temporary\ -\/-\/}}
+\DoxyCodeLine{00255\ \ \ \ \ std::vector<std::pair<double,\ double>>\ \&\ \mbox{\hyperlink{class_film_statistics_a7ac648424f559be729fd15a65e493d05}{getEntropy}}()\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_film_statistics_a531606cba04d7e4c2ffda57b6f0b1324}{enthropy\_timeline}};\ \};}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00261\ \ \ \ \ std::vector<std::pair<double,\ double>>\ \&\ \mbox{\hyperlink{class_film_statistics_ae2bf70b89811a94f3bfb22a1b227a557}{getEntropyVAriance}}()\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_film_statistics_a36ab9cdd335f9e4884cca8be667ae165}{enthropy\_variance\_timeline}};\ \};}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00267\ \ \ \ \ std::vector<std::pair<double,\ ShotType>>\ \&\ \mbox{\hyperlink{class_film_statistics_a72031c8608d41d3cdb67f7e68dc84524}{getShotType}}()\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_film_statistics_a13f33560f14dc8a5754647119bb8f0f5}{shot\_type\_timeline}};\}}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{comment}{//\ -\/-\/\ temporary\ -\/-\/}}
+\DoxyCodeLine{00269\ \};}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ FilmStatisticEval\_hpp\ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

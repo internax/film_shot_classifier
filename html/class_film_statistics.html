@@ -104,6 +104,7 @@ $(function(){initNavTree('class_film_statistics.html',''); initResizable(true); 
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_film_statistics-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">FilmStatistics Class Reference</div></div>
@@ -121,15 +122,12 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>FilmStatistics</b> ()=default</td></tr>
 <tr class="memdesc:a1d383997c5e40127f0f1eb53a6e4daf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor (analyzes every frame). <br /></td></tr>
 <tr class="separator:a1d383997c5e40127f0f1eb53a6e4daf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a430510040632f0f5e03d26bff9a2ad6b" id="r_a430510040632f0f5e03d26bff9a2ad6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a430510040632f0f5e03d26bff9a2ad6b">FilmStatistics</a> (size_t stride)</td></tr>
-<tr class="memdesc:a430510040632f0f5e03d26bff9a2ad6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with custom frame stride.  <br /></td></tr>
-<tr class="separator:a430510040632f0f5e03d26bff9a2ad6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a332ff57847146069f1e68d664a8ac06f" id="r_a332ff57847146069f1e68d664a8ac06f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a332ff57847146069f1e68d664a8ac06f">addFrameResult</a> (double timestampMs, const <a class="el" href="struct_classification_result.html">ClassificationResult</a> &amp;result)</td></tr>
-<tr class="memdesc:a332ff57847146069f1e68d664a8ac06f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the classification result for a single frame.  <br /></td></tr>
-<tr class="separator:a332ff57847146069f1e68d664a8ac06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac263d689c6b770ac8de7db3f2a81a988" id="r_ac263d689c6b770ac8de7db3f2a81a988"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac263d689c6b770ac8de7db3f2a81a988">setFrameStep</a> (size_t stride)</td></tr>
-<tr class="memdesc:ac263d689c6b770ac8de7db3f2a81a988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of frames to skip during analysis.  <br /></td></tr>
-<tr class="separator:ac263d689c6b770ac8de7db3f2a81a988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb7f83bb659b3891872efb394ed4c8b2" id="r_acb7f83bb659b3891872efb394ed4c8b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb7f83bb659b3891872efb394ed4c8b2">addConfigurationStruct</a> (<a class="el" href="struct_film_statistics_eval_config.html">FilmStatisticsEvalConfig</a> const &amp;cfg)</td></tr>
+<tr class="memdesc:acb7f83bb659b3891872efb394ed4c8b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds configuration parameters for the evaluation.  <br /></td></tr>
+<tr class="separator:acb7f83bb659b3891872efb394ed4c8b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9defb8fa801d41bf211cfc52c2e9ee21" id="r_a9defb8fa801d41bf211cfc52c2e9ee21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9defb8fa801d41bf211cfc52c2e9ee21">addFrameResult</a> (const double timestampMs, const <a class="el" href="structclassification__result.html">classification_result</a> &amp;result)</td></tr>
+<tr class="memdesc:a9defb8fa801d41bf211cfc52c2e9ee21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the classification result for a single frame.  <br /></td></tr>
+<tr class="separator:a9defb8fa801d41bf211cfc52c2e9ee21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96df1a57a7848b604518bd8a0eb27b71" id="r_a96df1a57a7848b604518bd8a0eb27b71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96df1a57a7848b604518bd8a0eb27b71">exportToCSV</a> (const std::string &amp;path) const</td></tr>
 <tr class="memdesc:a96df1a57a7848b604518bd8a0eb27b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports all collected statistics to a CSV file.  <br /></td></tr>
 <tr class="separator:a96df1a57a7848b604518bd8a0eb27b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,78 +135,185 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>printSummary</b> () const</td></tr>
 <tr class="memdesc:a179f692db9d5bf9784e67092c1f2d7be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a textual summary of the shot distribution to the console. <br /></td></tr>
 <tr class="separator:a179f692db9d5bf9784e67092c1f2d7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ac648424f559be729fd15a65e493d05" id="r_a7ac648424f559be729fd15a65e493d05"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ac648424f559be729fd15a65e493d05">getEntropy</a> ()</td></tr>
+<tr class="memdesc:a7ac648424f559be729fd15a65e493d05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the entropy timeline.  <br /></td></tr>
+<tr class="separator:a7ac648424f559be729fd15a65e493d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2bf70b89811a94f3bfb22a1b227a557" id="r_ae2bf70b89811a94f3bfb22a1b227a557"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2bf70b89811a94f3bfb22a1b227a557">getEntropyVAriance</a> ()</td></tr>
+<tr class="memdesc:ae2bf70b89811a94f3bfb22a1b227a557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the entropy variance timeline.  <br /></td></tr>
+<tr class="separator:ae2bf70b89811a94f3bfb22a1b227a557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72031c8608d41d3cdb67f7e68dc84524" id="r_a72031c8608d41d3cdb67f7e68dc84524"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; double, ShotType &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72031c8608d41d3cdb67f7e68dc84524">getShotType</a> ()</td></tr>
+<tr class="memdesc:a72031c8608d41d3cdb67f7e68dc84524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the shot type timeline.  <br /></td></tr>
+<tr class="separator:a72031c8608d41d3cdb67f7e68dc84524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ac6ca8de76bd78a50a2380c7ceb30ca7a" id="r_ac6ca8de76bd78a50a2380c7ceb30ca7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6ca8de76bd78a50a2380c7ceb30ca7a">normalizeProbs</a> (std::map&lt; ShotType, double &gt; &amp;aggregated_probs)</td></tr>
+<tr class="memdesc:ac6ca8de76bd78a50a2380c7ceb30ca7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes the aggregated probabilities so they sum to 1.  <br /></td></tr>
+<tr class="separator:ac6ca8de76bd78a50a2380c7ceb30ca7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab7b11bf4851767877e302cbded9c790" id="r_aab7b11bf4851767877e302cbded9c790"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab7b11bf4851767877e302cbded9c790">aggregateSlidingWindowProbs</a> (std::deque&lt; <a class="el" href="structclassification__result.html">classification_result</a> &gt; &amp;sliding_window, std::map&lt; ShotType, double &gt; &amp;aggregated_probs)</td></tr>
+<tr class="memdesc:aab7b11bf4851767877e302cbded9c790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggregates probabilities from a sliding window of classification results.  <br /></td></tr>
+<tr class="separator:aab7b11bf4851767877e302cbded9c790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6e08c0876613733d85886378ef1eb20" id="r_ab6e08c0876613733d85886378ef1eb20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6e08c0876613733d85886378ef1eb20">findShotTypeMaxProb</a> (std::map&lt; ShotType, double &gt; &amp;aggregated_probs, <a class="el" href="structclassification__result.html">classification_result</a> &amp;sample)</td></tr>
+<tr class="memdesc:ab6e08c0876613733d85886378ef1eb20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the shot type with the maximum probability from aggregated probabilities and updates the sample.  <br /></td></tr>
+<tr class="separator:ab6e08c0876613733d85886378ef1eb20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0db3c6c590435d26d69d2548f9234102" id="r_a0db3c6c590435d26d69d2548f9234102"><td class="memItemLeft" align="right" valign="top"><a id="a0db3c6c590435d26d69d2548f9234102" name="a0db3c6c590435d26d69d2548f9234102"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>oversampleInputData</b> ()</td></tr>
+<tr class="memdesc:a0db3c6c590435d26d69d2548f9234102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs oversampling on input data to improve statistical robustness. <br /></td></tr>
+<tr class="separator:a0db3c6c590435d26d69d2548f9234102"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22cd4c95af44566e6c58db390a1697a8" id="r_a22cd4c95af44566e6c58db390a1697a8"><td class="memItemLeft" align="right" valign="top"><a id="a22cd4c95af44566e6c58db390a1697a8" name="a22cd4c95af44566e6c58db390a1697a8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>computeEntropy</b> ()</td></tr>
+<tr class="memdesc:a22cd4c95af44566e6c58db390a1697a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the entropy of the current sliding window of classification results. <br /></td></tr>
+<tr class="separator:a22cd4c95af44566e6c58db390a1697a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1555cd3ba8b4ce8959ce6b13ef11cc0" id="r_ad1555cd3ba8b4ce8959ce6b13ef11cc0"><td class="memItemLeft" align="right" valign="top"><a id="ad1555cd3ba8b4ce8959ce6b13ef11cc0" name="ad1555cd3ba8b4ce8959ce6b13ef11cc0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>computeEntropyVariance</b> ()</td></tr>
+<tr class="memdesc:ad1555cd3ba8b4ce8959ce6b13ef11cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the variance of the entropy values over the sliding window. <br /></td></tr>
+<tr class="separator:ad1555cd3ba8b4ce8959ce6b13ef11cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfb9a85b54499a52bb1e973ad839e51b" id="r_acfb9a85b54499a52bb1e973ad839e51b"><td class="memItemLeft" align="right" valign="top"><a id="acfb9a85b54499a52bb1e973ad839e51b" name="acfb9a85b54499a52bb1e973ad839e51b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>outputStatistics</b> ()</td></tr>
+<tr class="memdesc:acfb9a85b54499a52bb1e973ad839e51b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs collected statistics to the console or log. <br /></td></tr>
+<tr class="separator:acfb9a85b54499a52bb1e973ad839e51b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc7f9fd90bf26e0d33518b296831afbf" id="r_adc7f9fd90bf26e0d33518b296831afbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc7f9fd90bf26e0d33518b296831afbf">appendSampleToTimeline</a> (std::vector&lt; std::pair&lt; double, std::map&lt; ShotType, double &gt; &gt; &gt; &amp;timeline)</td></tr>
+<tr class="memdesc:adc7f9fd90bf26e0d33518b296831afbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends the current sample's aggregated probabilities and timestamp to a timeline.  <br /></td></tr>
+<tr class="separator:adc7f9fd90bf26e0d33518b296831afbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64ea72384ff3b2f70af0a6685f48e3f1" id="r_a64ea72384ff3b2f70af0a6685f48e3f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64ea72384ff3b2f70af0a6685f48e3f1">appendSampleToTimeline</a> (std::vector&lt; std::pair&lt; double, ShotType &gt; &gt; &amp;timeline)</td></tr>
+<tr class="memdesc:a64ea72384ff3b2f70af0a6685f48e3f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends the current sample's shot type and timestamp to a timeline.  <br /></td></tr>
+<tr class="separator:a64ea72384ff3b2f70af0a6685f48e3f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa012383f4bb42705e01718197775e38d" id="r_aa012383f4bb42705e01718197775e38d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa012383f4bb42705e01718197775e38d">appendEntropyToTimeline</a> (std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp;timeline)</td></tr>
+<tr class="memdesc:aa012383f4bb42705e01718197775e38d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends the current entropy value and timestamp to a timeline.  <br /></td></tr>
+<tr class="separator:aa012383f4bb42705e01718197775e38d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcb8d25b5e6af99172db42a46ac0d058" id="r_adcb8d25b5e6af99172db42a46ac0d058"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcb8d25b5e6af99172db42a46ac0d058">appendEntropyVarianceToTimeline</a> (std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp;timeline)</td></tr>
+<tr class="memdesc:adcb8d25b5e6af99172db42a46ac0d058"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends the current entropy variance value and timestamp to a timeline.  <br /></td></tr>
+<tr class="separator:adcb8d25b5e6af99172db42a46ac0d058"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54bcb7a6d7ca568dfd5f9db378d3cf9c" id="r_a54bcb7a6d7ca568dfd5f9db378d3cf9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54bcb7a6d7ca568dfd5f9db378d3cf9c">appendCutDetectionToTimeline</a> (std::vector&lt; std::pair&lt; double, bool &gt; &gt; &amp;timeline)</td></tr>
+<tr class="memdesc:a54bcb7a6d7ca568dfd5f9db378d3cf9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends the current cut detection flag and timestamp to a timeline.  <br /></td></tr>
+<tr class="separator:a54bcb7a6d7ca568dfd5f9db378d3cf9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a4acf2ba4efa2c3daa697d1769146daaa" id="r_a4acf2ba4efa2c3daa697d1769146daaa"><td class="memItemLeft" align="right" valign="top"><a id="a4acf2ba4efa2c3daa697d1769146daaa" name="a4acf2ba4efa2c3daa697d1769146daaa"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>step</b> = 1</td></tr>
-<tr class="memdesc:a4acf2ba4efa2c3daa697d1769146daaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame step size – allows skipping frames during analysis. <br /></td></tr>
-<tr class="separator:a4acf2ba4efa2c3daa697d1769146daaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94f2720dab851559ae134d9a749a4ab7" id="r_a94f2720dab851559ae134d9a749a4ab7"><td class="memItemLeft" align="right" valign="top"><a id="a94f2720dab851559ae134d9a749a4ab7" name="a94f2720dab851559ae134d9a749a4ab7"></a>
 std::map&lt; ShotType, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>shot_counts</b></td></tr>
-<tr class="memdesc:a94f2720dab851559ae134d9a749a4ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count of each shot type. <br /></td></tr>
+<tr class="memdesc:a94f2720dab851559ae134d9a749a4ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count of each shot type encountered in the video. <br /></td></tr>
 <tr class="separator:a94f2720dab851559ae134d9a749a4ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64c4cb404baa09d471d1061ea2910005" id="r_a64c4cb404baa09d471d1061ea2910005"><td class="memItemLeft" align="right" valign="top"><a id="a64c4cb404baa09d471d1061ea2910005" name="a64c4cb404baa09d471d1061ea2910005"></a>
-std::vector&lt; std::pair&lt; double, ShotType &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>timeline</b></td></tr>
-<tr class="memdesc:a64c4cb404baa09d471d1061ea2910005"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeline of shot types (timestamp → type) <br /></td></tr>
-<tr class="separator:a64c4cb404baa09d471d1061ea2910005"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab64b6098fc68ba0e97841eb055fd03e9" id="r_ab64b6098fc68ba0e97841eb055fd03e9"><td class="memItemLeft" align="right" valign="top"><a id="ab64b6098fc68ba0e97841eb055fd03e9" name="ab64b6098fc68ba0e97841eb055fd03e9"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>totalFrames</b> = 0</td></tr>
-<tr class="memdesc:ab64b6098fc68ba0e97841eb055fd03e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of frames processed. <br /></td></tr>
-<tr class="separator:ab64b6098fc68ba0e97841eb055fd03e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3761e802821fc8626e26552b7a6757e" id="r_ac3761e802821fc8626e26552b7a6757e"><td class="memItemLeft" align="right" valign="top"><a id="ac3761e802821fc8626e26552b7a6757e" name="ac3761e802821fc8626e26552b7a6757e"></a>
+std::vector&lt; std::pair&lt; double, std::map&lt; ShotType, double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>prob_timeline</b></td></tr>
+<tr class="memdesc:ac3761e802821fc8626e26552b7a6757e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeline of aggregated shot type probabilities at given timestamps. Each entry maps a timestamp (double) to a map of ShotType and their probabilities. <br /></td></tr>
+<tr class="separator:ac3761e802821fc8626e26552b7a6757e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13f33560f14dc8a5754647119bb8f0f5" id="r_a13f33560f14dc8a5754647119bb8f0f5"><td class="memItemLeft" align="right" valign="top"><a id="a13f33560f14dc8a5754647119bb8f0f5" name="a13f33560f14dc8a5754647119bb8f0f5"></a>
+std::vector&lt; std::pair&lt; double, ShotType &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>shot_type_timeline</b></td></tr>
+<tr class="memdesc:a13f33560f14dc8a5754647119bb8f0f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeline of detected shot types at given timestamps. Each entry maps a timestamp (double) to the detected ShotType. <br /></td></tr>
+<tr class="separator:a13f33560f14dc8a5754647119bb8f0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a531606cba04d7e4c2ffda57b6f0b1324" id="r_a531606cba04d7e4c2ffda57b6f0b1324"><td class="memItemLeft" align="right" valign="top"><a id="a531606cba04d7e4c2ffda57b6f0b1324" name="a531606cba04d7e4c2ffda57b6f0b1324"></a>
+std::vector&lt; std::pair&lt; double, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>enthropy_timeline</b></td></tr>
+<tr class="memdesc:a531606cba04d7e4c2ffda57b6f0b1324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeline of entropy values computed over a sliding window of samples. Each entry maps a timestamp (double) to the entropy value. <br /></td></tr>
+<tr class="separator:a531606cba04d7e4c2ffda57b6f0b1324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36ab9cdd335f9e4884cca8be667ae165" id="r_a36ab9cdd335f9e4884cca8be667ae165"><td class="memItemLeft" align="right" valign="top"><a id="a36ab9cdd335f9e4884cca8be667ae165" name="a36ab9cdd335f9e4884cca8be667ae165"></a>
+std::vector&lt; std::pair&lt; double, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>enthropy_variance_timeline</b></td></tr>
+<tr class="memdesc:a36ab9cdd335f9e4884cca8be667ae165"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeline of entropy variance values computed over a sliding window. Each entry maps a timestamp (double) to the entropy variance value. <br /></td></tr>
+<tr class="separator:a36ab9cdd335f9e4884cca8be667ae165"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e8b09391abd96b4272e4704f898031c" id="r_a9e8b09391abd96b4272e4704f898031c"><td class="memItemLeft" align="right" valign="top"><a id="a9e8b09391abd96b4272e4704f898031c" name="a9e8b09391abd96b4272e4704f898031c"></a>
+std::vector&lt; std::pair&lt; double, bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>cut_detection_timeline</b></td></tr>
+<tr class="memdesc:a9e8b09391abd96b4272e4704f898031c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeline of cut detection flags at given timestamps. Each entry maps a timestamp (double) to a boolean indicating if a cut was detected. <br /></td></tr>
+<tr class="separator:a9e8b09391abd96b4272e4704f898031c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af686ff8e1b6a5e2254e60a0b9369f7e0" id="r_af686ff8e1b6a5e2254e60a0b9369f7e0"><td class="memItemLeft" align="right" valign="top"><a id="af686ff8e1b6a5e2254e60a0b9369f7e0" name="af686ff8e1b6a5e2254e60a0b9369f7e0"></a>
+std::deque&lt; <a class="el" href="structclassification__result.html">classification_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>oversampling_sliding_window</b></td></tr>
+<tr class="memdesc:af686ff8e1b6a5e2254e60a0b9369f7e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sliding window storing classification results for oversampling. <br /></td></tr>
+<tr class="separator:af686ff8e1b6a5e2254e60a0b9369f7e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a249a2965029b9cdf8456ceb82f08b5ab" id="r_a249a2965029b9cdf8456ceb82f08b5ab"><td class="memItemLeft" align="right" valign="top"><a id="a249a2965029b9cdf8456ceb82f08b5ab" name="a249a2965029b9cdf8456ceb82f08b5ab"></a>
+std::deque&lt; <a class="el" href="structclassification__result.html">classification_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>entropy_sliding_window</b></td></tr>
+<tr class="memdesc:a249a2965029b9cdf8456ceb82f08b5ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sliding window storing classification results for entropy computation. <br /></td></tr>
+<tr class="separator:a249a2965029b9cdf8456ceb82f08b5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1a0ff2b1ec5d637bf0a11bda40090f8" id="r_aa1a0ff2b1ec5d637bf0a11bda40090f8"><td class="memItemLeft" align="right" valign="top"><a id="aa1a0ff2b1ec5d637bf0a11bda40090f8" name="aa1a0ff2b1ec5d637bf0a11bda40090f8"></a>
+std::deque&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>entropy_variance_sliding_window</b></td></tr>
+<tr class="memdesc:aa1a0ff2b1ec5d637bf0a11bda40090f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sliding window storing entropy variance values. <br /></td></tr>
+<tr class="separator:aa1a0ff2b1ec5d637bf0a11bda40090f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac17c7e155c3770ebfeea33d95e0b8ada" id="r_ac17c7e155c3770ebfeea33d95e0b8ada"><td class="memItemLeft" align="right" valign="top"><a id="ac17c7e155c3770ebfeea33d95e0b8ada" name="ac17c7e155c3770ebfeea33d95e0b8ada"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>total_frames</b> = 0</td></tr>
+<tr class="memdesc:ac17c7e155c3770ebfeea33d95e0b8ada"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of frames processed so far. <br /></td></tr>
+<tr class="separator:ac17c7e155c3770ebfeea33d95e0b8ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49ae808728298283c5ae0205b839d98e" id="r_a49ae808728298283c5ae0205b839d98e"><td class="memItemLeft" align="right" valign="top"><a id="a49ae808728298283c5ae0205b839d98e" name="a49ae808728298283c5ae0205b839d98e"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>evaluated_frames</b> = 0</td></tr>
+<tr class="memdesc:a49ae808728298283c5ae0205b839d98e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of frames that have been evaluated and included in statistics. <br /></td></tr>
+<tr class="separator:a49ae808728298283c5ae0205b839d98e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bd79c0fd3d7a7f14eef6bcc5bcedab1" id="r_a8bd79c0fd3d7a7f14eef6bcc5bcedab1"><td class="memItemLeft" align="right" valign="top"><a id="a8bd79c0fd3d7a7f14eef6bcc5bcedab1" name="a8bd79c0fd3d7a7f14eef6bcc5bcedab1"></a>
+<a class="el" href="structclassification__result.html">classification_result</a>&#160;</td><td class="memItemRight" valign="bottom"><b>current_sample_oversampled</b></td></tr>
+<tr class="memdesc:a8bd79c0fd3d7a7f14eef6bcc5bcedab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current oversampled classification result being processed. <br /></td></tr>
+<tr class="separator:a8bd79c0fd3d7a7f14eef6bcc5bcedab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab49a90ba0ee00a25c711b224e8eaf616" id="r_ab49a90ba0ee00a25c711b224e8eaf616"><td class="memItemLeft" align="right" valign="top"><a id="ab49a90ba0ee00a25c711b224e8eaf616" name="ab49a90ba0ee00a25c711b224e8eaf616"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>entropy</b> = 0.0</td></tr>
+<tr class="memdesc:ab49a90ba0ee00a25c711b224e8eaf616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current entropy value computed from the sliding window. <br /></td></tr>
+<tr class="separator:ab49a90ba0ee00a25c711b224e8eaf616"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79139e0e945f986a28ca53ad9a1cfdc9" id="r_a79139e0e945f986a28ca53ad9a1cfdc9"><td class="memItemLeft" align="right" valign="top"><a id="a79139e0e945f986a28ca53ad9a1cfdc9" name="a79139e0e945f986a28ca53ad9a1cfdc9"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>timestamp_ms</b> = 0.0</td></tr>
+<tr class="memdesc:a79139e0e945f986a28ca53ad9a1cfdc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timestamp in milliseconds of the current frame/sample. <br /></td></tr>
+<tr class="separator:a79139e0e945f986a28ca53ad9a1cfdc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15257c877874773c1f81db966fa25a4f" id="r_a15257c877874773c1f81db966fa25a4f"><td class="memItemLeft" align="right" valign="top"><a id="a15257c877874773c1f81db966fa25a4f" name="a15257c877874773c1f81db966fa25a4f"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>entropy_variance</b> = 0.0</td></tr>
+<tr class="memdesc:a15257c877874773c1f81db966fa25a4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current entropy variance value computed from the sliding window. <br /></td></tr>
+<tr class="separator:a15257c877874773c1f81db966fa25a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6c3cbc02e1bd032813a17eaf6cd6d93" id="r_ad6c3cbc02e1bd032813a17eaf6cd6d93"><td class="memItemLeft" align="right" valign="top"><a id="ad6c3cbc02e1bd032813a17eaf6cd6d93" name="ad6c3cbc02e1bd032813a17eaf6cd6d93"></a>
+<a class="el" href="struct_film_statistics_eval_config.html">FilmStatisticsEvalConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><b>config</b></td></tr>
+<tr class="memdesc:ad6c3cbc02e1bd032813a17eaf6cd6d93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration parameters for the <a class="el" href="class_film_statistics.html" title="Collects and analyzes shot type data across a sequence of video frames.">FilmStatistics</a> evaluation. <br /></td></tr>
+<tr class="separator:ad6c3cbc02e1bd032813a17eaf6cd6d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a0701220e79c1fe5d6fd5e4a80fef17" id="r_a7a0701220e79c1fe5d6fd5e4a80fef17"><td class="memItemLeft" align="right" valign="top"><a id="a7a0701220e79c1fe5d6fd5e4a80fef17" name="a7a0701220e79c1fe5d6fd5e4a80fef17"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>start_delay</b> = 0</td></tr>
+<tr class="memdesc:a7a0701220e79c1fe5d6fd5e4a80fef17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of initial frames to delay before starting analysis. <br /></td></tr>
+<tr class="separator:a7a0701220e79c1fe5d6fd5e4a80fef17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92cf3f91334dc7bac80e0460e680c637" id="r_a92cf3f91334dc7bac80e0460e680c637"><td class="memItemLeft" align="right" valign="top"><a id="a92cf3f91334dc7bac80e0460e680c637" name="a92cf3f91334dc7bac80e0460e680c637"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>frame_time_measurement</b></td></tr>
+<tr class="memdesc:a92cf3f91334dc7bac80e0460e680c637"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duration of a single frame in milliseconds used for time measurement. <br /></td></tr>
+<tr class="separator:a92cf3f91334dc7bac80e0460e680c637"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Collects and analyzes shot type data across a sequence of video frames. </p>
 <p>The <a class="el" href="class_film_statistics.html" title="Collects and analyzes shot type data across a sequence of video frames.">FilmStatistics</a> class is responsible for aggregating classification results from multiple frames and producing summary statistics about shot types used in a video. It also supports time-based analysis and exporting results.</p>
 <p>This class is typically used at the end of a processing pipeline, after each frame has been classified. It stores both a timeline and cumulative counts of different shot types.</p>
 <p>The analysis can be configured to skip frames using a configurable <code>step</code>, which allows subsampling of the video.</p>
-<p>Example usage: </p><div class="fragment"><div class="line"><a class="code hl_function" href="#a1d383997c5e40127f0f1eb53a6e4daf4">FilmStatistics</a> stats(5); <span class="comment">// analyze every 5th frame</span></div>
-<div class="line">stats.addFrameResult(1.2, result);</div>
-<div class="line">stats.printSummary();</div>
-<div class="line">stats.exportToCSV(<span class="stringliteral">&quot;shots.csv&quot;</span>);</div>
+<p>Example usage: </p><div class="fragment"><div class="line"><a class="code hl_struct" href="struct_film_statistics_eval_config.html">FilmStatisticsEvalConfig</a> cfg;</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_function" href="#a1d383997c5e40127f0f1eb53a6e4daf4">FilmStatistics</a> stats;</div>
+<div class="line">stats.<a class="code hl_function" href="#acb7f83bb659b3891872efb394ed4c8b2">addConfigurationStruct</a>(cfg);</div>
+<div class="line">stats.<a class="code hl_function" href="#a9defb8fa801d41bf211cfc52c2e9ee21">addFrameResult</a>(timestamp, result);</div>
+<div class="line">stats.<a class="code hl_function" href="#a179f692db9d5bf9784e67092c1f2d7be">printSummary</a>();</div>
+<div class="line">stats.<a class="code hl_function" href="#a96df1a57a7848b604518bd8a0eb27b71">exportToCSV</a>(<span class="stringliteral">&quot;shots.csv&quot;</span>);</div>
+<div class="ttc" id="aclass_film_statistics_html_a179f692db9d5bf9784e67092c1f2d7be"><div class="ttname"><a href="#a179f692db9d5bf9784e67092c1f2d7be">FilmStatistics::printSummary</a></div><div class="ttdeci">void printSummary() const</div><div class="ttdoc">Prints a textual summary of the shot distribution to the console.</div></div>
 <div class="ttc" id="aclass_film_statistics_html_a1d383997c5e40127f0f1eb53a6e4daf4"><div class="ttname"><a href="#a1d383997c5e40127f0f1eb53a6e4daf4">FilmStatistics::FilmStatistics</a></div><div class="ttdeci">FilmStatistics()=default</div><div class="ttdoc">Default constructor (analyzes every frame).</div></div>
+<div class="ttc" id="aclass_film_statistics_html_a96df1a57a7848b604518bd8a0eb27b71"><div class="ttname"><a href="#a96df1a57a7848b604518bd8a0eb27b71">FilmStatistics::exportToCSV</a></div><div class="ttdeci">void exportToCSV(const std::string &amp;path) const</div><div class="ttdoc">Exports all collected statistics to a CSV file.</div><div class="ttdef"><b>Definition</b> FilmStatisticEval.cpp:327</div></div>
+<div class="ttc" id="aclass_film_statistics_html_a9defb8fa801d41bf211cfc52c2e9ee21"><div class="ttname"><a href="#a9defb8fa801d41bf211cfc52c2e9ee21">FilmStatistics::addFrameResult</a></div><div class="ttdeci">void addFrameResult(const double timestampMs, const classification_result &amp;result)</div><div class="ttdoc">Adds the classification result for a single frame.</div><div class="ttdef"><b>Definition</b> FilmStatisticEval.cpp:125</div></div>
+<div class="ttc" id="aclass_film_statistics_html_acb7f83bb659b3891872efb394ed4c8b2"><div class="ttname"><a href="#acb7f83bb659b3891872efb394ed4c8b2">FilmStatistics::addConfigurationStruct</a></div><div class="ttdeci">void addConfigurationStruct(FilmStatisticsEvalConfig const &amp;cfg)</div><div class="ttdoc">Adds configuration parameters for the evaluation.</div><div class="ttdef"><b>Definition</b> FilmStatisticEval.cpp:175</div></div>
+<div class="ttc" id="astruct_film_statistics_eval_config_html"><div class="ttname"><a href="struct_film_statistics_eval_config.html">FilmStatisticsEvalConfig</a></div><div class="ttdoc">Configuration structure for controlling statistical evaluation of film analysis.</div><div class="ttdef"><b>Definition</b> UserStructs.hpp:83</div></div>
 </div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Marek Tatýrek </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_classification_result.html" title="Contains the result of shot type classification.">ClassificationResult</a> </dd>
 <dd>
 ShotType </dd></dl>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a430510040632f0f5e03d26bff9a2ad6b" name="a430510040632f0f5e03d26bff9a2ad6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a430510040632f0f5e03d26bff9a2ad6b">&#9670;&#160;</a></span>FilmStatistics()</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="acb7f83bb659b3891872efb394ed4c8b2" name="acb7f83bb659b3891872efb394ed4c8b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb7f83bb659b3891872efb394ed4c8b2">&#9670;&#160;</a></span>addConfigurationStruct()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">FilmStatistics::FilmStatistics </td>
+          <td class="memname">void FilmStatistics::addConfigurationStruct </td>
           <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>stride</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_film_statistics_eval_config.html">FilmStatisticsEvalConfig</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>cfg</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Constructor with custom frame stride. </p>
+<p>Adds configuration parameters for the evaluation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">stride</td><td>Number of frames to skip between evaluations (e.g. 1 = every frame, 5 = every 5th). </td></tr>
+    <tr><td class="paramname">cfg</td><td>Configuration struct containing evaluation parameters. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a332ff57847146069f1e68d664a8ac06f" name="a332ff57847146069f1e68d664a8ac06f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a332ff57847146069f1e68d664a8ac06f">&#9670;&#160;</a></span>addFrameResult()</h2>
+<a id="a9defb8fa801d41bf211cfc52c2e9ee21" name="a9defb8fa801d41bf211cfc52c2e9ee21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9defb8fa801d41bf211cfc52c2e9ee21">&#9670;&#160;</a></span>addFrameResult()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -216,12 +321,12 @@ ShotType </dd></dl>
         <tr>
           <td class="memname">void FilmStatistics::addFrameResult </td>
           <td>(</td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>timestampMs</em></span>, </td>
+          <td class="paramtype">const double</td>          <td class="paramname"><span class="paramname"><em>timestampMs</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="struct_classification_result.html">ClassificationResult</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structclassification__result.html">classification_result</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -231,6 +336,209 @@ ShotType </dd></dl>
   <table class="params">
     <tr><td class="paramname">timestampMs</td><td>Timestamp of the frame in milliseconds. </td></tr>
     <tr><td class="paramname">result</td><td>Classification result containing shot type. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aab7b11bf4851767877e302cbded9c790" name="aab7b11bf4851767877e302cbded9c790"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab7b11bf4851767877e302cbded9c790">&#9670;&#160;</a></span>aggregateSlidingWindowProbs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FilmStatistics::aggregateSlidingWindowProbs </td>
+          <td>(</td>
+          <td class="paramtype">std::deque&lt; <a class="el" href="structclassification__result.html">classification_result</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>sliding_window</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::map&lt; ShotType, double &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>aggregated_probs</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aggregates probabilities from a sliding window of classification results. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sliding_window</td><td>Deque containing classification results to aggregate. </td></tr>
+    <tr><td class="paramname">aggregated_probs</td><td>Output map of ShotType to aggregated probability values. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a54bcb7a6d7ca568dfd5f9db378d3cf9c" name="a54bcb7a6d7ca568dfd5f9db378d3cf9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54bcb7a6d7ca568dfd5f9db378d3cf9c">&#9670;&#160;</a></span>appendCutDetectionToTimeline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FilmStatistics::appendCutDetectionToTimeline </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; double, bool &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>timeline</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Appends the current cut detection flag and timestamp to a timeline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeline</td><td>Vector to append the timestamp and cut detection boolean. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa012383f4bb42705e01718197775e38d" name="aa012383f4bb42705e01718197775e38d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa012383f4bb42705e01718197775e38d">&#9670;&#160;</a></span>appendEntropyToTimeline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FilmStatistics::appendEntropyToTimeline </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>timeline</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Appends the current entropy value and timestamp to a timeline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeline</td><td>Vector to append the timestamp and entropy value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adcb8d25b5e6af99172db42a46ac0d058" name="adcb8d25b5e6af99172db42a46ac0d058"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcb8d25b5e6af99172db42a46ac0d058">&#9670;&#160;</a></span>appendEntropyVarianceToTimeline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FilmStatistics::appendEntropyVarianceToTimeline </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>timeline</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Appends the current entropy variance value and timestamp to a timeline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeline</td><td>Vector to append the timestamp and entropy variance value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a64ea72384ff3b2f70af0a6685f48e3f1" name="a64ea72384ff3b2f70af0a6685f48e3f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64ea72384ff3b2f70af0a6685f48e3f1">&#9670;&#160;</a></span>appendSampleToTimeline() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FilmStatistics::appendSampleToTimeline </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; double, ShotType &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>timeline</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Appends the current sample's shot type and timestamp to a timeline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeline</td><td>Vector to append the timestamp and shot type. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adc7f9fd90bf26e0d33518b296831afbf" name="adc7f9fd90bf26e0d33518b296831afbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc7f9fd90bf26e0d33518b296831afbf">&#9670;&#160;</a></span>appendSampleToTimeline() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FilmStatistics::appendSampleToTimeline </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; double, std::map&lt; ShotType, double &gt; &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>timeline</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Appends the current sample's aggregated probabilities and timestamp to a timeline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeline</td><td>Vector to append the timestamp and aggregated shot type probabilities. </td></tr>
   </table>
   </dd>
 </dl>
@@ -263,33 +571,164 @@ ShotType </dd></dl>
 
 </div>
 </div>
-<a id="ac263d689c6b770ac8de7db3f2a81a988" name="ac263d689c6b770ac8de7db3f2a81a988"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac263d689c6b770ac8de7db3f2a81a988">&#9670;&#160;</a></span>setFrameStep()</h2>
+<a id="ab6e08c0876613733d85886378ef1eb20" name="ab6e08c0876613733d85886378ef1eb20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6e08c0876613733d85886378ef1eb20">&#9670;&#160;</a></span>findShotTypeMaxProb()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void FilmStatistics::setFrameStep </td>
+          <td class="memname">void FilmStatistics::findShotTypeMaxProb </td>
           <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>stride</em></span></td><td>)</td>
+          <td class="paramtype">std::map&lt; ShotType, double &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>aggregated_probs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="structclassification__result.html">classification_result</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>sample</em></span>&#160;)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Sets the number of frames to skip during analysis. </p>
+<p>Finds the shot type with the maximum probability from aggregated probabilities and updates the sample. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">stride</td><td>New step size (e.g., 1 = no skipping). </td></tr>
+    <tr><td class="paramname">aggregated_probs</td><td>Map of ShotType to their aggregated probabilities. </td></tr>
+    <tr><td class="paramname">sample</td><td>Classification result to update with the shot type having max probability. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="a7ac648424f559be729fd15a65e493d05" name="a7ac648424f559be729fd15a65e493d05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ac648424f559be729fd15a65e493d05">&#9670;&#160;</a></span>getEntropy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp; FilmStatistics::getEntropy </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the entropy timeline. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to vector of timestamp and entropy pairs. </dd></dl>
+
+</div>
+</div>
+<a id="ae2bf70b89811a94f3bfb22a1b227a557" name="ae2bf70b89811a94f3bfb22a1b227a557"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2bf70b89811a94f3bfb22a1b227a557">&#9670;&#160;</a></span>getEntropyVAriance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp; FilmStatistics::getEntropyVAriance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the entropy variance timeline. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to vector of timestamp and entropy variance pairs. </dd></dl>
+
+</div>
+</div>
+<a id="a72031c8608d41d3cdb67f7e68dc84524" name="a72031c8608d41d3cdb67f7e68dc84524"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72031c8608d41d3cdb67f7e68dc84524">&#9670;&#160;</a></span>getShotType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::pair&lt; double, ShotType &gt; &gt; &amp; FilmStatistics::getShotType </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the shot type timeline. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to vector of timestamp and shot type pairs. </dd></dl>
+
+</div>
+</div>
+<a id="ac6ca8de76bd78a50a2380c7ceb30ca7a" name="ac6ca8de76bd78a50a2380c7ceb30ca7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6ca8de76bd78a50a2380c7ceb30ca7a">&#9670;&#160;</a></span>normalizeProbs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FilmStatistics::normalizeProbs </td>
+          <td>(</td>
+          <td class="paramtype">std::map&lt; ShotType, double &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>aggregated_probs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Normalizes the aggregated probabilities so they sum to 1. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aggregated_probs</td><td>Map of ShotType to their aggregated probabilities to normalize. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="_film_statistic_eval_8hpp_source.html">FilmStatisticEval.hpp</a></li>
+<li>src/<b>FilmStatisticEval.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

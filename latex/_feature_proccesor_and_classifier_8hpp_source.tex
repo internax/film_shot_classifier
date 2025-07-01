@@ -14,51 +14,29 @@
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <opencv2/opencv.hpp>}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}FeatureDetector.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}UserStructs.hpp"{}}}
 \DoxyCodeLine{00014\ }
-\DoxyCodeLine{00025\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_shot_features}{ShotFeatures}}\ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_shot_features_a52eb1566c46ae6d19318e25507d5679a}{object\_count}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_shot_features_ae666409f1b873e0fd73580447de4e880}{largest\_object\_area}}\ =\ 0.;\ \ \ \ \ }
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_shot_features_a7751cb00e4a77b4f5fcd5ab733ff04ec}{total\_object\_area}}\ =\ 0.;\ \ \ \ \ \ \ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_shot_features_aec98631daf90df3107f149515a4970dc}{total\_area}}\ =\ 0.;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ for\ good\ shot\ classification\ +\ we\ can\ add\ some\ statistical\ metrics}}
-\DoxyCodeLine{00033\ \ \ \ \ std::vector<cv::Point2f>\ \mbox{\hyperlink{struct_shot_features_adfbe739db9033296f8741c11631af9b0}{object\_centers}};\ }
-\DoxyCodeLine{00034\ \};}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00055\ \textcolor{keyword}{class\ }ShotFeatureExtractor\ \{}
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_shot_feature_extractor_a8e7d00419a3596c12ccea58d3658d1ea}{returnTotalArea}}(\textcolor{keyword}{const}\ cv::Mat\&\ frame);\ }
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_shot_feature_extractor_a97bf6aa9a2477494e43f6045df534a08}{returnLaregstObjectArea}}(\textcolor{keyword}{const}\ std::vector<DetectedFeature>\&\ features);\ }
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_shot_feature_extractor_a0abf6aac96e0abed7db4223f4be951c6}{returnTotalObjectArea}}(\textcolor{keyword}{const}\ std::vector<DetectedFeature>\&\ features);\ }
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00061\ \ \ \ \ ShotFeatureExtractor()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00062\ \ \ \ \ \string~ShotFeatureExtractor()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{struct_shot_features}{ShotFeatures}}\ \mbox{\hyperlink{class_shot_feature_extractor_ae2d3ff73c72c72afffdee4b257c9d7ae}{extract}}(\textcolor{keyword}{const}\ cv::Mat\&\ frame,\ \textcolor{keyword}{const}\ std::vector<DetectedFeature>\&\ features);}
-\DoxyCodeLine{00072\ \};}
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00080\ \textcolor{keyword}{enum\ class}\ ShotType\ \{}
-\DoxyCodeLine{00081\ \ \ \ \ CLOSE\_UP,\ \ \ }
-\DoxyCodeLine{00082\ \ \ \ \ MEDIUM,\ \ \ \ \ }
-\DoxyCodeLine{00083\ \ \ \ \ WIDE,\ \ \ \ \ \ \ }
-\DoxyCodeLine{00084\ \ \ \ \ UNKNOWN\ \ \ \ \ }
-\DoxyCodeLine{00085\ \};}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00094\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_classification_result}{ClassificationResult}}\ \{}
-\DoxyCodeLine{00095\ \ \ \ \ ShotType\ \mbox{\hyperlink{struct_classification_result_ac7b40d6ec2a43fd56da9eb53d5a6c5cf}{predictedType}}\ =\ ShotType::UNKNOWN;\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00096\ \ \ \ \ std::map<ShotType,\ double>\ \mbox{\hyperlink{struct_classification_result_a9afe45a7f13bdb8e65b865df9108355d}{probabilities}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00097\ \};}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00112\ \textcolor{keyword}{class\ }ShotClassifier\ \{}
-\DoxyCodeLine{00113\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00114\ \ \ \ \ ShotClassifier()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00115\ \ \ \ \ \string~ShotClassifier()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00116\ }
-\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{struct_classification_result}{ClassificationResult}}\ \mbox{\hyperlink{class_shot_classifier_a2ef06c52d231113954c2ed21cb957689}{classify}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_shot_features}{ShotFeatures}}\&\ features)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00124\ \};}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ FeatureProccesor\_hpp\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }ShotFeatureExtractor\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_shot_feature_extractor_a8e7d00419a3596c12ccea58d3658d1ea}{returnTotalArea}}(\textcolor{keyword}{const}\ cv::Mat\&\ frame);\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_shot_feature_extractor_a97bf6aa9a2477494e43f6045df534a08}{returnLaregstObjectArea}}(\textcolor{keyword}{const}\ std::vector<DetectedFeature>\&\ features);\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_shot_feature_extractor_a0abf6aac96e0abed7db4223f4be951c6}{returnTotalObjectArea}}(\textcolor{keyword}{const}\ std::vector<DetectedFeature>\&\ features);\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ ShotFeatureExtractor()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00041\ \ \ \ \ \string~ShotFeatureExtractor()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{struct_shot_features}{ShotFeatures}}\ \mbox{\hyperlink{class_shot_feature_extractor_ae2d3ff73c72c72afffdee4b257c9d7ae}{extract}}(\textcolor{keyword}{const}\ cv::Mat\&\ frame,\ \textcolor{keyword}{const}\ std::vector<DetectedFeature>\&\ features);}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{class\ }ShotClassifier\ \{}
+\DoxyCodeLine{00068\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ \ \ \ \ ShotClassifier()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00070\ \ \ \ \ \string~ShotClassifier()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{structclassification__result}{classification\_result}}\ \mbox{\hyperlink{class_shot_classifier_ae0c96ea1a429bba7ef9e7f7801f7b12c}{classify}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_shot_features}{ShotFeatures}}\&\ features)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ \};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ FeatureProccesor\_hpp\ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

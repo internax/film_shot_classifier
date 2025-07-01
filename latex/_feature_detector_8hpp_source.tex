@@ -14,29 +14,25 @@
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <opencv2/opencv.hpp>}}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00021\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_detected_feature}{DetectedFeature}}\ \{}
-\DoxyCodeLine{00022\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_detected_feature_a9e848d9e5561e71b1ab8f6985233225d}{label}};\ \ \ \ }
-\DoxyCodeLine{00023\ \ \ \ \ cv::Rect\ \mbox{\hyperlink{struct_detected_feature_a5d0ac2221b1e9277cbb06ae2f2472043}{boundingBox}};\ }
-\DoxyCodeLine{00024\ \};}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_feature_detector_afadfbf4a61a045ce18b3b4462139a601}{FeatureDetector}}}
-\DoxyCodeLine{00040\ \{}
-\DoxyCodeLine{00041\ \ \ \ \ cv::CascadeClassifier\ \mbox{\hyperlink{class_feature_detector_ae0c4a92ac795bdcb788e24a2932c763f}{cascade}};\ }
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_feature_detector_afadfbf4a61a045ce18b3b4462139a601}{FeatureDetector}}(std::string\&\ modelPath)\ \{\ \mbox{\hyperlink{class_feature_detector_a260abfa490e239110e83661d2fb91e9a}{loadModel}}(modelPath);\ \}}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_feature_detector_a689e1c3cf0e783d34492a9f7b218b355}{FeatureDetector}}()\ \{\}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}UserStructs.hpp"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_feature_detector_afadfbf4a61a045ce18b3b4462139a601}{FeatureDetector}}}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ cv::CascadeClassifier\ \mbox{\hyperlink{class_feature_detector_ae0c4a92ac795bdcb788e24a2932c763f}{cascade}};\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_feature_detector_afadfbf4a61a045ce18b3b4462139a601}{FeatureDetector}}(std::string\&\ modelPath)\ \{\ \mbox{\hyperlink{class_feature_detector_a260abfa490e239110e83661d2fb91e9a}{loadModel}}(modelPath);\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_feature_detector_a689e1c3cf0e783d34492a9f7b218b355}{FeatureDetector}}()\ \{\}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_feature_detector_a096c5a957a82c0f695900bb822b38acf}{\string~FeatureDetector}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_feature_detector_a260abfa490e239110e83661d2fb91e9a}{loadModel}}(\textcolor{keyword}{const}\ std::string\&\ modelPath);}
 \DoxyCodeLine{00054\ }
-\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_feature_detector_a096c5a957a82c0f695900bb822b38acf}{\string~FeatureDetector}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_feature_detector_a260abfa490e239110e83661d2fb91e9a}{loadModel}}(\textcolor{keyword}{const}\ std::string\&\ modelPath);}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00075\ \ \ \ \ std::vector<DetectedFeature>\ \mbox{\hyperlink{class_feature_detector_a26de374727fa0799058476a9dea37986}{detect}}(\textcolor{keyword}{const}\ cv::Mat\&\ image);\ \textcolor{comment}{//\ maybe\ it\ will\ be\ fine\ to\ sort\ the\ vector\ from\ biggest\ BB,\ so\ we\ gonna\ have\ easier\ job\ afterwards}}
-\DoxyCodeLine{00076\ \};}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ FeatureDetector\_hpp\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00064\ \ \ \ \ std::vector<DetectedFeature>\ \mbox{\hyperlink{class_feature_detector_a26de374727fa0799058476a9dea37986}{detect}}(\textcolor{keyword}{const}\ cv::Mat\&\ image);\ \textcolor{comment}{//\ maybe\ it\ will\ be\ fine\ to\ sort\ the\ vector\ from\ biggest\ BB,\ so\ we\ gonna\ have\ easier\ job\ afterwards}}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ FeatureDetector\_hpp\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00068\ }
 
 \end{DoxyCode}

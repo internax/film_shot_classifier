@@ -102,9 +102,6 @@ $(function(){initNavTree('struct_classification_result.html',''); initResizable(
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct_classification_result-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ClassificationResult Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -112,24 +109,13 @@ $(function(){initNavTree('struct_classification_result.html',''); initResizable(
 <p>Contains the result of shot type classification.  
  <a href="#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_feature_proccesor_and_classifier_8hpp_source.html">FeatureProccesorAndClassifier.hpp</a>&gt;</code></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:ac7b40d6ec2a43fd56da9eb53d5a6c5cf" id="r_ac7b40d6ec2a43fd56da9eb53d5a6c5cf"><td class="memItemLeft" align="right" valign="top"><a id="ac7b40d6ec2a43fd56da9eb53d5a6c5cf" name="ac7b40d6ec2a43fd56da9eb53d5a6c5cf"></a>
-ShotType&#160;</td><td class="memItemRight" valign="bottom"><b>predictedType</b> = ShotType::UNKNOWN</td></tr>
-<tr class="memdesc:ac7b40d6ec2a43fd56da9eb53d5a6c5cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most probable shot type. <br /></td></tr>
-<tr class="separator:ac7b40d6ec2a43fd56da9eb53d5a6c5cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9afe45a7f13bdb8e65b865df9108355d" id="r_a9afe45a7f13bdb8e65b865df9108355d"><td class="memItemLeft" align="right" valign="top"><a id="a9afe45a7f13bdb8e65b865df9108355d" name="a9afe45a7f13bdb8e65b865df9108355d"></a>
-std::map&lt; ShotType, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>probabilities</b></td></tr>
-<tr class="memdesc:a9afe45a7f13bdb8e65b865df9108355d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Probability distribution across shot types. <br /></td></tr>
-<tr class="separator:a9afe45a7f13bdb8e65b865df9108355d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
+<p><code>#include &lt;<a class="el" href="_user_structs_8hpp_source.html">UserStructs.hpp</a>&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains the result of shot type classification. </p>
-<p>Holds both the most likely predicted shot type and a probability distribution over all possible shot types. </p>
+<p>Holds both the most likely predicted shot type and a probability distribution over all possible shot types.</p>
+<p>Set probability of detected ShotType to 1 if there is not better metrics </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>include/<a class="el" href="_feature_proccesor_and_classifier_8hpp_source.html">FeatureProccesorAndClassifier.hpp</a></li>
+<li>include/<a class="el" href="_user_structs_8hpp_source.html">UserStructs.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

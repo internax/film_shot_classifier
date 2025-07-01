@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['detect_0',['detect',['../class_feature_detector.html#a26de374727fa0799058476a9dea37986',1,'FeatureDetector']]],
-  ['detectedfeature_1',['DetectedFeature',['../struct_detected_feature.html',1,'']]]
+  ['4_20implementation_20details_0',['4. Implementation Details',['../md__r_e_a_d_m_e.html#autotoc_md15',1,'']]]
 ];

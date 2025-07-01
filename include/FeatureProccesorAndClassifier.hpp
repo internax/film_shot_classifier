@@ -75,7 +75,7 @@ public:
      * @param features The extracted shot-level features.
      * @return A ClassificationResult with the predicted type and probabilities.
      */
-    ClassificationResult classify(const ShotFeatures& features) const;
+    classification_result classify(const ShotFeatures& features) const;
 };
 
 #endif /* FeatureProccesor_hpp */

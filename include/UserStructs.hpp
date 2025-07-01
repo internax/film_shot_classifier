@@ -64,11 +64,40 @@ enum class ShotType {
  *
  * Holds both the most likely predicted shot type and a probability
  * distribution over all possible shot types.
+ *
+ *Set probability of detected ShotType to 1 if there is not better metrics
  */
-struct ClassificationResult {
-    ShotType predictedType = ShotType::UNKNOWN;             ///< Most probable shot type
+struct classification_result {
+    ShotType predictedType = ShotType::UNKNOWN;             ///< Most probable shot type, redundant but efective
     std::map<ShotType, double> probabilities;               ///< Probability distribution across shot types
 };
 
+/**
+ * @struct FilmStatisticsEvalConfig
+ * @brief Configuration structure for controlling statistical evaluation of film analysis.
+ *
+ * This structure allows customization of how the statistical evaluator processes and outputs
+ * data derived from frame-by-frame shot classification. It includes control parameters for
+ * sampling, entropy analysis, cut detection, and export settings.
+ */
+struct FilmStatisticsEvalConfig {
+    size_t input_step = 1;                          ///< Frame step size – how many frames to skip during analysis (e.g., 1 = every frame, 2 = every second frame)
+    size_t input_oversample = 1;                    ///< Number of frames to buffer for oversampling before producing aggregate result
 
+    size_t entropy_window_size = 20;                ///< Window size for calculating mean entropy over time
+    size_t entropy_variance_window_size = 30;       ///< Window size for entropy variance calculation (0 = disabled)
+
+    double cut_detect_entropy_threshold = 1;        ///< Threshold value for absolute entropy to trigger cut detection
+
+    bool output_ratios_series = false;              ///< Whether to output ratio data (e.g., object area / frame area)
+    size_t output_shot_type_time_series;
+    size_t output_prob_time_series = 1;             ///< Interval for outputting classification probability time series (0 = disabled)
+    size_t output_entropy_time_series = 1;          ///< Interval for exporting entropy over time (0 = disabled)
+    size_t output_entropy_variance_time_series = 1; ///< Interval for exporting entropy variance over time (0 = disabled)
+    size_t output_cut_detection_time_series = 1;    ///< Interval for exporting detected cuts (0 = disabled)
+
+    double cut_detection_entropy_treshold = 1.3;    ///< Absolute entropy value required to consider cut (used as hard trigger)
+    size_t cut_detection_history_window_size = 15;  ///< Number of previous frames to consider for cut decision history
+    double cut_detection_entropy_diff_treshold = 0.3; ///< Required difference in entropy between frames to confirm a cut
+};
 #endif /* UserStructs_hpp */

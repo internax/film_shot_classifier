@@ -10,6 +10,11 @@
 
 #include <stdio.h>
 #include <opencv2/opencv.hpp>
+#include <iostream>
+#include <opencv2/highgui.hpp>
+#include <opencv2/imgproc.hpp>
+#include <string>
+#include <vector>
 
 /**
  * @class InputSource
@@ -67,6 +72,10 @@ public:
  */
 class ImageLoader : public InputSource
 {
+private:
+    cv::Mat image; // Loaded image
+    bool loaded = false;
+    bool frameReturned = false;
 public:
     using InputSource::InputSource;
 
@@ -87,6 +96,9 @@ public:
      * @return Fixed timestamp value (e.g., 0 ms).
      */
     double getCurrentTimestamp() const override;
+
+    // Utility: Load and return sorted image paths from a directory
+    static std::vector<std::string> getOrderedImagePaths(const std::string& directory);
 };
 
 /**

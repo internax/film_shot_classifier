@@ -43,7 +43,7 @@ public:
      */
     ~ResultDisplayer() = default;
 
-    // Future: Add methods for graphical or textual result display
+    cv::Mat GetPlot(/*input_dataset, xlabel, ylabel*/);
 };
 
 #endif /* ResultDisplayer_hpp */

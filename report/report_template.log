@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.14)  1 JUL 2025 23:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.14)  2 JUL 2025 13:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/report/report_template.tex"
-(/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/report/report_template.tex
+**"/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.tex"
+(/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -312,7 +312,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count301
 \l__pdf_internal_box=\box59
-) (/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/report/report_template.aux)
+) (/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.aux)
 \openout1 = `report_template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
@@ -393,24 +393,28 @@ Package pdftex.def Info: figures/unipd-logo.png  used on input line 58.
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 ) [1
 
-{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/report/figures/unipd-logo.png>] (/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/report/report_template.toc)
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/figures/unipd-logo.png>] (/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.toc)
 \tf@toc=\write3
 \openout3 = `report_template.toc'.
 
- [1] (/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/report/report_template.aux) ) 
+ [1]
+
+LaTeX Warning: Empty `thebibliography' environment on input line 103.
+
+[2] (/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.aux) ) 
 Here is how much of TeX's memory you used:
- 9099 strings out of 478268
- 147946 string characters out of 5846347
+ 9101 strings out of 478268
+ 148298 string characters out of 5846347
  462087 words of memory out of 5000000
- 27203 multiletter control sequences out of 15000+600000
- 471565 words of font info for 31 fonts, out of 8000000 for 9000
+ 27204 multiletter control sequences out of 15000+600000
+ 472341 words of font info for 32 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 69i,6n,79p,446b,603s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb>
-Output written on "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/report/report_template.pdf" (2 pages, 211826 bytes).
+ 69i,6n,79p,476b,603s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb>
+Output written on "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.pdf" (3 pages, 238478 bytes).
 PDF statistics:
- 30 PDF objects out of 1000 (max. 8388607)
- 17 compressed objects within 1 object stream
+ 38 PDF objects out of 1000 (max. 8388607)
+ 22 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

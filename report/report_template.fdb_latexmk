@@ -1,14 +1,16 @@
 # Fdb version 3
-["pdflatex"] 1751403843 "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/report/report_template.tex" "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/report/report_template.pdf" "report_template" 1751403844
-  "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/report/figures/unipd-logo.png" 1647942882 237788 7c0c49fe7646b5a5e9d2163a94f593b5 ""
-  "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/report/report_template.aux" 1751403844 112 a79fe896b56b4862b346df1ebf05b16d "pdflatex"
-  "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/report/report_template.tex" 1751403843 9176 05146f724681f1633ca0476ab5472d83 ""
-  "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/report/report_template.toc" 1751403844 30 283c90c47f0e16887e96cec4ba110f76 "pdflatex"
+["pdflatex"] 1751454430 "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.tex" "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.pdf" "report_template" 1751454430
+  "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/figures/unipd-logo.png" 1647942882 237788 7c0c49fe7646b5a5e9d2163a94f593b5 ""
+  "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.aux" 1751454430 943 4d31a3312692ebd50d03c755fe2eeaf5 "pdflatex"
+  "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.tex" 1751454429 9404 22c9acbec87cacaf132dca07910b6eac ""
+  "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.toc" 1751454430 533 60f4d67031329b1d662e2716f72ff9df "pdflatex"
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1136768653 3584 2d666ecf6d466d8b007246bc2f94d9da ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm" 1136768653 3584 13049b61b922a28b158a38aeff75ee9b ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1136768653 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/ecrm1440.tfm" 1136768653 3584 3169d30142b88a27d4ab0e3468e963a2 ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb" 1215737283 145408 43d44302ca7d82d487f511f83e309505 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb" 1215737283 135942 859a90cad7494a1e79c94baf546d7de5 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1215737283 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb" 1215737283 131078 d96015a2fa5c350129e933ca070b2484 ""
@@ -69,7 +71,7 @@
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1676393285 2826442 f61b2f2b6acb6f0cf8eb6ba1bb1861ea ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
   (generated)
-  "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/report/report_template.aux"
-  "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/report/report_template.log"
-  "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/report/report_template.pdf"
-  "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/report/report_template.toc"
+  "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.aux"
+  "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.log"
+  "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.pdf"
+  "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.toc"

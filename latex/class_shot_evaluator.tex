@@ -1,0 +1,35 @@
+\doxysection{Shot\+Evaluator Class Reference}
+\hypertarget{class_shot_evaluator}{}\label{class_shot_evaluator}\index{ShotEvaluator@{ShotEvaluator}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_shot_evaluator_a1136311a5937c905e432aaed0852f8e5}\label{class_shot_evaluator_a1136311a5937c905e432aaed0852f8e5} 
+{\bfseries Shot\+Evaluator} (\mbox{\hyperlink{class_haar_detector}{Haar\+Detector}} \&frontal, \mbox{\hyperlink{class_haar_detector}{Haar\+Detector}} \&profile, \mbox{\hyperlink{class_haar_detector}{Haar\+Detector}} \&eye, \mbox{\hyperlink{class_shot_classifier}{Shot\+Classifier}} \&face\+Classifier, int eye\+Threshold)
+\item 
+\Hypertarget{class_shot_evaluator_a6c2a6b6a0688372392ddd614b6bd6d8a}\label{class_shot_evaluator_a6c2a6b6a0688372392ddd614b6bd6d8a} 
+\mbox{\hyperlink{struct_classification_result}{Classification\+Result}} {\bfseries evaluate} (const cv\+::\+Mat \&image, std\+::vector$<$ cv\+::\+Rect $>$ \&all\+Faces, std\+::vector$<$ cv\+::\+Rect $>$ \&eyes)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_shot_evaluator_aad4e3692dbabec0d115d7f7924dfb44a}\label{class_shot_evaluator_aad4e3692dbabec0d115d7f7924dfb44a} 
+\mbox{\hyperlink{class_haar_detector}{Haar\+Detector}} \& {\bfseries frontal\+\_\+face\+\_\+detector}
+\item 
+\Hypertarget{class_shot_evaluator_ae596fa041db51fdafebab3c4f5210152}\label{class_shot_evaluator_ae596fa041db51fdafebab3c4f5210152} 
+\mbox{\hyperlink{class_haar_detector}{Haar\+Detector}} \& {\bfseries profile\+\_\+face\+\_\+detector}
+\item 
+\Hypertarget{class_shot_evaluator_a3c359dfb04605100f2afde39624da219}\label{class_shot_evaluator_a3c359dfb04605100f2afde39624da219} 
+\mbox{\hyperlink{class_haar_detector}{Haar\+Detector}} \& {\bfseries eye\+\_\+detector}
+\item 
+\Hypertarget{class_shot_evaluator_aaf2b7e8b1ec2dfc067c55398674e264b}\label{class_shot_evaluator_aaf2b7e8b1ec2dfc067c55398674e264b} 
+\mbox{\hyperlink{class_shot_classifier}{Shot\+Classifier}} \& {\bfseries face\+\_\+classifier}
+\item 
+\Hypertarget{class_shot_evaluator_a935062975baed68430747278456793ad}\label{class_shot_evaluator_a935062975baed68430747278456793ad} 
+\mbox{\hyperlink{class_shot_classifier}{Shot\+Classifier}} {\bfseries eye\+\_\+classifier}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Shot\+Evaluator.\+hpp\item 
+src/Shot\+Evaluator.\+cpp\end{DoxyCompactItemize}

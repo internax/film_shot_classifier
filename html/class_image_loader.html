@@ -104,6 +104,8 @@ $(function(){initNavTree('class_image_loader.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_image_loader-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ImageLoader Class Reference</div></div>
 </div><!--header-->
@@ -145,6 +147,24 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~InputSource</b> ()=default</td></tr>
 <tr class="memdesc:a02eec90ae2d3419c82e7fc7f09204e1f inherit pub_methods_class_input_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for polymorphic use. <br /></td></tr>
 <tr class="separator:a02eec90ae2d3419c82e7fc7f09204e1f inherit pub_methods_class_input_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a761f8dcfce6922505e458e105caf8b3c" id="r_a761f8dcfce6922505e458e105caf8b3c"><td class="memItemLeft" align="right" valign="top"><a id="a761f8dcfce6922505e458e105caf8b3c" name="a761f8dcfce6922505e458e105caf8b3c"></a>
+static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getOrderedImagePaths</b> (const std::string &amp;directory)</td></tr>
+<tr class="separator:a761f8dcfce6922505e458e105caf8b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a960545ed2e15f13d57e2448efe771ce5" id="r_a960545ed2e15f13d57e2448efe771ce5"><td class="memItemLeft" align="right" valign="top"><a id="a960545ed2e15f13d57e2448efe771ce5" name="a960545ed2e15f13d57e2448efe771ce5"></a>
+cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><b>image</b></td></tr>
+<tr class="separator:a960545ed2e15f13d57e2448efe771ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d662f6dafcfb134af49e2e6371d0130" id="r_a9d662f6dafcfb134af49e2e6371d0130"><td class="memItemLeft" align="right" valign="top"><a id="a9d662f6dafcfb134af49e2e6371d0130" name="a9d662f6dafcfb134af49e2e6371d0130"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>loaded</b> = false</td></tr>
+<tr class="separator:a9d662f6dafcfb134af49e2e6371d0130"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92a16f23ad4287b1efa90deea1af494f" id="r_a92a16f23ad4287b1efa90deea1af494f"><td class="memItemLeft" align="right" valign="top"><a id="a92a16f23ad4287b1efa90deea1af494f" name="a92a16f23ad4287b1efa90deea1af494f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>frameReturned</b> = false</td></tr>
+<tr class="separator:a92a16f23ad4287b1efa90deea1af494f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -281,8 +301,9 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>source_path</b
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="_file_loader_8hpp_source.html">FileLoader.hpp</a></li>
+<li>src/<b>FileLoader.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

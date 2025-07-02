@@ -1,0 +1,26 @@
+\doxysection{Shot\+Evaluator.\+hpp}
+\hypertarget{_shot_evaluator_8hpp_source}{}\label{_shot_evaluator_8hpp_source}\index{include/ShotEvaluator.hpp@{include/ShotEvaluator.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <opencv2/opencv.hpp>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}HaarDetector.hpp"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ShotClassifier.hpp"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Assuming\ ShotType\ and\ ClassificationResult\ are\ defined\ in\ a\ separate\ header}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}UsersStructs.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }ShotEvaluator\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ ShotEvaluator(\mbox{\hyperlink{class_haar_detector}{HaarDetector}}\&\ frontal,\ \mbox{\hyperlink{class_haar_detector}{HaarDetector}}\&\ profile,\ \mbox{\hyperlink{class_haar_detector}{HaarDetector}}\&\ eye,\ \mbox{\hyperlink{class_shot_classifier}{ShotClassifier}}\&\ faceClassifier,\ \textcolor{keywordtype}{int}\ eyeThreshold);}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{struct_classification_result}{ClassificationResult}}\ evaluate(\textcolor{keyword}{const}\ cv::Mat\&\ image,\ std::vector<cv::Rect>\&\ allFaces,\ std::vector<cv::Rect>\&\ eyes);}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_haar_detector}{HaarDetector}}\&\ frontal\_face\_detector;}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_haar_detector}{HaarDetector}}\&\ profile\_face\_detector;}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_haar_detector}{HaarDetector}}\&\ eye\_detector;}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_shot_classifier}{ShotClassifier}}\&\ face\_classifier;}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_shot_classifier}{ShotClassifier}}\ eye\_classifier;}
+\DoxyCodeLine{00020\ \};}
+
+\end{DoxyCode}

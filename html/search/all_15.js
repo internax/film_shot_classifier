@@ -12,5 +12,5 @@ var searchData=
   ['outputstatistics_9',['outputStatistics',['../class_film_statistics.html#acfb9a85b54499a52bb1e973ad839e51b',1,'FilmStatistics']]],
   ['oversampleinputdata_10',['oversampleInputData',['../class_film_statistics.html#a0db3c6c590435d26d69d2548f9234102',1,'FilmStatistics']]],
   ['oversampling_5fsliding_5fwindow_11',['oversampling_sliding_window',['../class_film_statistics.html#af686ff8e1b6a5e2254e60a0b9369f7e0',1,'FilmStatistics']]],
-  ['overview_12',['3. System Overview',['../md__r_e_a_d_m_e.html#autotoc_md13',1,'']]]
+  ['overview_20marek_12',['3. System Overview - Marek',['../md__r_e_a_d_m_e.html#autotoc_md13',1,'']]]
 ];

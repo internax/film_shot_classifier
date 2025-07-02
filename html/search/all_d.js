@@ -9,7 +9,9 @@ var searchData=
   ['entropy_5fvariance_5fwindow_5fsize_6',['entropy_variance_window_size',['../struct_film_statistics_eval_config.html#aed916d1a588b22279343d652acc0b9c3',1,'FilmStatisticsEvalConfig']]],
   ['entropy_5fwindow_5fsize_7',['entropy_window_size',['../struct_film_statistics_eval_config.html#a52dc5ae19bce51f288a9381172ea2047',1,'FilmStatisticsEvalConfig']]],
   ['evaluated_5fframes_8',['evaluated_frames',['../class_film_statistics.html#a49ae808728298283c5ae0205b839d98e',1,'FilmStatistics']]],
-  ['evaluation_9',['Evaluation',['../md__r_e_a_d_m_e.html#autotoc_md17',1,'5. Evaluation'],['../md__r_e_a_d_m_e.html#autotoc_md19',1,'Qualitative Evaluation'],['../md__r_e_a_d_m_e.html#autotoc_md18',1,'Quantitative Evaluation']]],
-  ['exporttocsv_10',['exportToCSV',['../class_film_statistics.html#a96df1a57a7848b604518bd8a0eb27b71',1,'FilmStatistics']]],
-  ['extract_11',['extract',['../class_shot_feature_extractor.html#ae2d3ff73c72c72afffdee4b257c9d7ae',1,'ShotFeatureExtractor']]]
+  ['evaluation_9',['Evaluation',['../md__r_e_a_d_m_e.html#autotoc_md19',1,'Qualitative Evaluation'],['../md__r_e_a_d_m_e.html#autotoc_md18',1,'Quantitative Evaluation']]],
+  ['evaluation_20peter_10',['5. Evaluation - Peter',['../md__r_e_a_d_m_e.html#autotoc_md17',1,'']]],
+  ['everyone_20describes_20his_20part_11',['4. Implementation Details - Everyone describes his part',['../md__r_e_a_d_m_e.html#autotoc_md15',1,'']]],
+  ['exporttocsv_12',['exportToCSV',['../class_film_statistics.html#a96df1a57a7848b604518bd8a0eb27b71',1,'FilmStatistics']]],
+  ['extract_13',['extract',['../class_shot_feature_extractor.html#ae2d3ff73c72c72afffdee4b257c9d7ae',1,'ShotFeatureExtractor']]]
 ];

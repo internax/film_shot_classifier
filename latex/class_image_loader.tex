@@ -33,6 +33,24 @@ double \mbox{\hyperlink{class_image_loader_a15dedf31b1d1f5ce468b475018f39adc}{ge
 \begin{DoxyCompactList}\small\item\em Constructs an input source with a file path. \end{DoxyCompactList}\item 
 virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Input\+Source} ()=default
 \begin{DoxyCompactList}\small\item\em Virtual destructor for polymorphic use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_image_loader_a761f8dcfce6922505e458e105caf8b3c}\label{class_image_loader_a761f8dcfce6922505e458e105caf8b3c} 
+static std\+::vector$<$ std\+::string $>$ {\bfseries get\+Ordered\+Image\+Paths} (const std\+::string \&directory)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_image_loader_a960545ed2e15f13d57e2448efe771ce5}\label{class_image_loader_a960545ed2e15f13d57e2448efe771ce5} 
+cv\+::\+Mat {\bfseries image}
+\item 
+\Hypertarget{class_image_loader_a9d662f6dafcfb134af49e2e6371d0130}\label{class_image_loader_a9d662f6dafcfb134af49e2e6371d0130} 
+bool {\bfseries loaded} = false
+\item 
+\Hypertarget{class_image_loader_a92a16f23ad4287b1efa90deea1af494f}\label{class_image_loader_a92a16f23ad4287b1efa90deea1af494f} 
+bool {\bfseries frame\+Returned} = false
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_input_source}{Input\+Source}}}
 \begin{DoxyCompactItemize}
@@ -115,6 +133,7 @@ Implements \mbox{\hyperlink{class_input_source_a46c3be398eac73b3b8d836c03ddcf351
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/File\+Loader.\+hpp\end{DoxyCompactItemize}
+include/File\+Loader.\+hpp\item 
+src/File\+Loader.\+cpp\end{DoxyCompactItemize}

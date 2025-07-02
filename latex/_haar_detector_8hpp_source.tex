@@ -1,0 +1,37 @@
+\doxysection{Haar\+Detector.\+hpp}
+\hypertarget{_haar_detector_8hpp_source}{}\label{_haar_detector_8hpp_source}\index{include/HaarDetector.hpp@{include/HaarDetector.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ \ HaarDetector.hpp}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ \ Film\_type\_classifier}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ \ Created\ by\ Miroslaw\ on\ 20.05.2025.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ HaarDetector\_hpp}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ HaarDetector\_hpp}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <opencv2/opencv.hpp>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_haar_detector_a4e9ba229da4b46df4cbbfdbea15998d5}{HaarDetector}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ cv::CascadeClassifier\ \mbox{\hyperlink{class_haar_detector_a82093b37e3cc217396da10b3b36d5526}{cascade}};\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_haar_detector_a71e0d30aba39408512d1481ad6c452c3}{HaarDetector}}(std::string\&\ modelPath);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_haar_detector_a71e0d30aba39408512d1481ad6c452c3}{HaarDetector}}()\ \{\}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_haar_detector_a36ec22b7470334205b45f33336d341e1}{\string~HaarDetector}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_haar_detector_a1ca44227ab0ae5523b319ac7a8e72dc2}{loadModel}}(\textcolor{keyword}{const}\ std::string\&\ modelPath);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00064\ \ \ \ \ std::vector<cv::Rect>\ \mbox{\hyperlink{class_haar_detector_a79634b7bbb31ddf91768109391c3396e}{detect}}(\textcolor{keyword}{const}\ cv::Mat\&\ image);\ \textcolor{comment}{//\ maybe\ it\ will\ be\ fine\ to\ sort\ the\ vector\ from\ biggest\ BB,\ so\ we\ gonna\ have\ easier\ job\ afterwards}}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HaarDetector\_hpp\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

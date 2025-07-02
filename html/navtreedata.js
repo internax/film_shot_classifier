@@ -33,18 +33,18 @@ var NAVTREE =
       ] ],
       [ "Notes", "md__r_e_a_d_m_e.html#autotoc_md7", null ],
       [ "📄 Final Project Report", "md__r_e_a_d_m_e.html#autotoc_md8", [
-        [ "Title Page", "md__r_e_a_d_m_e.html#autotoc_md9", null ],
-        [ "Introduction", "md__r_e_a_d_m_e.html#autotoc_md11", null ],
-        [ "System Overview", "md__r_e_a_d_m_e.html#autotoc_md13", null ],
-        [ "Implementation Details", "md__r_e_a_d_m_e.html#autotoc_md15", null ],
-        [ "Evaluation", "md__r_e_a_d_m_e.html#autotoc_md17", [
+        [ "Title Page - Marek", "md__r_e_a_d_m_e.html#autotoc_md9", null ],
+        [ "Introduction - Miroslaw", "md__r_e_a_d_m_e.html#autotoc_md11", null ],
+        [ "System Overview - Marek", "md__r_e_a_d_m_e.html#autotoc_md13", null ],
+        [ "Implementation Details - Everyone describes his part", "md__r_e_a_d_m_e.html#autotoc_md15", null ],
+        [ "Evaluation - Peter", "md__r_e_a_d_m_e.html#autotoc_md17", [
           [ "Quantitative Evaluation", "md__r_e_a_d_m_e.html#autotoc_md18", null ],
           [ "Qualitative Evaluation", "md__r_e_a_d_m_e.html#autotoc_md19", null ]
         ] ],
-        [ "Dataset Description", "md__r_e_a_d_m_e.html#autotoc_md21", null ],
-        [ "Results Summary", "md__r_e_a_d_m_e.html#autotoc_md23", null ],
+        [ "Dataset Description - Miroslaw", "md__r_e_a_d_m_e.html#autotoc_md21", null ],
+        [ "Results Summary - Peter", "md__r_e_a_d_m_e.html#autotoc_md23", null ],
         [ "Individual Contributions", "md__r_e_a_d_m_e.html#autotoc_md25", null ],
-        [ "Conclusion", "md__r_e_a_d_m_e.html#autotoc_md27", null ],
+        [ "Conclusion - Marek", "md__r_e_a_d_m_e.html#autotoc_md27", null ],
         [ "References", "md__r_e_a_d_m_e.html#autotoc_md29", null ]
       ] ]
     ] ],
@@ -66,7 +66,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_feature_detector_8hpp_source.html"
+"_feature_proccesor_and_classifier_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

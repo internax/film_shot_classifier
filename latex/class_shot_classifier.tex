@@ -13,7 +13,25 @@ Classifies the type of cinematic shot based on extracted visual features.
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{structclassification__result}{classification\+\_\+result}} \mbox{\hyperlink{class_shot_classifier_ae0c96ea1a429bba7ef9e7f7801f7b12c}{classify}} (const \mbox{\hyperlink{struct_shot_features}{Shot\+Features}} \&features) const
-\begin{DoxyCompactList}\small\item\em Classifies the shot type using extracted features. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Classifies the shot type using extracted features. \end{DoxyCompactList}\item 
+\Hypertarget{class_shot_classifier_ae2c0f4e2154caa2cfb270260206b846e}\label{class_shot_classifier_ae2c0f4e2154caa2cfb270260206b846e} 
+{\bfseries Shot\+Classifier} (int smallest\+\_\+thresh=5000, int closeup\+\_\+thresh=30000)
+\item 
+\Hypertarget{class_shot_classifier_af0c075758088909f647a40ad2e2fa16a}\label{class_shot_classifier_af0c075758088909f647a40ad2e2fa16a} 
+int {\bfseries classify} (const std\+::vector$<$ cv\+::\+Rect $>$ \&shot\+\_\+features)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_shot_classifier_abe4c49a10d52a9bf3bef11fc67526e97}\label{class_shot_classifier_abe4c49a10d52a9bf3bef11fc67526e97} 
+int {\bfseries smallest\+\_\+face\+\_\+threshold}
+\item 
+\Hypertarget{class_shot_classifier_a8779189ae1475868c0746873a9349731}\label{class_shot_classifier_a8779189ae1475868c0746873a9349731} 
+int {\bfseries medium\+\_\+face\+\_\+threshold}
+\item 
+\Hypertarget{class_shot_classifier_a48a07223b9e1f9daecd7e56aff5f71cc}\label{class_shot_classifier_a48a07223b9e1f9daecd7e56aff5f71cc} 
+int {\bfseries closeup\+\_\+face\+\_\+threshold}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -51,6 +69,8 @@ A \doxylink{struct_classification_result}{Classification\+Result} with the predi
 \end{DoxyReturn}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/Feature\+Proccesor\+And\+Classifier.\+hpp\end{DoxyCompactItemize}
+include/Feature\+Proccesor\+And\+Classifier.\+hpp\item 
+include/Shot\+Classifier.\+hpp\item 
+src/Shot\+Classifier.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,106 @@
+\doxysection{Haar\+Detector Class Reference}
+\hypertarget{class_haar_detector}{}\label{class_haar_detector}\index{HaarDetector@{HaarDetector}}
+
+
+Detects visual features (e.\+g., faces) in an image using Haar cascade models.  
+
+
+
+
+{\ttfamily \#include $<$Haar\+Detector.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_haar_detector_a4e9ba229da4b46df4cbbfdbea15998d5}{Haar\+Detector}} (std\+::string \&model\+Path)
+\begin{DoxyCompactList}\small\item\em Constructs the detector and immediately loads the model. \end{DoxyCompactList}\item 
+\Hypertarget{class_haar_detector_a71e0d30aba39408512d1481ad6c452c3}\label{class_haar_detector_a71e0d30aba39408512d1481ad6c452c3} 
+{\bfseries Haar\+Detector} ()
+\begin{DoxyCompactList}\small\item\em Constructs the detector without loading a model initially. \end{DoxyCompactList}\item 
+\Hypertarget{class_haar_detector_a36ec22b7470334205b45f33336d341e1}\label{class_haar_detector_a36ec22b7470334205b45f33336d341e1} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Haar\+Detector} ()=default
+\begin{DoxyCompactList}\small\item\em destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_haar_detector_a1ca44227ab0ae5523b319ac7a8e72dc2}{load\+Model}} (const std\+::string \&model\+Path)
+\begin{DoxyCompactList}\small\item\em Loads a Haar cascade model from the specified file path. \end{DoxyCompactList}\item 
+std\+::vector$<$ cv\+::\+Rect $>$ \mbox{\hyperlink{class_haar_detector_a79634b7bbb31ddf91768109391c3396e}{detect}} (const cv\+::\+Mat \&image)
+\begin{DoxyCompactList}\small\item\em Detects features in the given image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_haar_detector_a82093b37e3cc217396da10b3b36d5526}\label{class_haar_detector_a82093b37e3cc217396da10b3b36d5526} 
+cv\+::\+Cascade\+Classifier {\bfseries cascade}
+\begin{DoxyCompactList}\small\item\em The loaded Haar cascade classifier used for detection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Detects visual features (e.\+g., faces) in an image using Haar cascade models. 
+
+This class provides a simple interface for loading a Haar cascade model and applying it to an input image to detect features such as faces, bodies, etc. The detector returns a list of {\ttfamily \doxylink{struct_detected_feature}{Detected\+Feature}} results, each containing a label and bounding box.
+
+It may be beneficial to sort the output vector by bounding box size (e.\+g., largest first), to simplify downstream feature selection or analysis.
+
+\begin{DoxySeeAlso}{See also}
+Haar\+Feature 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_haar_detector_a4e9ba229da4b46df4cbbfdbea15998d5}\index{HaarDetector@{HaarDetector}!HaarDetector@{HaarDetector}}
+\index{HaarDetector@{HaarDetector}!HaarDetector@{HaarDetector}}
+\doxysubsubsection{\texorpdfstring{HaarDetector()}{HaarDetector()}}
+{\footnotesize\ttfamily \label{class_haar_detector_a4e9ba229da4b46df4cbbfdbea15998d5} 
+Haar\+Detector\+::\+Haar\+Detector (\begin{DoxyParamCaption}\item[{std\+::string \&}]{model\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the detector and immediately loads the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+Path} & Path to the Haar cascade XML model file. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_haar_detector_a79634b7bbb31ddf91768109391c3396e}\index{HaarDetector@{HaarDetector}!detect@{detect}}
+\index{detect@{detect}!HaarDetector@{HaarDetector}}
+\doxysubsubsection{\texorpdfstring{detect()}{detect()}}
+{\footnotesize\ttfamily \label{class_haar_detector_a79634b7bbb31ddf91768109391c3396e} 
+std\+::vector$<$ cv\+::\+Rect $>$ Haar\+Detector\+::detect (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{image}{}\end{DoxyParamCaption})}
+
+
+
+Detects features in the given image. 
+
+Applies the currently loaded Haar cascade model to the image and returns a list of bounding boxes with associated labels.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & The image in which to detect features. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of {\ttfamily std\+::vector\texorpdfstring{$<$}{<}cv\+::\+Rect\texorpdfstring{$>$}{>}} representing all detected faces. 
+\end{DoxyReturn}
+\Hypertarget{class_haar_detector_a1ca44227ab0ae5523b319ac7a8e72dc2}\index{HaarDetector@{HaarDetector}!loadModel@{loadModel}}
+\index{loadModel@{loadModel}!HaarDetector@{HaarDetector}}
+\doxysubsubsection{\texorpdfstring{loadModel()}{loadModel()}}
+{\footnotesize\ttfamily \label{class_haar_detector_a1ca44227ab0ae5523b319ac7a8e72dc2} 
+void Haar\+Detector\+::load\+Model (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{model\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Loads a Haar cascade model from the specified file path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+Path} & Path to the Haar cascade XML model file. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Haar\+Detector.\+hpp\item 
+src/Haar\+Detector.\+cpp\end{DoxyCompactItemize}

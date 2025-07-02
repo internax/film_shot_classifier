@@ -77,7 +77,47 @@
 
 \section{Introduction}
 
-\section{System Overview}
+\subsection{Notes}
+To make code more clear, we use:
+\begin{itemize}
+	\item \texttt{snake\_case} for variables
+	\item \texttt{PascalCase} for classes
+	\item \texttt{camelCase} for functions
+\end{itemize}
+
+\section{Overview}
+\paragraph{}
+We decided to use class design, where classes are logicaly separated depending on task.
+Dataflow between classes is provided by several user structures. Data are processed squentialy.
+Unfortunately used dataflow is not that clear because we havent been able to fully follow originally defined structure.
+\paragraph{}
+	For loading data we have two classes \texttt{ImageLoader()} and \texttt{VideoLoader()}, derived from class \texttt{InputSource()}.
+	From user side the classes have common interface and usage is the same. Important is method \texttt{hasNextFrame()}, used for
+	driving the while loop in the main, returning true in case there is frame or image that we can read. Class is returning timestamp,
+	cv::Mat with current sample.
+
+\paragraph{}
+	As was already said, tasks are performed sequentialy, which is convenient, because we are reading many frames and to store them in the buffer,
+	it will be very memory demanding. Also from the same reason we have to take care about not making deep copies.
+\paragraph{}
+	We have \texttt{Preprocessing()} class, for editing the image before actual detection of haar features.
+\paragraph{}
+	For detecting features in the images we are using class \texttt{HaarDetector()} using haar cascades for finding desired 
+	patterns in the images. In our case faces and eyes.
+\paragraph{}
+	From the detected features we need to make evaluation and decide which shot type are we having. For this purpouse we have
+	class \texttt{FeatureEvaluator()} that outputs structure \texttt{classification\_result} with information if is curent sample
+	wide shot, medium or close up.
+\paragraph{}
+	Because we want to make statictic from the data, we made \texttt{FilmStatistics()} class. It makes sense to use this class only on
+	video data. At the init we provide configuration structure \texttt{FilmStatisticsEvalConfig}, with many settings. 
+	We can export time sequences to \texttt{.csv} file or we can use getters to get the time sequences and use them in the code.
+\paragraph{}
+	For graphical output of the statstic data we have \texttt{ResultDisplayer()} class, which is inputting all data types got
+	from \texttt{FilmStatistics()} getters and returning \texttt{cv::mat} with plots.
+
+
+
 
 \section{Implementation details}
 

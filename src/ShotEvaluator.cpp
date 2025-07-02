@@ -1,5 +1,6 @@
 #include "ShotEvaluator.hpp"
 
+
 ShotEvaluator::ShotEvaluator(HaarDetector& frontal, HaarDetector& profile, HaarDetector& eye,
                              ShotClassifier& faceClassifier, int eyeThreshold)
     : frontal_face_detector(frontal), profile_face_detector(profile), eye_detector(eye),

@@ -15,6 +15,7 @@
 #include <opencv2/imgproc.hpp>
 #include <string>
 #include <vector>
+#include <opencv2/videoio.hpp>
 
 /**
  * @class InputSource
@@ -106,13 +107,19 @@ public:
  * @brief Placeholder for a video-based implementation of InputSource.
  *
  * This class will provide functionality to iterate over frames from a video file.
- * Not implemented yet.
  */
 class VideoLoader : public InputSource
 {
+private:
+    cv::VideoCapture cap;
+    cv::Mat currentFrame;
+    double timestamp = 0.0;
 public:
-    using InputSource::InputSource;
-    // Implementation will follow similar to ImageLoader
+    VideoLoader(const std::string& path);
+    ~VideoLoader();
+    bool hasNextFrame() const override;
+    cv::Mat& nextFrame() override;
+    double getCurrentTimestamp() const override;
 };
 
 /**
@@ -159,5 +166,12 @@ public:
 
     // Future: add methods for specific preprocessing steps (blur, resize, etc.)
 };
+
+cv::Mat load_image(const std::string& path);
+std::vector<cv::Mat> load_video_frames(const std::string& path);
+
+void display_image(const std::string& path);
+void display_video(const std::string& path);
+void display_media(const std::string& path);
 
 #endif /* FileLoader_hpp */

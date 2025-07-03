@@ -6,7 +6,7 @@ ShotEvaluator::ShotEvaluator(HaarDetector& frontal, HaarDetector& profile, HaarD
     : frontal_face_detector(frontal), profile_face_detector(profile), eye_detector(eye),
       face_classifier(faceClassifier), eye_classifier(0, eyeThreshold) {}
 
-ClassificationResult ShotEvaluator::evaluate(const cv::Mat& image, std::vector<cv::Rect>& allFaces, std::vector<cv::Rect>& eyes) {
+classification_result ShotEvaluator::evaluate(const cv::Mat& image, std::vector<cv::Rect>& allFaces, std::vector<cv::Rect>& eyes) {
     // Assume image is already resized externally
     std::vector<cv::Rect> frontal_faces = frontal_face_detector.detect(image);
     eyes = eye_detector.detect(image);
@@ -36,8 +36,8 @@ ClassificationResult ShotEvaluator::evaluate(const cv::Mat& image, std::vector<c
         }
     }
 
-    // Construct the ClassificationResult using one-hot encoding
-    ClassificationResult result;
+    // Construct the classification_result using one-hot encoding
+    classification_result result;
     switch (classification) {
         case 0:
             result.predictedType = ShotType::WIDE;

@@ -3,13 +3,13 @@
 #include "ShotClassifier.hpp"
 
 // Assuming ShotType and ClassificationResult are defined in a separate header
-#include "UsersStructs.hpp"
+#include "UserStructs.hpp"
 
 class ShotEvaluator {
 public:
     ShotEvaluator(HaarDetector& frontal, HaarDetector& profile, HaarDetector& eye, ShotClassifier& faceClassifier, int eyeThreshold);
 
-    ClassificationResult evaluate(const cv::Mat& image, std::vector<cv::Rect>& allFaces, std::vector<cv::Rect>& eyes);
+    classification_result evaluate(const cv::Mat& image, std::vector<cv::Rect>& allFaces, std::vector<cv::Rect>& eyes);
 
 private:
     HaarDetector& frontal_face_detector;

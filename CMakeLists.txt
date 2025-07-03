@@ -16,11 +16,16 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 # Add source files
 set(SOURCES
     src/FileLoader.cpp
-    src/FeatureDetector.cpp
+    src/HaarDetector.cpp
     src/FeatureProccesorAndClassifier.cpp
     src/FilmStatisticEval.cpp
     src/ResultDisplayer.cpp
-    src/main.cpp
+    # src/main_miroslaw.cpp
+    src/main_peter.cpp
+    src/TestDatasetEval.cpp
+    # src/UserStructs.cpp
+    # src/ShotClassifier.cpp
+
 )
 
 # Create executable

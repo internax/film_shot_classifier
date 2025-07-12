@@ -51,10 +51,10 @@ int main(int argc, char* argv[])
 
         // --- Classification part ---
 
-        // Haar detectors paths - adjust paths as needed
-        std::string frontal_path = "haarcascade_frontalface_alt2.xml";
-        std::string profile_path = "haarcascade_profileface.xml";
-        std::string eye_path = "haarcascade_eye.xml";
+        // Haar detectors paths - relative paths are used, detectors should stay in "haar" folder
+        std::string frontal_path = "../haar/haarcascade_frontalface_alt2.xml";
+        std::string profile_path = "../haar/haarcascade_profileface.xml";
+        std::string eye_path = "../haar/haarcascade_eye.xml";
 
         HaarDetector frontal_detector(frontal_path);
         HaarDetector profile_detector(profile_path);

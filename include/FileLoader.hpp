@@ -65,6 +65,10 @@ public:
     virtual double getCurrentTimestamp() const = 0;
 };
 
+
+
+
+
 /**
  * @class ImageLoader
  * @brief Concrete implementation of InputSource for loading a single image.
@@ -111,9 +115,6 @@ public:
      * @return Fixed timestamp value (e.g., 0 ms).
      */
     double getCurrentTimestamp() const override;
-
-    // Utility: Load and return sorted image paths from a directory
-    static std::vector<std::string> getOrderedImagePaths(const std::string& directory);
 };
 
 /**
@@ -125,10 +126,51 @@ public:
  */
 class VideoLoader : public InputSource
 {
+    std::string video_path;
+    cv::VideoCapture video;
+    
+    cv::Mat current_frame;
+    
+    int current_frame_index;
+    
+    void openVideoFromPath(const std::string & path);
+    
 public:
     using InputSource::InputSource;
-    // Implementation will follow similar to ImageLoader
+    
+    VideoLoader(const std::string& path) : InputSource(path)
+    {
+        openVideoFromPath(path);
+    }
+    
+    /**
+     * @brief Checks if the image is still available to be returned.
+     * @return True if the image hasn't been returned yet.
+     */
+    bool hasNextFrame() const override;
+
+    /**
+     * @brief Returns the loaded image.
+     * @return Reference to the loaded image (`cv::Mat`).
+     */
+    cv::Mat& nextFrame() override;
+
+    /**
+     * @brief Returns the timestamp of the image (usually 0).
+     * @return Fixed timestamp value (e.g., 0 ms).
+     */
+    double getCurrentTimestamp() const override;
+    
+    
 };
+
+
+
+
+
+
+
+
 
 /**
  * @class Preprocessing

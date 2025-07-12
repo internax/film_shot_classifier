@@ -63,20 +63,30 @@
 //
 int main()
 {
+    cv::Mat image;
     
     ImageLoader image_loader("../test/closeup");
-    
-    cv::Mat image;
- 
     
     while(image_loader.hasNextFrame())
     {
         image.release();
         image = image_loader.nextFrame();
         cv::imshow("img", image);
-        cv::waitKey(1000);
+        cv::waitKey(10);
         cv::destroyWindow("img");
     }
+    
+    VideoLoader video_loader ("../video/SampleVideo.mp4");
+    
+    while(video_loader.hasNextFrame())
+    {
+        image.release();
+        image = video_loader.nextFrame();
+        cv::imshow("img", image);
+        cv::waitKey(10);
+        cv::destroyWindow("img");
+    }
+    
     
 //// just a code prototype, comment out to build
 //    std::string data_path = "path";

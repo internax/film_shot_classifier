@@ -31,7 +31,7 @@ void ImageLoader::loadImagePathsFromDirectory(const std::string& directory) {
         }
     }
 
-    std::sort(image_paths.begin(), image_paths.end()); // seřaď cesty podle jména
+    std::sort(image_paths.begin(), image_paths.end());
 }
 
 bool ImageLoader::hasNextFrame() const
@@ -59,6 +59,51 @@ double ImageLoader::getCurrentTimestamp() const
 {
     return 0;
 }
+
+
+void VideoLoader::openVideoFromPath(const std::string & path)
+{
+    if (video.isOpened())
+        video.release();
+    
+    video.open(path);
+       if (!video.isOpened()) {
+           throw std::runtime_error("Could not open video file: " + path);
+       }
+
+       current_frame_index = 0;
+}
+
+
+bool VideoLoader::hasNextFrame() const
+{
+    return video.isOpened() && current_frame_index < static_cast<size_t>(video.get(cv::CAP_PROP_FRAME_COUNT));
+}
+
+cv::Mat & VideoLoader::nextFrame() {
+    
+    if (!video.isOpened()) {
+        throw std::runtime_error("Video file is not opened.");
+    }
+
+    if (!hasNextFrame()) {
+        throw std::runtime_error("No more frames available");
+    }
+    current_frame.release();
+    video >> current_frame;
+    
+    if (current_frame.empty()) {
+        throw std::runtime_error("Failed to read next frame.");
+    }
+
+    current_frame_index++;
+    return current_frame;
+}
+
+double VideoLoader::getCurrentTimestamp() const {
+    return video.get(cv::CAP_PROP_POS_MSEC);
+}
+
 
 
 // Preprocessing Implementation

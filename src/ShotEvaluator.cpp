@@ -1,4 +1,4 @@
-#include "ShotEvaluator.hpp"
+#include "../include/ShotEvaluator.hpp"
 
 
 ShotEvaluator::ShotEvaluator(HaarDetector& frontal, HaarDetector& profile, HaarDetector& eye,

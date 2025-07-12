@@ -72,7 +72,7 @@ int main()
         image.release();
         image = image_loader.nextFrame();
         cv::imshow("img", image);
-        cv::waitKey(10);
+        cv::waitKey(500);
         cv::destroyWindow("img");
     }
     

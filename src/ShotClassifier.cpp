@@ -1,4 +1,4 @@
-#include "ShotClassifier.hpp"
+#include "../include/ShotClassifier.hpp"
 
 ShotClassifier::ShotClassifier(int smallest_thresh, int closeup_thresh)
     : smallest_face_threshold(smallest_thresh), closeup_face_threshold(closeup_thresh)

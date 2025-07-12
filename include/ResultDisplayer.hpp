@@ -43,7 +43,10 @@ public:
      */
     ~ResultDisplayer() = default;
 
-    cv::Mat GetPlot(/*input_dataset, xlabel, ylabel*/);
+    cv::Mat GetPlot(std::vector<std::pair<double, std::map<ShotType, double>>> & data_series, std::string xlabel, std::string ylabel, std::string title);
+    cv::Mat GetPlot(std::vector<std::pair<double, ShotType>>, std::string xlabel, std::string ylabel, std::string title);
+    cv::Mat GetPlot(std::vector<std::pair<double, double>> & data_series, std::string xlabel, std::string ylabel, std::string title);
+    cv::Mat GetPlot(std::vector<std::pair<double, bool>> & data_series, std::string xlabel, std::string ylabel, std::string title);
 };
 
 #endif /* ResultDisplayer_hpp */

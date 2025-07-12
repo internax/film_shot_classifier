@@ -20,13 +20,11 @@ The application processes input frame-by-frame, extracts spatial and geometric f
 - `FeatureProcessorAndClassifier` – Feature extraction and shot type classification logic  
 -
 
-### Peter
-- `FileLoader` – Abstract interface for loading images or video  
-- `ResultDisplayer` – Displays or exports results  
-
 ### Marek 
 - `FilmStatisticEval` – Aggregates classification results across frames  
-- `TestDatasetEval` – Compares predictions with ground truth labels  
+- `TestDatasetEval` – Compares predictions with ground truth labels
+- `FileLoader` – Abstract interface for loading images or video  
+- `ResultDisplayer` – Displays or exports results    
 
 ---
 ## Notes

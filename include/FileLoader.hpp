@@ -33,6 +33,8 @@ protected:
     std::string source_path; ///< Path to the input source file (image or video)
 
 public:
+    
+    
     /**
      * @brief Constructs an input source with a file path.
      * @param path Path to the image or video file.
@@ -76,9 +78,22 @@ private:
     cv::Mat image; // Loaded image
     bool loaded = false;
     bool frameReturned = false;
+    
+    std::vector<std::string> image_paths;
+    int current_frame_index = 0;    // reset indexu
+    
+    
+    void loadImagePathsFromDirectory(const std::string& directory);
+    
 public:
+    
     using InputSource::InputSource;
 
+    ImageLoader(const std::string& path) : InputSource(path) 
+    {
+        loadImagePathsFromDirectory(path);
+    }
+    
     /**
      * @brief Checks if the image is still available to be returned.
      * @return True if the image hasn't been returned yet.

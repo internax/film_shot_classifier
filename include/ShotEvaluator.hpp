@@ -3,7 +3,7 @@
 #include "ShotClassifier.hpp"
 
 // Assuming ShotType and ClassificationResult are defined in a separate header
-#include "UsersStructs.hpp"
+#include "UserStructs.hpp"
 
 class ShotEvaluator {
 public:

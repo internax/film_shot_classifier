@@ -67,7 +67,7 @@ enum class ShotType {
  *
  *Set probability of detected ShotType to 1 if there is not better metrics
  */
-struct classification_result {
+struct ClassificationResult {
     ShotType predictedType = ShotType::UNKNOWN;             ///< Most probable shot type, redundant but efective
     std::map<ShotType, double> probabilities;               ///< Probability distribution across shot types
 };
@@ -101,3 +101,4 @@ struct FilmStatisticsEvalConfig {
     double cut_detection_entropy_diff_treshold = 0.3; ///< Required difference in entropy between frames to confirm a cut
 };
 #endif /* UserStructs_hpp */
+

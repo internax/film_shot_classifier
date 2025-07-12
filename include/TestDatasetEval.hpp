@@ -41,7 +41,7 @@
  */
 class TestDatasetEval
 {
-    std::vector<classification_result> GroundTruth; ///< Ground truth classification results for comparison
+    std::vector<ClassificationResult> GroundTruth; ///< Ground truth classification results for comparison
 
 public:
 

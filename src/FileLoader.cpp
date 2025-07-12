@@ -11,40 +11,55 @@
 #include <filesystem>
 #include <algorithm>
 
-// ImageLoader Implementation
-bool ImageLoader::hasNextFrame() const {
-    return !frameReturned;
+
+namespace fs = std::filesystem;
+
+void ImageLoader::loadImagePathsFromDirectory(const std::string& directory) {
+    image_paths.clear();
+    current_frame_index = 0;
+
+    for (const auto& entry : fs::directory_iterator(directory)) {
+        if (entry.is_regular_file()) {
+            std::string path = entry.path().string();
+            std::string ext = entry.path().extension().string();
+
+            std::transform(ext.begin(), ext.end(), ext.begin(), ::tolower);
+
+            if (ext == ".jpg" || ext == ".jpeg" || ext == ".png" || ext == ".bmp" || ext == ".tiff") {
+                image_paths.push_back(path);
+            }
+        }
+    }
+
+    std::sort(image_paths.begin(), image_paths.end()); // seřaď cesty podle jména
+}
+
+bool ImageLoader::hasNextFrame() const
+{
+    return current_frame_index < image_paths.size();
 }
 
 cv::Mat& ImageLoader::nextFrame() {
-    if (!loaded) {
-        image = cv::imread(source_path);
-        if (image.empty()) {
-            throw std::runtime_error("Failed to load image: " + source_path);
-        }
-        loaded = true;
-    }
-    if (!hasNextFrame()) {
+    if (current_frame_index >= image_paths.size()) {
         throw std::runtime_error("No more frames available");
     }
-    frameReturned = true;
+
+    image.release();
+
+    image = cv::imread(image_paths[current_frame_index]);
+    if (image.empty()) {
+        throw std::runtime_error("Failed to load image: " + image_paths[current_frame_index]);
+    }
+
+    current_frame_index++;
     return image;
 }
 
-double ImageLoader::getCurrentTimestamp() const {
-    return 0.0; // Single images don't have timestamps
+double ImageLoader::getCurrentTimestamp() const
+{
+    return 0;
 }
 
-std::vector<std::string> ImageLoader::getOrderedImagePaths(const std::string& directory) {
-    std::vector<std::string> paths;
-    for (const auto& entry : std::filesystem::directory_iterator(directory)) {
-        if (entry.is_regular_file()) {
-            paths.push_back(entry.path().string());
-        }
-    }
-    std::sort(paths.begin(), paths.end());
-    return paths;
-}
 
 // Preprocessing Implementation
 Preprocessing::~Preprocessing() = default;

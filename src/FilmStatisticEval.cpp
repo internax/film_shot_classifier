@@ -35,7 +35,7 @@ void FilmStatistics::normalizeProbs(std::map<ShotType, double> & aggregated_prob
     }
 }
 
-void FilmStatistics::aggregateSlidingWindowProbs(std::deque<classification_result> & sliding_window, std::map<ShotType, double> & aggregated_probs)
+void FilmStatistics::aggregateSlidingWindowProbs(std::deque<ClassificationResult> & sliding_window, std::map<ShotType, double> & aggregated_probs)
 {
     aggregated_probs.clear();
     
@@ -50,7 +50,7 @@ void FilmStatistics::aggregateSlidingWindowProbs(std::deque<classification_resul
     }
 }
 
-void FilmStatistics::findShotTypeMaxProb(std::map<ShotType, double> & probs, classification_result & sample)
+void FilmStatistics::findShotTypeMaxProb(std::map<ShotType, double> & probs, ClassificationResult & sample)
 {
     auto max_it = std::max_element(
         probs.begin(),
@@ -122,7 +122,7 @@ void FilmStatistics::computeEntropyVariance()
 
 
 // main function with all calls
-void FilmStatistics::addFrameResult(const double timestampMs, const classification_result& result)
+void FilmStatistics::addFrameResult(const double timestampMs, const ClassificationResult& result)
 {
     total_frames++;
     

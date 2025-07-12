@@ -3,7 +3,8 @@
 //#include <opencvi2/highgui.hpp>
 //#include <opencv2/imgproc.hpp>
 #include <filesystem>
-#include "FilmShotClassifier.hpp"
+//#include "FilmShotClassifier.hpp"
+#include "FileLoader.hpp"
 
 
 #include <vector>
@@ -12,8 +13,8 @@
 #include <iostream>
 #include "UserStructs.hpp"
 
-std::vector<classification_result> generateRandomResults(size_t count = 100) {
-    std::vector<classification_result> results;
+std::vector<ClassificationResult> generateRandomResults(size_t count = 100) {
+    std::vector<ClassificationResult> results;
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_real_distribution<double> dist(0.0, 1.0);
@@ -26,7 +27,7 @@ std::vector<classification_result> generateRandomResults(size_t count = 100) {
             current_type = static_cast<ShotType>(typeDist(gen));
         }
 
-        classification_result res;
+        ClassificationResult res;
         res.predictedType = current_type;
 
         // generate probabilities for all 3 types
@@ -100,6 +101,8 @@ int main()
   // Ujisti se, že soubor je dostupný
 
    
+  /*
+    
         // Vygeneruj náhodná data
     std::vector<classification_result> simulated_results = generateRandomResults(100);
         std::vector<double> simulated_timestamps = generateTimestamps(100, 100.0);
@@ -134,6 +137,29 @@ int main()
     std::vector<std::pair<double, ShotType>> st = film_stats.getShotType();
     
     film_stats.exportToCSV("path");
+   
+   */
+    
+    
+    
+    
+    
+    
+    ImageLoader image_loader("/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/test/closeup");
+    
+    cv::Mat image;
+ 
+    
+    while(image_loader.hasNextFrame())
+    {
+        image.release();
+        image = image_loader.nextFrame();
+        cv::imshow("img", image);
+        cv::waitKey(1000);
+        cv::destroyWindow("img");
+    }
+    
+    
         
     return 0;
 }

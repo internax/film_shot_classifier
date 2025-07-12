@@ -85,12 +85,12 @@ class FilmStatistics
     /**
      * @brief Sliding window storing classification results for oversampling.
      */
-    std::deque<classification_result> oversampling_sliding_window;
+    std::deque<ClassificationResult> oversampling_sliding_window;
     
     /**
      * @brief Sliding window storing classification results for entropy computation.
      */
-    std::deque<classification_result> entropy_sliding_window;
+    std::deque<ClassificationResult> entropy_sliding_window;
     
     /**
      * @brief Sliding window storing entropy variance values.
@@ -110,7 +110,7 @@ class FilmStatistics
     /**
      * @brief Current oversampled classification result being processed.
      */
-    classification_result current_sample_oversampled;
+    ClassificationResult current_sample_oversampled;
     
     /**
      * @brief Current entropy value computed from the sliding window.
@@ -153,14 +153,14 @@ class FilmStatistics
      * @param sliding_window Deque containing classification results to aggregate.
      * @param aggregated_probs Output map of ShotType to aggregated probability values.
      */
-    void aggregateSlidingWindowProbs(std::deque<classification_result> & sliding_window, std::map<ShotType, double> & aggregated_probs);
+    void aggregateSlidingWindowProbs(std::deque<ClassificationResult> & sliding_window, std::map<ShotType, double> & aggregated_probs);
     
     /**
      * @brief Finds the shot type with the maximum probability from aggregated probabilities and updates the sample.
      * @param aggregated_probs Map of ShotType to their aggregated probabilities.
      * @param sample Classification result to update with the shot type having max probability.
      */
-    void findShotTypeMaxProb(std::map<ShotType, double> & aggregated_probs, classification_result & sample);
+    void findShotTypeMaxProb(std::map<ShotType, double> & aggregated_probs, ClassificationResult & sample);
     
     /**
      * @brief Performs oversampling on input data to improve statistical robustness.
@@ -230,7 +230,7 @@ public:
      * @param timestampMs Timestamp of the frame in milliseconds.
      * @param result Classification result containing shot type.
      */
-    void addFrameResult(const double timestampMs, const classification_result & result);
+    void addFrameResult(const double timestampMs, const ClassificationResult & result);
 
     /**
      * @brief Exports all collected statistics to a CSV file.

@@ -5,7 +5,7 @@
 //  Main developer: Mateusz Miroslaw Lis
 //
 
-#include "HaarDetector.hpp"
+#include "../include/HaarDetector.hpp"
 #include <algorithm>
 
 HaarDetector::HaarDetector(std::string& cascade_path) {

@@ -13,60 +13,75 @@
 #include <iostream>
 #include "UserStructs.hpp"
 
-std::vector<ClassificationResult> generateRandomResults(size_t count = 100) {
-    std::vector<ClassificationResult> results;
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_real_distribution<double> dist(0.0, 1.0);
-    std::uniform_int_distribution<int> typeDist(0, 2); // CLOSE_UP, MEDIUM, WIDE
-
-    ShotType current_type = static_cast<ShotType>(typeDist(gen));
-
-    for (size_t i = 0; i < count; ++i) {
-        if (i % 10 == 0) {
-            current_type = static_cast<ShotType>(typeDist(gen));
-        }
-
-        ClassificationResult res;
-        res.predictedType = current_type;
-
-        // generate probabilities for all 3 types
-        std::map<ShotType, double> raw_probs = {
-            {ShotType::CLOSE_UP, dist(gen)},
-            {ShotType::MEDIUM, dist(gen)},
-            {ShotType::WIDE, dist(gen)}
-        };
-
-        // force the predicted type to be the highest, with stronger dominance
-        raw_probs[current_type] += 3.0;
-
-        // normalize
-        double total = 0;
-        for (const auto& p : raw_probs) total += p.second;
-        for (const auto& p : raw_probs)
-            res.probabilities[p.first] = p.second / total;
-
-        results.push_back(res);
-    }
-
-    return results;
-}
-
-std::vector<double> generateTimestamps(size_t count, double step = 100.0) {
-    std::vector<double> timestamps;
-    timestamps.reserve(count);
-    for (size_t i = 0; i < count; ++i) {
-        timestamps.push_back(i * step);
-    }
-    return timestamps;
-}
-
+//std::vector<ClassificationResult> generateRandomResults(size_t count = 100) {
+//    std::vector<ClassificationResult> results;
+//    std::random_device rd;
+//    std::mt19937 gen(rd());
+//    std::uniform_real_distribution<double> dist(0.0, 1.0);
+//    std::uniform_int_distribution<int> typeDist(0, 2); // CLOSE_UP, MEDIUM, WIDE
+//
+//    ShotType current_type = static_cast<ShotType>(typeDist(gen));
+//
+//    for (size_t i = 0; i < count; ++i) {
+//        if (i % 10 == 0) {
+//            current_type = static_cast<ShotType>(typeDist(gen));
+//        }
+//
+//        ClassificationResult res;
+//        res.predictedType = current_type;
+//
+//        // generate probabilities for all 3 types
+//        std::map<ShotType, double> raw_probs = {
+//            {ShotType::CLOSE_UP, dist(gen)},
+//            {ShotType::MEDIUM, dist(gen)},
+//            {ShotType::WIDE, dist(gen)}
+//        };
+//
+//        // force the predicted type to be the highest, with stronger dominance
+//        raw_probs[current_type] += 3.0;
+//
+//        // normalize
+//        double total = 0;
+//        for (const auto& p : raw_probs) total += p.second;
+//        for (const auto& p : raw_probs)
+//            res.probabilities[p.first] = p.second / total;
+//
+//        results.push_back(res);
+//    }
+//
+//    return results;
+//}
+//
+//std::vector<double> generateTimestamps(size_t count, double step = 100.0) {
+//    std::vector<double> timestamps;
+//    timestamps.reserve(count);
+//    for (size_t i = 0; i < count; ++i) {
+//        timestamps.push_back(i * step);
+//    }
+//    return timestamps;
+//}
+//
 int main()
 {
-// just a code prototype, comment out to build
-    std::string data_path = "path";
-    std::string haar_filter_path1 = "path";
-    std::string haar_filter_path2 = "path";
+    
+    ImageLoader image_loader("../test/closeup");
+    
+    cv::Mat image;
+ 
+    
+    while(image_loader.hasNextFrame())
+    {
+        image.release();
+        image = image_loader.nextFrame();
+        cv::imshow("img", image);
+        cv::waitKey(1000);
+        cv::destroyWindow("img");
+    }
+    
+//// just a code prototype, comment out to build
+//    std::string data_path = "path";
+//    std::string haar_filter_path1 = "path";
+//    std::string haar_filter_path2 = "path";
     
 //    ImageLoader image_loader(data_path);
 //    Preprocessing preprocess;
@@ -145,19 +160,7 @@ int main()
     
     
     
-    ImageLoader image_loader("/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/test/closeup");
-    
-    cv::Mat image;
  
-    
-    while(image_loader.hasNextFrame())
-    {
-        image.release();
-        image = image_loader.nextFrame();
-        cv::imshow("img", image);
-        cv::waitKey(1000);
-        cv::destroyWindow("img");
-    }
     
     
         

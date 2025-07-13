@@ -111,8 +111,8 @@ Preprocessing::~Preprocessing() = default;
 
 void Preprocessing::LoadFrame(cv::Mat& new_image) {
     cv::resize(new_image, image, cv::Size(1280, 720));
-    //cv::cvtColor(image, image, cv::COLOR_BGR2GRAY);
-    //cv::equalizeHist(image, image);
+    cv::cvtColor(image, image, cv::COLOR_BGR2GRAY);
+    cv::equalizeHist(image, image);
     // cv::GaussianBlur(image, image, cv::Size(5, 5), 1.5);
    // cv::bilateralFilter(image, image, 9, 75, 75);
 }

@@ -71,7 +71,7 @@ The application processes input frame-by-frame, extracts spatial and geometric f
 
 ---
 
-## 5. Evaluation - Peter
+## 5. Evaluation - Marek
 
 ### Quantitative Evaluation
 - Accuracy, confusion matrix, or class-wise performance  
@@ -94,7 +94,7 @@ The application processes input frame-by-frame, extracts spatial and geometric f
 
 ---
 
-## 7. Results Summary - Peter
+## 7. Results Summary - Miroslaw
 - General observations  
 - Performance comparison if multiple methods were tested  
 - Strengths and weaknesses of the current implementation  

@@ -19,3 +19,4 @@ build/
 
 # macOS
 .DS_Store
+Film_type_classifier.xcodeproj/xcuserdata/

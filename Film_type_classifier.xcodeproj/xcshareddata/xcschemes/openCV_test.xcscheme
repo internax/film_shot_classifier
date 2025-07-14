@@ -36,7 +36,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PR&#x30c;EDME&#x30c;TY/8.SEMESTR/COMPUTER VISION/INTERMEDIATE_PROJECT"
+      customWorkingDirectory = "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PR&#x30c;EDME&#x30c;TY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"

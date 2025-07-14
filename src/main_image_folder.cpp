@@ -5,6 +5,9 @@
 #include "../include/ShotClassifier.hpp"
 #include "../include/ShotEvaluator.hpp"
 #include "../include/UserStructs.hpp"
+#include "TestDatasetEval.hpp"
+
+
 
 // Detection thresholds
 int WIDE_THRESHOLD = 3000;
@@ -24,8 +27,10 @@ std::string shotTypeToString(ShotType type) {
 }
 
 
+
 int main(int argc, char** argv)
 {
+
     if (argc < 2) {
         std::cerr << "Usage: " << argv[0] << " <image_folder_path>" << std::endl;
         return 1;
@@ -35,12 +40,12 @@ int main(int argc, char** argv)
     cv::Mat frame;
 
     // Load all images from the directory
-    ImageLoader image_loader(input_folder);
+    ImageLoader image_loader("test/wide");
 
     // Haar detector paths
-    std::string frontal_path = "../haar/haarcascade_frontalface_alt2.xml";
-    std::string profile_path = "../haar/haarcascade_profileface.xml";
-    std::string eye_path = "../haar/haarcascade_eye.xml";
+    std::string frontal_path = "haar/haarcascade_frontalface_alt2.xml";
+    std::string profile_path = "haar/haarcascade_profileface.xml";
+    std::string eye_path = "haar/haarcascade_eye.xml";
 
     // Initialize detectors and classifier
     HaarDetector frontal_detector(frontal_path);
@@ -48,6 +53,8 @@ int main(int argc, char** argv)
     HaarDetector eye_detector(eye_path);
     ShotClassifier face_classifier(WIDE_THRESHOLD, CLOSEUP_THRESHOLD);
     ShotEvaluator evaluator(frontal_detector, profile_detector, eye_detector, face_classifier, EYE_THRESHOLD);
+    
+    TestDatasetEval wide_shot(ShotType::WIDE);
 
     while (image_loader.hasNextFrame())
     {
@@ -84,12 +91,16 @@ int main(int argc, char** argv)
         for (const auto& eye : eyes) {
             cv::rectangle(processed, eye, cv::Scalar(255, 0, 0), 2);
         }
+        
+        wide_shot.isDesiredType(classification_result.predictedType);
 
         // Show processed frame with annotations
         cv::imshow("Processed Image", processed);
-        cv::waitKey(500);
+        cv::waitKey(200);
         cv::destroyWindow("Processed Image");
     }
+    
+    std::cout << "accuracy" << wide_shot.GetEvalResult() << std::endl;
 
     return 0;
 }

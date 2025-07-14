@@ -41,25 +41,41 @@
  */
 class TestDatasetEval
 {
-    std::vector<ClassificationResult> GroundTruth; ///< Ground truth classification results for comparison
 
+    ShotType desired_type;
+    
+    int true_detect;
+    int counter;
+    
 public:
 
-    /**
-     * @brief Loads the ground truth classification labels from a file.
-     * @param load_path Path to the CSV or data file containing ground truth labels.
-     */
-    void loadGroundTruth(std::string load_path);
+    TestDatasetEval(ShotType type) : desired_type(type)
+    {
+        true_detect = 0;
+        counter = 0;
+    }
 
     /**
      * @brief Adds a predicted image classification result to the evaluation set.
      * @param Image The image to be evaluated (prediction logic assumed to be applied externally).
      */
-    void addImageSample(cv::Mat Image);
+    bool isDesiredType(ShotType input_type)
+    {
+        counter ++;
+        if(input_type == desired_type)
+        {
+            true_detect ++;
+            return true;
+        }
+        return false;
+    }
 
     /**
      * @brief Computes and returns the evaluation result (e.g., accuracy).
      * @return A floating-point score representing classifier performance.
      */
-    double GetEvalResult();
+    double GetEvalResult()
+    {
+        return static_cast<double>(true_detect)/static_cast<double>(counter);
+    }
 };

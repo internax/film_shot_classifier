@@ -92,7 +92,7 @@ int main(int argc, char** argv)
             cv::rectangle(processed, eye, cv::Scalar(255, 0, 0), 2);
         }
         
-        wide_shot.isDesiredType(classification_result.predictedType);
+        wide_shot.check(classification_result.predictedType);
 
         // Show processed frame with annotations
         cv::imshow("Processed Image", processed);

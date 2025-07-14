@@ -59,7 +59,7 @@ public:
      * @brief Adds a predicted image classification result to the evaluation set.
      * @param Image The image to be evaluated (prediction logic assumed to be applied externally).
      */
-    bool isDesiredType(ShotType input_type)
+    bool check(ShotType input_type)
     {
         counter ++;
         if(input_type == desired_type)

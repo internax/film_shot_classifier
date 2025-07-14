@@ -111,13 +111,13 @@ Preprocessing::~Preprocessing() = default;
 
 void Preprocessing::LoadFrame(cv::Mat& new_image) {image = new_image;}
 
-void Preprocessing::resizeImage(int const rows, int const cols)
+void Preprocessing::resizeImage(int const width, int const height)
 {
     if(image.empty())
         return;
     
-    if((rows > 0) && (cols > 0))
-        cv::resize(image, image, cv::Size(1280, 720));
+    if((width > 0) && (height > 0))
+        cv::resize(image, image, cv::Size(width, height));
     else
         image.release();
     return;

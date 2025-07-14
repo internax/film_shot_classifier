@@ -53,6 +53,7 @@ int main(int argc, char** argv)
     HaarDetector eye_detector(eye_path);
     ShotClassifier face_classifier(WIDE_THRESHOLD, CLOSEUP_THRESHOLD);
     ShotEvaluator evaluator(frontal_detector, profile_detector, eye_detector, face_classifier, EYE_THRESHOLD);
+    Preprocessing processor;
     
     TestDatasetEval wide_shot(ShotType::WIDE);
 
@@ -62,12 +63,14 @@ int main(int argc, char** argv)
         frame = image_loader.nextFrame();
 
         // Preprocess the frame
-        Preprocessing processor;
+        
         processor.LoadFrame(frame);
-        cv::Mat processed = processor.GetProcessedImage();
+        processor.resizeImage(1280, 720);
+        processor.equalizeHistogram();
+        frame = processor.GetProcessedImage();
 
         std::vector<cv::Rect> faces, eyes;
-        ClassificationResult classification_result = evaluator.evaluate(processed, faces, eyes);
+        ClassificationResult classification_result = evaluator.evaluate(frame, faces, eyes);
 
         std::cout << "Shot classification: " << shotTypeToString(classification_result.predictedType) 
                   << " | Faces: " << faces.size() 
@@ -75,17 +78,17 @@ int main(int argc, char** argv)
 
         // Draw bounding boxes
         for (const auto& face : faces) {
-            cv::rectangle(processed, face, cv::Scalar(0, 255, 0), 2);
+            cv::rectangle(frame, face, cv::Scalar(0, 255, 0), 2);
         }
 
         for (const auto& eye : eyes) {
-            cv::rectangle(processed, eye, cv::Scalar(255, 0, 0), 2);
+            cv::rectangle(frame, eye, cv::Scalar(255, 0, 0), 2);
         }
         
         wide_shot.check(classification_result.predictedType);
 
         // Show processed frame with annotations
-        cv::imshow("Processed Image", processed);
+        cv::imshow("Processed Image", frame);
         cv::waitKey(200);
         cv::destroyWindow("Processed Image");
     }

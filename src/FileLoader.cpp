@@ -109,12 +109,37 @@ double VideoLoader::getCurrentTimestamp() const {
 // Preprocessing Implementation
 Preprocessing::~Preprocessing() = default;
 
-void Preprocessing::LoadFrame(cv::Mat& new_image) {
-    cv::resize(new_image, image, cv::Size(1280, 720));
-    cv::cvtColor(image, image, cv::COLOR_BGR2GRAY);
+void Preprocessing::LoadFrame(cv::Mat& new_image) {image = new_image;}
+
+void Preprocessing::resizeImage(int const rows, int const cols)
+{
+    if(image.empty())
+        return;
+    
+    if((rows > 0) && (cols > 0))
+        cv::resize(image, image, cv::Size(1280, 720));
+    else
+        image.release();
+    return;
+}
+
+void Preprocessing::toGrayscale()
+{
+    if(image.empty())
+        return;
+    
+    if (image.channels() == 3)
+        cv::cvtColor(image, image, cv::COLOR_BGR2GRAY);
+    return;
+}
+
+void Preprocessing::equalizeHistogram()
+{
+    if(image.empty())
+        return;
+    
+    toGrayscale();
     cv::equalizeHist(image, image);
-    // cv::GaussianBlur(image, image, cv::Size(5, 5), 1.5);
-   // cv::bilateralFilter(image, image, 9, 75, 75);
 }
 
 cv::Mat& Preprocessing::GetProcessedImage() {

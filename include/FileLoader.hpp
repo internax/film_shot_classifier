@@ -207,6 +207,10 @@ public:
      * @param image Frame to load for processing.
      */
     void LoadFrame(cv::Mat& image);
+    
+    void resizeImage(int const rows, int const cols);
+    void toGrayscale();
+    void equalizeHistogram();
 
     /**
      * @brief Returns the processed image.

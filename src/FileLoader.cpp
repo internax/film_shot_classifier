@@ -118,6 +118,9 @@ void Preprocessing::LoadFrame(cv::Mat& new_image) {
 }
 
 cv::Mat& Preprocessing::GetProcessedImage() {
+    if (image.empty())
+        throw std::runtime_error("Failed to return image: image is empty!");
+
     return image;
 }
 

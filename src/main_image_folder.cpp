@@ -61,20 +61,10 @@ int main(int argc, char** argv)
         frame.release();
         frame = image_loader.nextFrame();
 
-        if (frame.empty()) {
-            std::cerr << "Error: Empty frame encountered." << std::endl;
-            continue;
-        }
-
         // Preprocess the frame
         Preprocessing processor;
         processor.LoadFrame(frame);
         cv::Mat processed = processor.GetProcessedImage();
-
-        if (processed.empty()) {
-            std::cerr << "Error: Processed frame is empty." << std::endl;
-            continue;
-        }
 
         std::vector<cv::Rect> faces, eyes;
         ClassificationResult classification_result = evaluator.evaluate(processed, faces, eyes);
@@ -100,7 +90,7 @@ int main(int argc, char** argv)
         cv::destroyWindow("Processed Image");
     }
     
-    std::cout << "accuracy" << wide_shot.GetEvalResult() << std::endl;
+    std::cout << "accuracy: " << wide_shot.GetEvalResult() << std::endl;
 
     return 0;
 }

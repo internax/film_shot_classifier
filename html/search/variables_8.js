@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['predictedtype_0',['predictedType',['../structclassification__result.html#aaf00dc0ed9f9c132fea15a6f296a5262',1,'classification_result']]],
-  ['prob_5ftimeline_1',['prob_timeline',['../class_film_statistics.html#ac3761e802821fc8626e26552b7a6757e',1,'FilmStatistics']]],
-  ['probabilities_2',['probabilities',['../structclassification__result.html#a487c16e75bc6d9a15379f0d781cbf94d',1,'classification_result']]]
+  ['shot_5fcounts_0',['shot_counts',['../class_film_statistics.html#a94f2720dab851559ae134d9a749a4ab7',1,'FilmStatistics']]],
+  ['shot_5ftype_5ftimeline_1',['shot_type_timeline',['../class_film_statistics.html#a13f33560f14dc8a5754647119bb8f0f5',1,'FilmStatistics']]],
+  ['source_5fpath_2',['source_path',['../class_input_source.html#a05c0b917fe5de0b326d343b07a06107e',1,'InputSource']]],
+  ['start_5fdelay_3',['start_delay',['../class_film_statistics.html#a7a0701220e79c1fe5d6fd5e4a80fef17',1,'FilmStatistics']]]
 ];

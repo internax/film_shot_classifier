@@ -24,9 +24,12 @@
 \DoxyCodeLine{00040\ }
 \DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_result_displayer_af40587f6a393ad35316ba8c48cfabd09}{\string~ResultDisplayer}}()\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \ \ cv::Mat\ GetPlot(\textcolor{comment}{/*input\_dataset,\ xlabel,\ ylabel*/});}
-\DoxyCodeLine{00047\ \};}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ResultDisplayer\_hpp\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00046\ \ \ \ \ cv::Mat\ GetPlot(std::vector<std::pair<\textcolor{keywordtype}{double},\ std::map<ShotType,\ double>>>\ \&\ data\_series,\ std::string\ xlabel,\ std::string\ ylabel,\ std::string\ title);}
+\DoxyCodeLine{00047\ \ \ \ \ cv::Mat\ GetPlot(std::vector<std::pair<double,\ ShotType>>,\ std::string\ xlabel,\ std::string\ ylabel,\ std::string\ title);}
+\DoxyCodeLine{00048\ \ \ \ \ cv::Mat\ GetPlot(std::vector<std::pair<double,\ double>>\ \&\ data\_series,\ std::string\ xlabel,\ std::string\ ylabel,\ std::string\ title);}
+\DoxyCodeLine{00049\ \ \ \ \ cv::Mat\ GetPlot(std::vector<std::pair<double,\ bool>>\ \&\ data\_series,\ std::string\ xlabel,\ std::string\ ylabel,\ std::string\ title);}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ResultDisplayer\_hpp\ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

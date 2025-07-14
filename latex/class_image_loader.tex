@@ -18,6 +18,9 @@ Inheritance diagram for Image\+Loader\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\Hypertarget{class_image_loader_a61d70e6bd1327e9829bd9c54f53a5034}\label{class_image_loader_a61d70e6bd1327e9829bd9c54f53a5034} 
+{\bfseries Image\+Loader} (const std\+::string \&path)
+\item 
 bool \mbox{\hyperlink{class_image_loader_a5302ba92a32276ac9a23f859b62abb51}{has\+Next\+Frame}} () const override
 \begin{DoxyCompactList}\small\item\em Checks if the image is still available to be returned. \end{DoxyCompactList}\item 
 cv\+::\+Mat \& \mbox{\hyperlink{class_image_loader_aae65387f71c9cc119c94db147b077708}{next\+Frame}} () override
@@ -33,11 +36,11 @@ double \mbox{\hyperlink{class_image_loader_a15dedf31b1d1f5ce468b475018f39adc}{ge
 \begin{DoxyCompactList}\small\item\em Constructs an input source with a file path. \end{DoxyCompactList}\item 
 virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Input\+Source} ()=default
 \begin{DoxyCompactList}\small\item\em Virtual destructor for polymorphic use. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Static Public Member Functions}
+\doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_image_loader_a761f8dcfce6922505e458e105caf8b3c}\label{class_image_loader_a761f8dcfce6922505e458e105caf8b3c} 
-static std\+::vector$<$ std\+::string $>$ {\bfseries get\+Ordered\+Image\+Paths} (const std\+::string \&directory)
+\Hypertarget{class_image_loader_a6535a0d08f8cac9fc732770c6cb3b3b9}\label{class_image_loader_a6535a0d08f8cac9fc732770c6cb3b3b9} 
+void {\bfseries load\+Image\+Paths\+From\+Directory} (const std\+::string \&directory)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -50,6 +53,12 @@ bool {\bfseries loaded} = false
 \item 
 \Hypertarget{class_image_loader_a92a16f23ad4287b1efa90deea1af494f}\label{class_image_loader_a92a16f23ad4287b1efa90deea1af494f} 
 bool {\bfseries frame\+Returned} = false
+\item 
+\Hypertarget{class_image_loader_a92cb24f441f5b7648ff3be0467713725}\label{class_image_loader_a92cb24f441f5b7648ff3be0467713725} 
+std\+::vector$<$ std\+::string $>$ {\bfseries image\+\_\+paths}
+\item 
+\Hypertarget{class_image_loader_a936c932cc36dca019e6f5ae9fd55c647}\label{class_image_loader_a936c932cc36dca019e6f5ae9fd55c647} 
+int {\bfseries current\+\_\+frame\+\_\+index} = 0
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_input_source}{Input\+Source}}}

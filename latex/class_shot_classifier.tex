@@ -1,19 +1,8 @@
 \doxysection{Shot\+Classifier Class Reference}
 \hypertarget{class_shot_classifier}{}\label{class_shot_classifier}\index{ShotClassifier@{ShotClassifier}}
-
-
-Classifies the type of cinematic shot based on extracted visual features.  
-
-
-
-
-{\ttfamily \#include $<$Feature\+Proccesor\+And\+Classifier.\+hpp$>$}
-
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structclassification__result}{classification\+\_\+result}} \mbox{\hyperlink{class_shot_classifier_ae0c96ea1a429bba7ef9e7f7801f7b12c}{classify}} (const \mbox{\hyperlink{struct_shot_features}{Shot\+Features}} \&features) const
-\begin{DoxyCompactList}\small\item\em Classifies the shot type using extracted features. \end{DoxyCompactList}\item 
 \Hypertarget{class_shot_classifier_ae2c0f4e2154caa2cfb270260206b846e}\label{class_shot_classifier_ae2c0f4e2154caa2cfb270260206b846e} 
 {\bfseries Shot\+Classifier} (int smallest\+\_\+thresh=5000, int closeup\+\_\+thresh=30000)
 \item 
@@ -34,43 +23,7 @@ int {\bfseries closeup\+\_\+face\+\_\+threshold}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-Classifies the type of cinematic shot based on extracted visual features. 
-
-\doxylink{class_shot_classifier}{Shot\+Classifier} takes a \doxylink{struct_shot_features}{Shot\+Features} input and produces a classification result. Typically used after feature extraction from a single video frame.
-
-The classification logic is based on heuristics, such as the relative size of detected objects compared to the frame.
-
-\begin{DoxySeeAlso}{See also}
-\doxylink{struct_shot_features}{Shot\+Features} 
-
-\doxylink{struct_classification_result}{Classification\+Result} 
-\end{DoxySeeAlso}
-
-
-\doxysubsection{Member Function Documentation}
-\Hypertarget{class_shot_classifier_ae0c96ea1a429bba7ef9e7f7801f7b12c}\index{ShotClassifier@{ShotClassifier}!classify@{classify}}
-\index{classify@{classify}!ShotClassifier@{ShotClassifier}}
-\doxysubsubsection{\texorpdfstring{classify()}{classify()}}
-{\footnotesize\ttfamily \label{class_shot_classifier_ae0c96ea1a429bba7ef9e7f7801f7b12c} 
-\mbox{\hyperlink{structclassification__result}{classification\+\_\+result}} Shot\+Classifier\+::classify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_shot_features}{Shot\+Features}} \&}]{features}{}\end{DoxyParamCaption}) const}
-
-
-
-Classifies the shot type using extracted features. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em features} & The extracted shot-\/level features. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A \doxylink{struct_classification_result}{Classification\+Result} with the predicted type and probabilities. 
-\end{DoxyReturn}
-
-
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/Feature\+Proccesor\+And\+Classifier.\+hpp\item 
 include/Shot\+Classifier.\+hpp\item 
 src/Shot\+Classifier.\+cpp\end{DoxyCompactItemize}

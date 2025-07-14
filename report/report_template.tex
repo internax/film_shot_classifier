@@ -4,6 +4,7 @@
 \usepackage[utf8x]{inputenc}
 \usepackage{float}
 \usepackage{graphicx}
+\usepackage{hyperref}
 
 
 \makeatletter
@@ -90,6 +91,7 @@ To make code more clear, we use:
 We decided to use class design, where classes are logicaly separated depending on task.
 Dataflow between classes is provided by several user structures. Data are processed squentialy.
 Unfortunately used dataflow is not that clear because we havent been able to fully follow originally defined structure.
+We also used Doxygen documentation so for detailed description you can check it \href{run:../latex/refman.pdf}{here}.
 \paragraph{}
 	For loading data we have two classes \texttt{ImageLoader()} and \texttt{VideoLoader()}, derived from class \texttt{InputSource()}.
 	From user side the classes have common interface and usage is the same. Important is method \texttt{hasNextFrame()}, used for
@@ -116,10 +118,88 @@ Unfortunately used dataflow is not that clear because we havent been able to ful
 	For graphical output of the statstic data we have \texttt{ResultDisplayer()} class, which is inputting all data types got
 	from \texttt{FilmStatistics()} getters and returning \texttt{cv::mat} with plots.
 
-
-
-
 \section{Implementation details}
+
+	\subsection{FileLoader}
+		In this file we have four classes.
+		\paragraph{}
+			Class \texttt{InputSource} is parent class for \texttt{ImageLoader}
+			and \texttt{VideoLoader} It serves to provide easy interface to work with image and video files.
+			In both cases we aiming to process data in series, that means frame by frame. 
+			Both of these classes have same user interface made of:
+			\begin{itemize}
+				\item \texttt{hasNextFrame()} - returns if there is one more frame to process, used for driving while loop.
+				\item \texttt{nextFrame()} - returns next frame in the sequence.
+				\item \texttt{getCurrentTimestamp}() - returns current timestamp in ms.
+			\end{itemize}
+		\paragraph{}
+			For preprocessing we have class \texttt{Preprocessing()}. We only implemented processing methods that we found 
+			beneficial. The class contains this methods:
+			\begin{itemize}
+				\item \texttt{LoadFrame()}
+				\item \texttt{resizeImage()}
+				\item \texttt{toGrayscale()}
+				\item \texttt{equalizeHistogram()}
+				\item \texttt{GetProcessedImage()}
+			\end{itemize}
+			Names on methods are describing function sufficiently.
+
+	\subsection{SceneChangeDetect}
+		\paragraph{}
+			This file contains single function for optimizing processing of Viola \& Johnes detector.
+			As an input we take two frames, we compute how much they are different and return boolean value.
+			Because Viola \& Johnes is computationaly quite expansive, we want to proccess the frame by it, only when it is really 
+			needed.
+			
+		\paragraph{}
+			We have two parameters:
+			\begin{itemize}
+				\item \texttt{pixelDiffThreshold} - Difference between two pixel at same position in input frames.
+				\item \texttt{threshold} - Percentage of pixels, that reach \texttt{pixelDiffThreshold} parameter value.
+			\end{itemize}
+		\paragraph{}
+			Algorithm computes difference between all pixel at apropriate positions and make boolean array. Then 
+			it computes percetage of pixels that reaches the \texttt{pixelDiffThreshold} and compare the value with \texttt{threshold}.
+			If the computed value reaches the treshold it returns true.
+			
+	%...
+
+	\subsection{TestDatasetEval}
+		\paragraph{}
+			This simple class is designed for computing accuracy of the algorithm on the test dataset. That means at image dataset.
+			Since we have test datased sorted in the folders, task is pretty simple. We have class \texttt{TestDatasetEval}.
+			with constructor we pass \texttt{ShotType}, which we want to test with this class. Then we have two methods:
+			\begin{itemize}
+				\item \texttt{check()} Is used in while to add currently classified image ShotType to evaluation.
+				\item \texttt{getEvalResults()} After all images are processed we call this method and it returns accuracy.
+			\end{itemize}
+
+	\subsection{FilmStatistics}
+		\paragraph{}
+			Class is mainly designed for video. As input it takes class probabilities and it outputs \texttt{.csv} file with
+			statictical data. Constructor takes one argument - structure \texttt{FilmStatisticsEvalConfig}, which is used to set up all the parameters
+			for class.
+
+		\paragraph{}
+			We have 4 public methods:
+			\begin{itemize}
+				\item \texttt{addConfigurationStruct()} - Serves to change configuration setings.
+				\item \texttt{addFrameResult()} - Add frame to final evaluation.
+				\item \texttt{exportToCSV()} - Exports computed statistical timelines to \texttt{csv} file for future processing.
+				\item \texttt{printSummary()} - Prints basic statistical summary.
+			\end{itemize}
+
+		\paragraph{}
+			It is important to mention what specificaly class does. It takes input probability. We can set oversapling or skipping to
+			input data to filter random noise etc. Class computes entropy and entropy variance, it detects cuts in the scenes
+			and clasify most probable \texttt{ShotType}. We can set different window sizes for oversampling window, entropy window and 
+			entropy variance window. We can also reduce output data flow if we dont want to have informations from each single shot and we reduce size
+			of output \texttt{csv} file. All of these parameters are settable in \texttt{FilmStatisticsEvalConfig}.
+		\paragraph{}
+			Since we are using sliding windows for signal processing, we introduce delay to the system, which grows as
+			we setting bigger window sizes. Delay is different for each statistical parameter timeseries. Class handle this situation and starts
+			outputing data when all of the parameters are valid, with correct timestamp.
+
 
 \section{Evaluation}
 

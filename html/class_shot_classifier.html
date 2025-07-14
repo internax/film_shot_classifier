@@ -109,17 +109,9 @@ $(function(){initNavTree('class_shot_classifier.html',''); initResizable(true); 
   <div class="headertitle"><div class="title">ShotClassifier Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Classifies the type of cinematic shot based on extracted visual features.  
- <a href="#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="_feature_proccesor_and_classifier_8hpp_source.html">FeatureProccesorAndClassifier.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae0c96ea1a429bba7ef9e7f7801f7b12c" id="r_ae0c96ea1a429bba7ef9e7f7801f7b12c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structclassification__result.html">classification_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0c96ea1a429bba7ef9e7f7801f7b12c">classify</a> (const <a class="el" href="struct_shot_features.html">ShotFeatures</a> &amp;features) const</td></tr>
-<tr class="memdesc:ae0c96ea1a429bba7ef9e7f7801f7b12c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classifies the shot type using extracted features.  <br /></td></tr>
-<tr class="separator:ae0c96ea1a429bba7ef9e7f7801f7b12c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2c0f4e2154caa2cfb270260206b846e" id="r_ae2c0f4e2154caa2cfb270260206b846e"><td class="memItemLeft" align="right" valign="top"><a id="ae2c0f4e2154caa2cfb270260206b846e" name="ae2c0f4e2154caa2cfb270260206b846e"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ShotClassifier</b> (int smallest_thresh=5000, int closeup_thresh=30000)</td></tr>
 <tr class="separator:ae2c0f4e2154caa2cfb270260206b846e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,42 +131,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>medium_face_threshold<
 int&#160;</td><td class="memItemRight" valign="bottom"><b>closeup_face_threshold</b></td></tr>
 <tr class="separator:a48a07223b9e1f9daecd7e56aff5f71cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Classifies the type of cinematic shot based on extracted visual features. </p>
-<p><a class="el" href="class_shot_classifier.html" title="Classifies the type of cinematic shot based on extracted visual features.">ShotClassifier</a> takes a <a class="el" href="struct_shot_features.html" title="Represents extracted geometric and area-based properties from a video frame.">ShotFeatures</a> input and produces a classification result. Typically used after feature extraction from a single video frame.</p>
-<p>The classification logic is based on heuristics, such as the relative size of detected objects compared to the frame.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_shot_features.html" title="Represents extracted geometric and area-based properties from a video frame.">ShotFeatures</a> </dd>
-<dd>
-<a class="el" href="struct_classification_result.html" title="Contains the result of shot type classification.">ClassificationResult</a> </dd></dl>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae0c96ea1a429bba7ef9e7f7801f7b12c" name="ae0c96ea1a429bba7ef9e7f7801f7b12c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0c96ea1a429bba7ef9e7f7801f7b12c">&#9670;&#160;</a></span>classify()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structclassification__result.html">classification_result</a> ShotClassifier::classify </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="struct_shot_features.html">ShotFeatures</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>features</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Classifies the shot type using extracted features. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">features</td><td>The extracted shot-level features. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="struct_classification_result.html" title="Contains the result of shot type classification.">ClassificationResult</a> with the predicted type and probabilities. </dd></dl>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="_feature_proccesor_and_classifier_8hpp_source.html">FeatureProccesorAndClassifier.hpp</a></li>
 <li>include/<a class="el" href="_shot_classifier_8hpp_source.html">ShotClassifier.hpp</a></li>
 <li>src/<b>ShotClassifier.cpp</b></li>
 </ul>

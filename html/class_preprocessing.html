@@ -131,6 +131,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a396223edd2d672d14555bf5a1903f5a1" id="r_a396223edd2d672d14555bf5a1903f5a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a396223edd2d672d14555bf5a1903f5a1">LoadFrame</a> (cv::Mat &amp;<a class="el" href="#aac52479d9834ffde3b7e5964b8d31d92">image</a>)</td></tr>
 <tr class="memdesc:a396223edd2d672d14555bf5a1903f5a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a new frame into the processor.  <br /></td></tr>
 <tr class="separator:a396223edd2d672d14555bf5a1903f5a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af013e5f3282e59441cb0a8a1f8532539" id="r_af013e5f3282e59441cb0a8a1f8532539"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af013e5f3282e59441cb0a8a1f8532539">resizeImage</a> (int const rows, int const cols)</td></tr>
+<tr class="memdesc:af013e5f3282e59441cb0a8a1f8532539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the internal image to the specified dimensions.  <br /></td></tr>
+<tr class="separator:af013e5f3282e59441cb0a8a1f8532539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9da79c2fd5b809f58004999e0d0dc0d3" id="r_a9da79c2fd5b809f58004999e0d0dc0d3"><td class="memItemLeft" align="right" valign="top"><a id="a9da79c2fd5b809f58004999e0d0dc0d3" name="a9da79c2fd5b809f58004999e0d0dc0d3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>toGrayscale</b> ()</td></tr>
+<tr class="memdesc:a9da79c2fd5b809f58004999e0d0dc0d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the internal image to grayscale. <br /></td></tr>
+<tr class="separator:a9da79c2fd5b809f58004999e0d0dc0d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31b1a8f826ca1016a4aa65b04b4edc21" id="r_a31b1a8f826ca1016a4aa65b04b4edc21"><td class="memItemLeft" align="right" valign="top"><a id="a31b1a8f826ca1016a4aa65b04b4edc21" name="a31b1a8f826ca1016a4aa65b04b4edc21"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>equalizeHistogram</b> ()</td></tr>
+<tr class="memdesc:a31b1a8f826ca1016a4aa65b04b4edc21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies histogram equalization to enhance image contrast. <br /></td></tr>
+<tr class="separator:a31b1a8f826ca1016a4aa65b04b4edc21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae121604d081216e78ec7802aa2478131" id="r_ae121604d081216e78ec7802aa2478131"><td class="memItemLeft" align="right" valign="top">cv::Mat &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae121604d081216e78ec7802aa2478131">GetProcessedImage</a> ()</td></tr>
 <tr class="memdesc:ae121604d081216e78ec7802aa2478131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the processed image.  <br /></td></tr>
 <tr class="separator:ae121604d081216e78ec7802aa2478131"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,6 +231,36 @@ cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><b>image</b></td></tr
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">image</td><td>Frame to load for processing. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af013e5f3282e59441cb0a8a1f8532539" name="af013e5f3282e59441cb0a8a1f8532539"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af013e5f3282e59441cb0a8a1f8532539">&#9670;&#160;</a></span>resizeImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Preprocessing::resizeImage </td>
+          <td>(</td>
+          <td class="paramtype">int const</td>          <td class="paramname"><span class="paramname"><em>rows</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int const</td>          <td class="paramname"><span class="paramname"><em>cols</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resizes the internal image to the specified dimensions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rows</td><td>Desired number of rows (height). </td></tr>
+    <tr><td class="paramname">cols</td><td>Desired number of columns (width). </td></tr>
   </table>
   </dd>
 </dl>

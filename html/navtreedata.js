@@ -28,24 +28,23 @@ var NAVTREE =
     [ "🎬 Film Shot Type Classification", "md__r_e_a_d_m_e.html", [
       [ "📂 Tasks", "md__r_e_a_d_m_e.html#autotoc_md2", [
         [ "Miroslaw", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
-        [ "Peter", "md__r_e_a_d_m_e.html#autotoc_md4", null ],
-        [ "Marek", "md__r_e_a_d_m_e.html#autotoc_md5", null ]
+        [ "Marek", "md__r_e_a_d_m_e.html#autotoc_md4", null ]
       ] ],
-      [ "Notes", "md__r_e_a_d_m_e.html#autotoc_md7", null ],
-      [ "📄 Final Project Report", "md__r_e_a_d_m_e.html#autotoc_md8", [
-        [ "Title Page - Marek", "md__r_e_a_d_m_e.html#autotoc_md9", null ],
-        [ "Introduction - Miroslaw", "md__r_e_a_d_m_e.html#autotoc_md11", null ],
-        [ "System Overview - Marek", "md__r_e_a_d_m_e.html#autotoc_md13", null ],
-        [ "Implementation Details - Everyone describes his part", "md__r_e_a_d_m_e.html#autotoc_md15", null ],
-        [ "Evaluation - Peter", "md__r_e_a_d_m_e.html#autotoc_md17", [
-          [ "Quantitative Evaluation", "md__r_e_a_d_m_e.html#autotoc_md18", null ],
-          [ "Qualitative Evaluation", "md__r_e_a_d_m_e.html#autotoc_md19", null ]
+      [ "Notes", "md__r_e_a_d_m_e.html#autotoc_md6", null ],
+      [ "📄 Final Project Report", "md__r_e_a_d_m_e.html#autotoc_md7", [
+        [ "Title Page - Marek", "md__r_e_a_d_m_e.html#autotoc_md8", null ],
+        [ "Introduction - Miroslaw", "md__r_e_a_d_m_e.html#autotoc_md10", null ],
+        [ "System Overview - Marek", "md__r_e_a_d_m_e.html#autotoc_md12", null ],
+        [ "Implementation Details - Everyone describes his part", "md__r_e_a_d_m_e.html#autotoc_md14", null ],
+        [ "Evaluation - Marek", "md__r_e_a_d_m_e.html#autotoc_md16", [
+          [ "Quantitative Evaluation", "md__r_e_a_d_m_e.html#autotoc_md17", null ],
+          [ "Qualitative Evaluation", "md__r_e_a_d_m_e.html#autotoc_md18", null ]
         ] ],
-        [ "Dataset Description - Miroslaw", "md__r_e_a_d_m_e.html#autotoc_md21", null ],
-        [ "Results Summary - Peter", "md__r_e_a_d_m_e.html#autotoc_md23", null ],
-        [ "Individual Contributions", "md__r_e_a_d_m_e.html#autotoc_md25", null ],
-        [ "Conclusion - Marek", "md__r_e_a_d_m_e.html#autotoc_md27", null ],
-        [ "References", "md__r_e_a_d_m_e.html#autotoc_md29", null ]
+        [ "Dataset Description - Miroslaw", "md__r_e_a_d_m_e.html#autotoc_md20", null ],
+        [ "Results Summary - Miroslaw", "md__r_e_a_d_m_e.html#autotoc_md22", null ],
+        [ "Individual Contributions", "md__r_e_a_d_m_e.html#autotoc_md24", null ],
+        [ "Conclusion - Marek", "md__r_e_a_d_m_e.html#autotoc_md26", null ],
+        [ "References", "md__r_e_a_d_m_e.html#autotoc_md28", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -66,7 +65,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_feature_proccesor_and_classifier_8hpp_source.html"
+"_file_loader_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

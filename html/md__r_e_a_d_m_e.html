@@ -123,40 +123,31 @@ $(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizable(true); });
 <h2><a class="anchor" id="autotoc_md3"></a>
 Miroslaw</h2>
 <ul>
-<li><code>FeatureDetector</code> – Object detection using Haar cascades <br  />
-</li>
-<li><code>FeatureProcessorAndClassifier</code> – Feature extraction and shot type classification logic <br  />
-</li>
+<li>~<code>FeatureDetector</code> – Object detection using Haar cascades~</li>
+<li>~<code>FeatureProcessorAndClassifier</code> – Feature extraction and shot type classification logic~</li>
 <li></li>
 </ul>
 <h2><a class="anchor" id="autotoc_md4"></a>
-Peter</h2>
+Marek</h2>
 <ul>
-<li><code>FileLoader</code> – Abstract interface for loading images or video <br  />
-</li>
+<li>~<code>FilmStatisticEval</code> – Aggregates classification results across frames~</li>
+<li>~<code><a class="el" href="class_test_dataset_eval.html" title="Evaluates classification accuracy against a labeled test dataset.">TestDatasetEval</a></code> – Compares predictions with ground truth labels~</li>
+<li>~<code>FileLoader</code> – Abstract interface for loading images or video~</li>
 <li><code><a class="el" href="class_result_displayer.html" title="Provides graphical or textual output for film analysis results.">ResultDisplayer</a></code> – Displays or exports results <br  />
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md5"></a>
-Marek</h2>
-<ul>
-<li><code>FilmStatisticEval</code> – Aggregates classification results across frames <br  />
-</li>
-<li><code><a class="el" href="class_test_dataset_eval.html" title="Evaluates classification accuracy against a labeled test dataset.">TestDatasetEval</a></code> – Compares predictions with ground truth labels <br  />
-</li>
-</ul>
 <hr  />
- <h1><a class="anchor" id="autotoc_md7"></a>
+ <h1><a class="anchor" id="autotoc_md6"></a>
 Notes</h1>
 <ul>
 <li>Do not make deep copies, since we are aiming to work with video</li>
 <li>Do not use static varibles inside classes</li>
 <li>Respect dataflow and do not edit it without telling others</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 📄 Final Project Report</h1>
 <p><em>Here is report structure derived from example project in moodle</em></p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 1. Title Page - Marek</h2>
 <ul>
 <li><b>Project title</b>: Film Shot Type Classification <br  />
@@ -169,7 +160,7 @@ Notes</h1>
 </li>
 </ul>
 <hr  />
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 2. Introduction - Miroslaw</h2>
 <ul>
 <li>Brief background on the problem domain (e.g., film analysis, automatic metadata generation) <br  />
@@ -180,7 +171,7 @@ Notes</h1>
 </li>
 </ul>
 <hr  />
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 3. System Overview - Marek</h2>
 <ul>
 <li>High-level description of the system pipeline <br  />
@@ -198,7 +189,7 @@ Notes</h1>
 </li>
 </ul>
 <hr  />
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 4. Implementation Details - Everyone describes his part</h2>
 <ul>
 <li>Technical breakdown of each module <br  />
@@ -211,9 +202,9 @@ Notes</h1>
 </li>
 </ul>
 <hr  />
-<h2><a class="anchor" id="autotoc_md17"></a>
-5. Evaluation - Peter</h2>
-<h3><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
+5. Evaluation - Marek</h2>
+<h3><a class="anchor" id="autotoc_md17"></a>
 Quantitative Evaluation</h3>
 <ul>
 <li>Accuracy, confusion matrix, or class-wise performance <br  />
@@ -221,7 +212,7 @@ Quantitative Evaluation</h3>
 <li>Dataset size and statistics <br  />
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md19"></a>
+<h3><a class="anchor" id="autotoc_md18"></a>
 Qualitative Evaluation</h3>
 <ul>
 <li>Visual examples:<ul>
@@ -233,7 +224,7 @@ Qualitative Evaluation</h3>
 </li>
 </ul>
 <hr  />
-<h2><a class="anchor" id="autotoc_md21"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 6. Dataset Description - Miroslaw</h2>
 <ul>
 <li>Source of the dataset (test images, videos, ground truth) <br  />
@@ -246,8 +237,8 @@ Qualitative Evaluation</h3>
 </li>
 </ul>
 <hr  />
-<h2><a class="anchor" id="autotoc_md23"></a>
-7. Results Summary - Peter</h2>
+<h2><a class="anchor" id="autotoc_md22"></a>
+7. Results Summary - Miroslaw</h2>
 <ul>
 <li>General observations <br  />
 </li>
@@ -257,7 +248,7 @@ Qualitative Evaluation</h3>
 </li>
 </ul>
 <hr  />
-<h2><a class="anchor" id="autotoc_md25"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 8. Individual Contributions</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -268,7 +259,7 @@ Qualitative Evaluation</h3>
 <td class="markdownTableBodyNone">Member 2   </td><td class="markdownTableBodyNone">e.g., evaluation, testing, visualization   </td><td class="markdownTableBodyNone"></td></tr>
 </table>
 <hr  />
-<h2><a class="anchor" id="autotoc_md27"></a>
+<h2><a class="anchor" id="autotoc_md26"></a>
 9. Conclusion - Marek</h2>
 <ul>
 <li>Final thoughts and achievements <br  />
@@ -279,7 +270,7 @@ Qualitative Evaluation</h3>
 </li>
 </ul>
 <hr  />
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md28"></a>
 10. References</h2>
 <ul>
 <li>Articles, documentation, libraries used (e.g., OpenCV) <br  />

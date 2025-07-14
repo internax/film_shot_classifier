@@ -1,0 +1,110 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}🎬 Film Shot Type Classification}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}📂 Tasks}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Miroslaw}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Marek}{1}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Notes}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}📄 Final Project Report}{2}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}1. Title Page -\/ Marek}{2}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}2. Introduction -\/ Miroslaw}{2}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}3. System Overview -\/ Marek}{2}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}4. Implementation Details -\/ Everyone describes his part}{3}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}5. Evaluation -\/ Marek}{3}{subsection.1.3.5}%
+\contentsline {subsubsection}{\numberline {1.3.5.1}Quantitative Evaluation}{3}{subsubsection.1.3.5.1}%
+\contentsline {subsubsection}{\numberline {1.3.5.2}Qualitative Evaluation}{3}{subsubsection.1.3.5.2}%
+\contentsline {subsection}{\numberline {1.3.6}6. Dataset Description -\/ Miroslaw}{3}{subsection.1.3.6}%
+\contentsline {subsection}{\numberline {1.3.7}7. Results Summary -\/ Miroslaw}{3}{subsection.1.3.7}%
+\contentsline {subsection}{\numberline {1.3.8}8. Individual Contributions}{3}{subsection.1.3.8}%
+\contentsline {subsection}{\numberline {1.3.9}9. Conclusion -\/ Marek}{4}{subsection.1.3.9}%
+\contentsline {subsection}{\numberline {1.3.10}10. References}{4}{subsection.1.3.10}%
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{5}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Index}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class List}{7}{section.3.1}%
+\contentsline {chapter}{\numberline {4}File Index}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}File List}{9}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Class Documentation}{11}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Classification\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Result Struct Reference}{11}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{11}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}Detected\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Feature Struct Reference}{11}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{11}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3}Film\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Statistics Class Reference}{12}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{13}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Member Function Documentation}{14}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}addConfigurationStruct()}{14}{subsubsection.5.3.2.1}%
+\contentsline {subsubsection}{\numberline {5.3.2.2}addFrameResult()}{14}{subsubsection.5.3.2.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.3}aggregateSlidingWindowProbs()}{14}{subsubsection.5.3.2.3}%
+\contentsline {subsubsection}{\numberline {5.3.2.4}appendCutDetectionToTimeline()}{15}{subsubsection.5.3.2.4}%
+\contentsline {subsubsection}{\numberline {5.3.2.5}appendEntropyToTimeline()}{16}{subsubsection.5.3.2.5}%
+\contentsline {subsubsection}{\numberline {5.3.2.6}appendEntropyVarianceToTimeline()}{16}{subsubsection.5.3.2.6}%
+\contentsline {subsubsection}{\numberline {5.3.2.7}appendSampleToTimeline()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{16}{subsubsection.5.3.2.7}%
+\contentsline {subsubsection}{\numberline {5.3.2.8}appendSampleToTimeline()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{16}{subsubsection.5.3.2.8}%
+\contentsline {subsubsection}{\numberline {5.3.2.9}exportToCSV()}{16}{subsubsection.5.3.2.9}%
+\contentsline {subsubsection}{\numberline {5.3.2.10}findShotTypeMaxProb()}{17}{subsubsection.5.3.2.10}%
+\contentsline {subsubsection}{\numberline {5.3.2.11}normalizeProbs()}{17}{subsubsection.5.3.2.11}%
+\contentsline {section}{\numberline {5.4}Film\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Statistics\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Eval\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config Struct Reference}{17}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{18}{subsection.5.4.1}%
+\contentsline {section}{\numberline {5.5}Haar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Detector Class Reference}{18}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{18}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Constructor \& Destructor Documentation}{19}{subsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.1}HaarDetector()}{19}{subsubsection.5.5.2.1}%
+\contentsline {subsection}{\numberline {5.5.3}Member Function Documentation}{19}{subsection.5.5.3}%
+\contentsline {subsubsection}{\numberline {5.5.3.1}detect()}{19}{subsubsection.5.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.5.3.2}loadModel()}{19}{subsubsection.5.5.3.2}%
+\contentsline {section}{\numberline {5.6}Image\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Loader Class Reference}{19}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{20}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Member Function Documentation}{20}{subsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.2.1}getCurrentTimestamp()}{20}{subsubsection.5.6.2.1}%
+\contentsline {subsubsection}{\numberline {5.6.2.2}hasNextFrame()}{21}{subsubsection.5.6.2.2}%
+\contentsline {subsubsection}{\numberline {5.6.2.3}InputSource()}{21}{subsubsection.5.6.2.3}%
+\contentsline {subsubsection}{\numberline {5.6.2.4}nextFrame()}{21}{subsubsection.5.6.2.4}%
+\contentsline {section}{\numberline {5.7}Input\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Source Class Reference}{21}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{22}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Constructor \& Destructor Documentation}{22}{subsection.5.7.2}%
+\contentsline {subsubsection}{\numberline {5.7.2.1}InputSource()}{22}{subsubsection.5.7.2.1}%
+\contentsline {subsection}{\numberline {5.7.3}Member Function Documentation}{22}{subsection.5.7.3}%
+\contentsline {subsubsection}{\numberline {5.7.3.1}getCurrentTimestamp()}{22}{subsubsection.5.7.3.1}%
+\contentsline {subsubsection}{\numberline {5.7.3.2}hasNextFrame()}{22}{subsubsection.5.7.3.2}%
+\contentsline {subsubsection}{\numberline {5.7.3.3}nextFrame()}{22}{subsubsection.5.7.3.3}%
+\contentsline {section}{\numberline {5.8}open\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}CV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib Class Reference}{23}{section.5.8}%
+\contentsline {section}{\numberline {5.9}open\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}CV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Priv Class Reference}{23}{section.5.9}%
+\contentsline {section}{\numberline {5.10}Preprocessing Class Reference}{23}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{23}{subsection.5.10.1}%
+\contentsline {subsection}{\numberline {5.10.2}Constructor \& Destructor Documentation}{24}{subsection.5.10.2}%
+\contentsline {subsubsection}{\numberline {5.10.2.1}Preprocessing()}{24}{subsubsection.5.10.2.1}%
+\contentsline {subsection}{\numberline {5.10.3}Member Function Documentation}{24}{subsection.5.10.3}%
+\contentsline {subsubsection}{\numberline {5.10.3.1}GetProcessedImage()}{24}{subsubsection.5.10.3.1}%
+\contentsline {subsubsection}{\numberline {5.10.3.2}LoadFrame()}{24}{subsubsection.5.10.3.2}%
+\contentsline {subsubsection}{\numberline {5.10.3.3}resizeImage()}{24}{subsubsection.5.10.3.3}%
+\contentsline {section}{\numberline {5.11}Result\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Displayer Class Reference}{24}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Detailed Description}{25}{subsection.5.11.1}%
+\contentsline {subsection}{\numberline {5.11.2}Constructor \& Destructor Documentation}{25}{subsection.5.11.2}%
+\contentsline {subsubsection}{\numberline {5.11.2.1}ResultDisplayer()}{25}{subsubsection.5.11.2.1}%
+\contentsline {section}{\numberline {5.12}Shot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classifier Class Reference}{25}{section.5.12}%
+\contentsline {section}{\numberline {5.13}Shot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Evaluator Class Reference}{26}{section.5.13}%
+\contentsline {section}{\numberline {5.14}Shot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Features Struct Reference}{26}{section.5.14}%
+\contentsline {subsection}{\numberline {5.14.1}Detailed Description}{26}{subsection.5.14.1}%
+\contentsline {section}{\numberline {5.15}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dataset\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Eval Class Reference}{27}{section.5.15}%
+\contentsline {subsection}{\numberline {5.15.1}Detailed Description}{27}{subsection.5.15.1}%
+\contentsline {subsection}{\numberline {5.15.2}Member Function Documentation}{27}{subsection.5.15.2}%
+\contentsline {subsubsection}{\numberline {5.15.2.1}check()}{27}{subsubsection.5.15.2.1}%
+\contentsline {subsubsection}{\numberline {5.15.2.2}GetEvalResult()}{28}{subsubsection.5.15.2.2}%
+\contentsline {section}{\numberline {5.16}Video\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Loader Class Reference}{28}{section.5.16}%
+\contentsline {subsection}{\numberline {5.16.1}Detailed Description}{29}{subsection.5.16.1}%
+\contentsline {subsection}{\numberline {5.16.2}Member Function Documentation}{29}{subsection.5.16.2}%
+\contentsline {subsubsection}{\numberline {5.16.2.1}getCurrentTimestamp()}{29}{subsubsection.5.16.2.1}%
+\contentsline {subsubsection}{\numberline {5.16.2.2}hasNextFrame()}{29}{subsubsection.5.16.2.2}%
+\contentsline {subsubsection}{\numberline {5.16.2.3}InputSource()}{29}{subsubsection.5.16.2.3}%
+\contentsline {subsubsection}{\numberline {5.16.2.4}nextFrame()}{29}{subsubsection.5.16.2.4}%
+\contentsline {chapter}{\numberline {6}File Documentation}{31}{chapter.6}%
+\contentsline {section}{\numberline {6.1}File\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Loader.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{31}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Film\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Statistic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Eval.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{32}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Haar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Detector.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{34}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Result\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Displayer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{34}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Change\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Detect.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{35}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Shot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classifier.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{35}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Shot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Evaluator.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{35}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dataset\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Eval.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{36}{section.6.8}%
+\contentsline {section}{\numberline {6.9}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Structs.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{36}{section.6.9}%
+\contentsline {section}{\numberline {6.10}open\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}CV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{37}{section.6.10}%
+\contentsline {section}{\numberline {6.11}open\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}CV\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Priv.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{37}{section.6.11}%

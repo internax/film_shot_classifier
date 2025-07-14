@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['image_0',['image',['../class_preprocessing.html#aac52479d9834ffde3b7e5964b8d31d92',1,'Preprocessing']]],
-  ['input_5foversample_1',['input_oversample',['../struct_film_statistics_eval_config.html#a4f254e4691f3aadc7834dec7bf5d5c5a',1,'FilmStatisticsEvalConfig']]],
-  ['input_5fstep_2',['input_step',['../struct_film_statistics_eval_config.html#a2d5bdc88d82f11440608b4459a85b1b0',1,'FilmStatisticsEvalConfig']]]
+  ['label_0',['label',['../struct_detected_feature.html#a9e848d9e5561e71b1ab8f6985233225d',1,'DetectedFeature']]],
+  ['largest_5fobject_5farea_1',['largest_object_area',['../struct_shot_features.html#ae666409f1b873e0fd73580447de4e880',1,'ShotFeatures']]]
 ];

@@ -248,23 +248,26 @@ public:
     
     
     // -- temporary --
-    /**
-     * @brief Gets the entropy timeline.
-     * @return Reference to vector of timestamp and entropy pairs.
-     */
-    std::vector<std::pair<double, double>> & getEntropy(){return enthropy_timeline; };
-
-    /**
-     * @brief Gets the entropy variance timeline.
-     * @return Reference to vector of timestamp and entropy variance pairs.
-     */
-    std::vector<std::pair<double, double>> & getEntropyVAriance(){return enthropy_variance_timeline; };
-
-    /**
-     * @brief Gets the shot type timeline.
-     * @return Reference to vector of timestamp and shot type pairs.
-     */
-    std::vector<std::pair<double, ShotType>> & getShotType(){return shot_type_timeline;}
+//    /**
+//     * @brief Gets the entropy timeline.
+//     * @return Reference to vector of timestamp and entropy pairs.
+//     */
+//    std::vector<std::pair<double, double>> & getEntropy(){return enthropy_timeline; };
+//
+//    /**
+//     * @brief Gets the entropy variance timeline.
+//     * @return Reference to vector of timestamp and entropy variance pairs.
+//     */
+//    std::vector<std::pair<double, double>> & getEntropyVAriance(){return enthropy_variance_timeline; };
+//
+//    /**
+//     * @brief Gets the shot type timeline.
+//     * @return Reference to vector of timestamp and shot type pairs.
+//     */
+//    std::vector<std::pair<double, ShotType>> & getShotType(){return shot_type_timeline;}
+//    
+//    std::vector<std::pair<double, std::map<ShotType, double>>> & getProbTimeline(){return prob_timeline;};
+//    
     // -- temporary --
 };
 

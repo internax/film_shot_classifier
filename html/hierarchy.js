@@ -1,6 +1,5 @@
 var hierarchy =
 [
-    [ "classification_result", "structclassification__result.html", null ],
     [ "ClassificationResult", "struct_classification_result.html", null ],
     [ "DetectedFeature", "struct_detected_feature.html", null ],
     [ "FilmStatistics", "class_film_statistics.html", null ],
@@ -16,7 +15,6 @@ var hierarchy =
     [ "ResultDisplayer", "class_result_displayer.html", null ],
     [ "ShotClassifier", "class_shot_classifier.html", null ],
     [ "ShotEvaluator", "class_shot_evaluator.html", null ],
-    [ "ShotFeatureExtractor", "class_shot_feature_extractor.html", null ],
     [ "ShotFeatures", "struct_shot_features.html", null ],
     [ "TestDatasetEval", "class_test_dataset_eval.html", null ]
 ];

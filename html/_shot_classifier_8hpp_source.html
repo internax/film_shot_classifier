@@ -111,7 +111,8 @@ $(function(){initNavTree('_shot_classifier_8hpp_source.html',''); initResizable(
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">class </span><a class="code hl_class" href="class_shot_classifier.html">ShotClassifier</a></div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_shot_classifier.html">    7</a></span><span class="keyword">class </span>ShotClassifier</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">int</span> smallest_face_threshold; <span class="comment">// minimal area for smallest face</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">int</span> medium_face_threshold;   <span class="comment">// minimal area for medium shot</span></div>
@@ -120,12 +121,11 @@ $(function(){initNavTree('_shot_classifier_8hpp_source.html',''); initResizable(
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    ShotClassifier(<span class="keywordtype">int</span> smallest_thresh = 5000, <span class="keywordtype">int</span> closeup_thresh = 30000);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_shot_classifier.html#ae0c96ea1a429bba7ef9e7f7801f7b12c">classify</a>(<span class="keyword">const</span> std::vector&lt;cv::Rect&gt;&amp; shot_features);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">int</span> classify(<span class="keyword">const</span> std::vector&lt;cv::Rect&gt;&amp; shot_features);</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
+</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif </span><span class="comment">/* ShotClassifier_hpp */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aclass_shot_classifier_html"><div class="ttname"><a href="class_shot_classifier.html">ShotClassifier</a></div><div class="ttdoc">Classifies the type of cinematic shot based on extracted visual features.</div><div class="ttdef"><b>Definition</b> FeatureProccesorAndClassifier.hpp:67</div></div>
-<div class="ttc" id="aclass_shot_classifier_html_ae0c96ea1a429bba7ef9e7f7801f7b12c"><div class="ttname"><a href="class_shot_classifier.html#ae0c96ea1a429bba7ef9e7f7801f7b12c">ShotClassifier::classify</a></div><div class="ttdeci">classification_result classify(const ShotFeatures &amp;features) const</div><div class="ttdoc">Classifies the shot type using extracted features.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

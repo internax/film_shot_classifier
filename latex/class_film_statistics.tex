@@ -17,27 +17,21 @@ Collects and analyzes shot type data across a sequence of video frames.
 \begin{DoxyCompactList}\small\item\em Default constructor (analyzes every frame). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_film_statistics_acb7f83bb659b3891872efb394ed4c8b2}{add\+Configuration\+Struct}} (\mbox{\hyperlink{struct_film_statistics_eval_config}{Film\+Statistics\+Eval\+Config}} const \&cfg)
 \begin{DoxyCompactList}\small\item\em Adds configuration parameters for the evaluation. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_film_statistics_a9defb8fa801d41bf211cfc52c2e9ee21}{add\+Frame\+Result}} (const double timestamp\+Ms, const \mbox{\hyperlink{structclassification__result}{classification\+\_\+result}} \&result)
+void \mbox{\hyperlink{class_film_statistics_ae8499b31d0c39c35c4d483632ed6f1c8}{add\+Frame\+Result}} (const double timestamp\+Ms, const \mbox{\hyperlink{struct_classification_result}{Classification\+Result}} \&result)
 \begin{DoxyCompactList}\small\item\em Adds the classification result for a single frame. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_film_statistics_a96df1a57a7848b604518bd8a0eb27b71}{export\+To\+CSV}} (const std\+::string \&path) const
 \begin{DoxyCompactList}\small\item\em Exports all collected statistics to a CSV file. \end{DoxyCompactList}\item 
 \Hypertarget{class_film_statistics_a179f692db9d5bf9784e67092c1f2d7be}\label{class_film_statistics_a179f692db9d5bf9784e67092c1f2d7be} 
 void {\bfseries print\+Summary} () const
-\begin{DoxyCompactList}\small\item\em Prints a textual summary of the shot distribution to the console. \end{DoxyCompactList}\item 
-std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \& \mbox{\hyperlink{class_film_statistics_a7ac648424f559be729fd15a65e493d05}{get\+Entropy}} ()
-\begin{DoxyCompactList}\small\item\em Gets the entropy timeline. \end{DoxyCompactList}\item 
-std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \& \mbox{\hyperlink{class_film_statistics_ae2bf70b89811a94f3bfb22a1b227a557}{get\+Entropy\+VAriance}} ()
-\begin{DoxyCompactList}\small\item\em Gets the entropy variance timeline. \end{DoxyCompactList}\item 
-std\+::vector$<$ std\+::pair$<$ double, Shot\+Type $>$ $>$ \& \mbox{\hyperlink{class_film_statistics_a72031c8608d41d3cdb67f7e68dc84524}{get\+Shot\+Type}} ()
-\begin{DoxyCompactList}\small\item\em Gets the shot type timeline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Prints a textual summary of the shot distribution to the console. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_film_statistics_ac6ca8de76bd78a50a2380c7ceb30ca7a}{normalize\+Probs}} (std\+::map$<$ Shot\+Type, double $>$ \&aggregated\+\_\+probs)
 \begin{DoxyCompactList}\small\item\em Normalizes the aggregated probabilities so they sum to 1. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_film_statistics_aab7b11bf4851767877e302cbded9c790}{aggregate\+Sliding\+Window\+Probs}} (std\+::deque$<$ \mbox{\hyperlink{structclassification__result}{classification\+\_\+result}} $>$ \&sliding\+\_\+window, std\+::map$<$ Shot\+Type, double $>$ \&aggregated\+\_\+probs)
+void \mbox{\hyperlink{class_film_statistics_a88ba60b6ebb17bbb5707897b8b05e554}{aggregate\+Sliding\+Window\+Probs}} (std\+::deque$<$ \mbox{\hyperlink{struct_classification_result}{Classification\+Result}} $>$ \&sliding\+\_\+window, std\+::map$<$ Shot\+Type, double $>$ \&aggregated\+\_\+probs)
 \begin{DoxyCompactList}\small\item\em Aggregates probabilities from a sliding window of classification results. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_film_statistics_ab6e08c0876613733d85886378ef1eb20}{find\+Shot\+Type\+Max\+Prob}} (std\+::map$<$ Shot\+Type, double $>$ \&aggregated\+\_\+probs, \mbox{\hyperlink{structclassification__result}{classification\+\_\+result}} \&sample)
+void \mbox{\hyperlink{class_film_statistics_ac6bb0d9c24a24624b899ad9301fabf0b}{find\+Shot\+Type\+Max\+Prob}} (std\+::map$<$ Shot\+Type, double $>$ \&aggregated\+\_\+probs, \mbox{\hyperlink{struct_classification_result}{Classification\+Result}} \&sample)
 \begin{DoxyCompactList}\small\item\em Finds the shot type with the maximum probability from aggregated probabilities and updates the sample. \end{DoxyCompactList}\item 
 \Hypertarget{class_film_statistics_a0db3c6c590435d26d69d2548f9234102}\label{class_film_statistics_a0db3c6c590435d26d69d2548f9234102} 
 void {\bfseries oversample\+Input\+Data} ()
@@ -82,11 +76,11 @@ std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ {\bfseries enthropy\+\_\+
 \Hypertarget{class_film_statistics_a9e8b09391abd96b4272e4704f898031c}\label{class_film_statistics_a9e8b09391abd96b4272e4704f898031c} 
 std\+::vector$<$ std\+::pair$<$ double, bool $>$ $>$ {\bfseries cut\+\_\+detection\+\_\+timeline}
 \begin{DoxyCompactList}\small\item\em Timeline of cut detection flags at given timestamps. Each entry maps a timestamp (double) to a boolean indicating if a cut was detected. \end{DoxyCompactList}\item 
-\Hypertarget{class_film_statistics_af686ff8e1b6a5e2254e60a0b9369f7e0}\label{class_film_statistics_af686ff8e1b6a5e2254e60a0b9369f7e0} 
-std\+::deque$<$ \mbox{\hyperlink{structclassification__result}{classification\+\_\+result}} $>$ {\bfseries oversampling\+\_\+sliding\+\_\+window}
+\Hypertarget{class_film_statistics_abf932366d1f4fc60f0d5c4542da4668f}\label{class_film_statistics_abf932366d1f4fc60f0d5c4542da4668f} 
+std\+::deque$<$ \mbox{\hyperlink{struct_classification_result}{Classification\+Result}} $>$ {\bfseries oversampling\+\_\+sliding\+\_\+window}
 \begin{DoxyCompactList}\small\item\em Sliding window storing classification results for oversampling. \end{DoxyCompactList}\item 
-\Hypertarget{class_film_statistics_a249a2965029b9cdf8456ceb82f08b5ab}\label{class_film_statistics_a249a2965029b9cdf8456ceb82f08b5ab} 
-std\+::deque$<$ \mbox{\hyperlink{structclassification__result}{classification\+\_\+result}} $>$ {\bfseries entropy\+\_\+sliding\+\_\+window}
+\Hypertarget{class_film_statistics_ad74c76e2e3db29a68c476a6844151625}\label{class_film_statistics_ad74c76e2e3db29a68c476a6844151625} 
+std\+::deque$<$ \mbox{\hyperlink{struct_classification_result}{Classification\+Result}} $>$ {\bfseries entropy\+\_\+sliding\+\_\+window}
 \begin{DoxyCompactList}\small\item\em Sliding window storing classification results for entropy computation. \end{DoxyCompactList}\item 
 \Hypertarget{class_film_statistics_aa1a0ff2b1ec5d637bf0a11bda40090f8}\label{class_film_statistics_aa1a0ff2b1ec5d637bf0a11bda40090f8} 
 std\+::deque$<$ double $>$ {\bfseries entropy\+\_\+variance\+\_\+sliding\+\_\+window}
@@ -97,8 +91,8 @@ int {\bfseries total\+\_\+frames} = 0
 \Hypertarget{class_film_statistics_a49ae808728298283c5ae0205b839d98e}\label{class_film_statistics_a49ae808728298283c5ae0205b839d98e} 
 int {\bfseries evaluated\+\_\+frames} = 0
 \begin{DoxyCompactList}\small\item\em Number of frames that have been evaluated and included in statistics. \end{DoxyCompactList}\item 
-\Hypertarget{class_film_statistics_a8bd79c0fd3d7a7f14eef6bcc5bcedab1}\label{class_film_statistics_a8bd79c0fd3d7a7f14eef6bcc5bcedab1} 
-\mbox{\hyperlink{structclassification__result}{classification\+\_\+result}} {\bfseries current\+\_\+sample\+\_\+oversampled}
+\Hypertarget{class_film_statistics_afd054fcd18074d17a831ab0a26df2472}\label{class_film_statistics_afd054fcd18074d17a831ab0a26df2472} 
+\mbox{\hyperlink{struct_classification_result}{Classification\+Result}} {\bfseries current\+\_\+sample\+\_\+oversampled}
 \begin{DoxyCompactList}\small\item\em Current oversampled classification result being processed. \end{DoxyCompactList}\item 
 \Hypertarget{class_film_statistics_ab49a90ba0ee00a25c711b224e8eaf616}\label{class_film_statistics_ab49a90ba0ee00a25c711b224e8eaf616} 
 double {\bfseries entropy} = 0.\+0
@@ -135,7 +129,7 @@ Example usage\+:
 \DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{class_film_statistics_a1d383997c5e40127f0f1eb53a6e4daf4}{FilmStatistics}}\ stats;}
 \DoxyCodeLine{stats.\mbox{\hyperlink{class_film_statistics_acb7f83bb659b3891872efb394ed4c8b2}{addConfigurationStruct}}(cfg);}
-\DoxyCodeLine{stats.\mbox{\hyperlink{class_film_statistics_a9defb8fa801d41bf211cfc52c2e9ee21}{addFrameResult}}(timestamp,\ result);}
+\DoxyCodeLine{stats.\mbox{\hyperlink{class_film_statistics_ae8499b31d0c39c35c4d483632ed6f1c8}{addFrameResult}}(timestamp,\ result);}
 \DoxyCodeLine{stats.\mbox{\hyperlink{class_film_statistics_a179f692db9d5bf9784e67092c1f2d7be}{printSummary}}();}
 \DoxyCodeLine{stats.\mbox{\hyperlink{class_film_statistics_a96df1a57a7848b604518bd8a0eb27b71}{exportToCSV}}(\textcolor{stringliteral}{"{}shots.csv"{}});}
 
@@ -171,11 +165,11 @@ Adds configuration parameters for the evaluation.
 {\em cfg} & Configuration struct containing evaluation parameters. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_film_statistics_a9defb8fa801d41bf211cfc52c2e9ee21}\index{FilmStatistics@{FilmStatistics}!addFrameResult@{addFrameResult}}
+\Hypertarget{class_film_statistics_ae8499b31d0c39c35c4d483632ed6f1c8}\index{FilmStatistics@{FilmStatistics}!addFrameResult@{addFrameResult}}
 \index{addFrameResult@{addFrameResult}!FilmStatistics@{FilmStatistics}}
 \doxysubsubsection{\texorpdfstring{addFrameResult()}{addFrameResult()}}
-{\footnotesize\ttfamily \label{class_film_statistics_a9defb8fa801d41bf211cfc52c2e9ee21} 
-void Film\+Statistics\+::add\+Frame\+Result (\begin{DoxyParamCaption}\item[{const double}]{timestamp\+Ms}{, }\item[{const \mbox{\hyperlink{structclassification__result}{classification\+\_\+result}} \&}]{result}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_film_statistics_ae8499b31d0c39c35c4d483632ed6f1c8} 
+void Film\+Statistics\+::add\+Frame\+Result (\begin{DoxyParamCaption}\item[{const double}]{timestamp\+Ms}{, }\item[{const \mbox{\hyperlink{struct_classification_result}{Classification\+Result}} \&}]{result}{}\end{DoxyParamCaption})}
 
 
 
@@ -188,11 +182,11 @@ Adds the classification result for a single frame.
 {\em result} & Classification result containing shot type. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_film_statistics_aab7b11bf4851767877e302cbded9c790}\index{FilmStatistics@{FilmStatistics}!aggregateSlidingWindowProbs@{aggregateSlidingWindowProbs}}
+\Hypertarget{class_film_statistics_a88ba60b6ebb17bbb5707897b8b05e554}\index{FilmStatistics@{FilmStatistics}!aggregateSlidingWindowProbs@{aggregateSlidingWindowProbs}}
 \index{aggregateSlidingWindowProbs@{aggregateSlidingWindowProbs}!FilmStatistics@{FilmStatistics}}
 \doxysubsubsection{\texorpdfstring{aggregateSlidingWindowProbs()}{aggregateSlidingWindowProbs()}}
-{\footnotesize\ttfamily \label{class_film_statistics_aab7b11bf4851767877e302cbded9c790} 
-void Film\+Statistics\+::aggregate\+Sliding\+Window\+Probs (\begin{DoxyParamCaption}\item[{std\+::deque$<$ \mbox{\hyperlink{structclassification__result}{classification\+\_\+result}} $>$ \&}]{sliding\+\_\+window}{, }\item[{std\+::map$<$ Shot\+Type, double $>$ \&}]{aggregated\+\_\+probs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{class_film_statistics_a88ba60b6ebb17bbb5707897b8b05e554} 
+void Film\+Statistics\+::aggregate\+Sliding\+Window\+Probs (\begin{DoxyParamCaption}\item[{std\+::deque$<$ \mbox{\hyperlink{struct_classification_result}{Classification\+Result}} $>$ \&}]{sliding\+\_\+window}{, }\item[{std\+::map$<$ Shot\+Type, double $>$ \&}]{aggregated\+\_\+probs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -297,11 +291,11 @@ The CSV includes both timeline data and summary shot counts.
 {\em path} & File path to export the data to. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_film_statistics_ab6e08c0876613733d85886378ef1eb20}\index{FilmStatistics@{FilmStatistics}!findShotTypeMaxProb@{findShotTypeMaxProb}}
+\Hypertarget{class_film_statistics_ac6bb0d9c24a24624b899ad9301fabf0b}\index{FilmStatistics@{FilmStatistics}!findShotTypeMaxProb@{findShotTypeMaxProb}}
 \index{findShotTypeMaxProb@{findShotTypeMaxProb}!FilmStatistics@{FilmStatistics}}
 \doxysubsubsection{\texorpdfstring{findShotTypeMaxProb()}{findShotTypeMaxProb()}}
-{\footnotesize\ttfamily \label{class_film_statistics_ab6e08c0876613733d85886378ef1eb20} 
-void Film\+Statistics\+::find\+Shot\+Type\+Max\+Prob (\begin{DoxyParamCaption}\item[{std\+::map$<$ Shot\+Type, double $>$ \&}]{aggregated\+\_\+probs}{, }\item[{\mbox{\hyperlink{structclassification__result}{classification\+\_\+result}} \&}]{sample}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{class_film_statistics_ac6bb0d9c24a24624b899ad9301fabf0b} 
+void Film\+Statistics\+::find\+Shot\+Type\+Max\+Prob (\begin{DoxyParamCaption}\item[{std\+::map$<$ Shot\+Type, double $>$ \&}]{aggregated\+\_\+probs}{, }\item[{\mbox{\hyperlink{struct_classification_result}{Classification\+Result}} \&}]{sample}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -314,45 +308,6 @@ Finds the shot type with the maximum probability from aggregated probabilities a
 {\em sample} & Classification result to update with the shot type having max probability. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_film_statistics_a7ac648424f559be729fd15a65e493d05}\index{FilmStatistics@{FilmStatistics}!getEntropy@{getEntropy}}
-\index{getEntropy@{getEntropy}!FilmStatistics@{FilmStatistics}}
-\doxysubsubsection{\texorpdfstring{getEntropy()}{getEntropy()}}
-{\footnotesize\ttfamily \label{class_film_statistics_a7ac648424f559be729fd15a65e493d05} 
-std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \& Film\+Statistics\+::get\+Entropy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Gets the entropy timeline. 
-
-\begin{DoxyReturn}{Returns}
-Reference to vector of timestamp and entropy pairs. 
-\end{DoxyReturn}
-\Hypertarget{class_film_statistics_ae2bf70b89811a94f3bfb22a1b227a557}\index{FilmStatistics@{FilmStatistics}!getEntropyVAriance@{getEntropyVAriance}}
-\index{getEntropyVAriance@{getEntropyVAriance}!FilmStatistics@{FilmStatistics}}
-\doxysubsubsection{\texorpdfstring{getEntropyVAriance()}{getEntropyVAriance()}}
-{\footnotesize\ttfamily \label{class_film_statistics_ae2bf70b89811a94f3bfb22a1b227a557} 
-std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \& Film\+Statistics\+::get\+Entropy\+VAriance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Gets the entropy variance timeline. 
-
-\begin{DoxyReturn}{Returns}
-Reference to vector of timestamp and entropy variance pairs. 
-\end{DoxyReturn}
-\Hypertarget{class_film_statistics_a72031c8608d41d3cdb67f7e68dc84524}\index{FilmStatistics@{FilmStatistics}!getShotType@{getShotType}}
-\index{getShotType@{getShotType}!FilmStatistics@{FilmStatistics}}
-\doxysubsubsection{\texorpdfstring{getShotType()}{getShotType()}}
-{\footnotesize\ttfamily \label{class_film_statistics_a72031c8608d41d3cdb67f7e68dc84524} 
-std\+::vector$<$ std\+::pair$<$ double, Shot\+Type $>$ $>$ \& Film\+Statistics\+::get\+Shot\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Gets the shot type timeline. 
-
-\begin{DoxyReturn}{Returns}
-Reference to vector of timestamp and shot type pairs. 
-\end{DoxyReturn}
 \Hypertarget{class_film_statistics_ac6ca8de76bd78a50a2380c7ceb30ca7a}\index{FilmStatistics@{FilmStatistics}!normalizeProbs@{normalizeProbs}}
 \index{normalizeProbs@{normalizeProbs}!FilmStatistics@{FilmStatistics}}
 \doxysubsubsection{\texorpdfstring{normalizeProbs()}{normalizeProbs()}}

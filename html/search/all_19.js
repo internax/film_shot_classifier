@@ -5,10 +5,9 @@ var searchData=
   ['shot_5ftype_5ftimeline_2',['shot_type_timeline',['../class_film_statistics.html#a13f33560f14dc8a5754647119bb8f0f5',1,'FilmStatistics']]],
   ['shotclassifier_3',['ShotClassifier',['../class_shot_classifier.html',1,'']]],
   ['shotevaluator_4',['ShotEvaluator',['../class_shot_evaluator.html',1,'']]],
-  ['shotfeatureextractor_5',['ShotFeatureExtractor',['../class_shot_feature_extractor.html',1,'']]],
-  ['shotfeatures_6',['ShotFeatures',['../struct_shot_features.html',1,'']]],
-  ['source_5fpath_7',['source_path',['../class_input_source.html#a05c0b917fe5de0b326d343b07a06107e',1,'InputSource']]],
-  ['start_5fdelay_8',['start_delay',['../class_film_statistics.html#a7a0701220e79c1fe5d6fd5e4a80fef17',1,'FilmStatistics']]],
-  ['summary_20peter_9',['7. Results Summary - Peter',['../md__r_e_a_d_m_e.html#autotoc_md23',1,'']]],
-  ['system_20overview_20marek_10',['3. System Overview - Marek',['../md__r_e_a_d_m_e.html#autotoc_md13',1,'']]]
+  ['shotfeatures_5',['ShotFeatures',['../struct_shot_features.html',1,'']]],
+  ['source_5fpath_6',['source_path',['../class_input_source.html#a05c0b917fe5de0b326d343b07a06107e',1,'InputSource']]],
+  ['start_5fdelay_7',['start_delay',['../class_film_statistics.html#a7a0701220e79c1fe5d6fd5e4a80fef17',1,'FilmStatistics']]],
+  ['summary_20miroslaw_8',['7. Results Summary - Miroslaw',['../md__r_e_a_d_m_e.html#autotoc_md22',1,'']]],
+  ['system_20overview_20marek_9',['3. System Overview - Marek',['../md__r_e_a_d_m_e.html#autotoc_md12',1,'']]]
 ];

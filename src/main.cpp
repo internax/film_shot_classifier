@@ -19,6 +19,7 @@
 #include "UserStructs.hpp"
 #include "FilmStatisticEval.hpp"
 #include "SceneChangeDetect.hpp"
+#include "ResultDisplayer.hpp"
 
 
 constexpr int optimizer_distance_between_samples = 3;
@@ -112,7 +113,10 @@ int main()
     std::cout <<   "| " << counter_proc << "              | " << counter_all << "         |" << ratio << "  | ";
     std::cout << elapsed << "     |\n\n";
 
-
+//    ResultDisplayer displayer(stats);
+//    cv::Mat plot = displayer.GetPlot(stats.getProbTimeline(), "x", "y", "graph");
+//    cv::imshow("plot", plot);
+//    cv::waitKey(0);
 
     return 0;
 }

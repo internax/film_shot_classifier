@@ -18,6 +18,15 @@ Inheritance diagram for Video\+Loader\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\Hypertarget{class_video_loader_a82b87e403726cbac3db4565637121cc6}\label{class_video_loader_a82b87e403726cbac3db4565637121cc6} 
+{\bfseries Video\+Loader} (const std\+::string \&path)
+\item 
+bool \mbox{\hyperlink{class_video_loader_a6c6676a1988b2bd8c43d31662a597c00}{has\+Next\+Frame}} () const override
+\begin{DoxyCompactList}\small\item\em Checks if the image is still available to be returned. \end{DoxyCompactList}\item 
+cv\+::\+Mat \& \mbox{\hyperlink{class_video_loader_ac2dfd1d7faa1a7da657b23b669321a1f}{next\+Frame}} () override
+\begin{DoxyCompactList}\small\item\em Returns the loaded image. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_video_loader_a355644db184a604d5a30759ef82b9819}{get\+Current\+Timestamp}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the timestamp of the image (usually 0). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_video_loader_af189bad1c5e1015d3b09227cb51d1075}{Input\+Source}} (const std\+::string \&path)
 \begin{DoxyCompactList}\small\item\em Constructs an input source with a file path. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_input_source}{Input\+Source}}}
@@ -26,13 +35,28 @@ Inheritance diagram for Video\+Loader\+:\begin{figure}[H]
 \mbox{\hyperlink{class_input_source_af189bad1c5e1015d3b09227cb51d1075}{Input\+Source}} (const std\+::string \&path)
 \begin{DoxyCompactList}\small\item\em Constructs an input source with a file path. \end{DoxyCompactList}\item 
 virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Input\+Source} ()=default
-\begin{DoxyCompactList}\small\item\em Virtual destructor for polymorphic use. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{class_input_source_abaec18bf62eec4100d689ad576b9169f}{has\+Next\+Frame}} () const =0
-\begin{DoxyCompactList}\small\item\em Checks whether there is a next frame to process. \end{DoxyCompactList}\item 
-virtual cv\+::\+Mat \& \mbox{\hyperlink{class_input_source_a46c3be398eac73b3b8d836c03ddcf351}{next\+Frame}} ()=0
-\begin{DoxyCompactList}\small\item\em Returns the next frame. \end{DoxyCompactList}\item 
-virtual double \mbox{\hyperlink{class_input_source_a79cfe9f30f49bf81f53676d81645dd17}{get\+Current\+Timestamp}} () const =0
-\begin{DoxyCompactList}\small\item\em Returns the current timestamp of the frame (in ms). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Virtual destructor for polymorphic use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_video_loader_af938a4eb537a3efff3408ab6ede028d5}\label{class_video_loader_af938a4eb537a3efff3408ab6ede028d5} 
+void {\bfseries open\+Video\+From\+Path} (const std\+::string \&path)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_video_loader_ab36aa2a49eb8d90eb63d141db4c3de79}\label{class_video_loader_ab36aa2a49eb8d90eb63d141db4c3de79} 
+std\+::string {\bfseries video\+\_\+path}
+\item 
+\Hypertarget{class_video_loader_ab36c45ff1034d3610a9f08c7fbe4a6d4}\label{class_video_loader_ab36c45ff1034d3610a9f08c7fbe4a6d4} 
+cv\+::\+Video\+Capture {\bfseries video}
+\item 
+\Hypertarget{class_video_loader_a81a7e48e4f6a77d7e314ea1ee2da38ed}\label{class_video_loader_a81a7e48e4f6a77d7e314ea1ee2da38ed} 
+cv\+::\+Mat {\bfseries current\+\_\+frame}
+\item 
+\Hypertarget{class_video_loader_adedc0f35eb82a55848a9a077ffe79714}\label{class_video_loader_adedc0f35eb82a55848a9a077ffe79714} 
+int {\bfseries current\+\_\+frame\+\_\+index}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_input_source}{Input\+Source}}}
 \begin{DoxyCompactItemize}
@@ -47,6 +71,40 @@ Placeholder for a video-\/based implementation of \doxylink{class_input_source}{
 This class will provide functionality to iterate over frames from a video file. Not implemented yet. 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_video_loader_a355644db184a604d5a30759ef82b9819}\index{VideoLoader@{VideoLoader}!getCurrentTimestamp@{getCurrentTimestamp}}
+\index{getCurrentTimestamp@{getCurrentTimestamp}!VideoLoader@{VideoLoader}}
+\doxysubsubsection{\texorpdfstring{getCurrentTimestamp()}{getCurrentTimestamp()}}
+{\footnotesize\ttfamily \label{class_video_loader_a355644db184a604d5a30759ef82b9819} 
+double Video\+Loader\+::get\+Current\+Timestamp (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the timestamp of the image (usually 0). 
+
+\begin{DoxyReturn}{Returns}
+Fixed timestamp value (e.\+g., 0 ms). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_input_source_a79cfe9f30f49bf81f53676d81645dd17}{Input\+Source}}.
+
+\Hypertarget{class_video_loader_a6c6676a1988b2bd8c43d31662a597c00}\index{VideoLoader@{VideoLoader}!hasNextFrame@{hasNextFrame}}
+\index{hasNextFrame@{hasNextFrame}!VideoLoader@{VideoLoader}}
+\doxysubsubsection{\texorpdfstring{hasNextFrame()}{hasNextFrame()}}
+{\footnotesize\ttfamily \label{class_video_loader_a6c6676a1988b2bd8c43d31662a597c00} 
+bool Video\+Loader\+::has\+Next\+Frame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the image is still available to be returned. 
+
+\begin{DoxyReturn}{Returns}
+True if the image hasn\textquotesingle{}t been returned yet. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_input_source_abaec18bf62eec4100d689ad576b9169f}{Input\+Source}}.
+
 \Hypertarget{class_video_loader_af189bad1c5e1015d3b09227cb51d1075}\index{VideoLoader@{VideoLoader}!InputSource@{InputSource}}
 \index{InputSource@{InputSource}!VideoLoader@{VideoLoader}}
 \doxysubsubsection{\texorpdfstring{InputSource()}{InputSource()}}
@@ -62,8 +120,26 @@ Constructs an input source with a file path.
 {\em path} & Path to the image or video file. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_video_loader_ac2dfd1d7faa1a7da657b23b669321a1f}\index{VideoLoader@{VideoLoader}!nextFrame@{nextFrame}}
+\index{nextFrame@{nextFrame}!VideoLoader@{VideoLoader}}
+\doxysubsubsection{\texorpdfstring{nextFrame()}{nextFrame()}}
+{\footnotesize\ttfamily \label{class_video_loader_ac2dfd1d7faa1a7da657b23b669321a1f} 
+cv\+::\+Mat \& Video\+Loader\+::next\+Frame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+
+Returns the loaded image. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the loaded image ({\ttfamily cv\+::\+Mat}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_input_source_a46c3be398eac73b3b8d836c03ddcf351}{Input\+Source}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/File\+Loader.\+hpp\end{DoxyCompactItemize}
+include/File\+Loader.\+hpp\item 
+src/File\+Loader.\+cpp\end{DoxyCompactItemize}

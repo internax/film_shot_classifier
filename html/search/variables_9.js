@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['shot_5fcounts_0',['shot_counts',['../class_film_statistics.html#a94f2720dab851559ae134d9a749a4ab7',1,'FilmStatistics']]],
-  ['shot_5ftype_5ftimeline_1',['shot_type_timeline',['../class_film_statistics.html#a13f33560f14dc8a5754647119bb8f0f5',1,'FilmStatistics']]],
-  ['source_5fpath_2',['source_path',['../class_input_source.html#a05c0b917fe5de0b326d343b07a06107e',1,'InputSource']]],
-  ['start_5fdelay_3',['start_delay',['../class_film_statistics.html#a7a0701220e79c1fe5d6fd5e4a80fef17',1,'FilmStatistics']]]
+  ['timestamp_5fms_0',['timestamp_ms',['../class_film_statistics.html#a79139e0e945f986a28ca53ad9a1cfdc9',1,'FilmStatistics']]],
+  ['total_5farea_1',['total_area',['../struct_shot_features.html#aec98631daf90df3107f149515a4970dc',1,'ShotFeatures']]],
+  ['total_5fframes_2',['total_frames',['../class_film_statistics.html#ac17c7e155c3770ebfeea33d95e0b8ada',1,'FilmStatistics']]],
+  ['total_5fobject_5farea_3',['total_object_area',['../struct_shot_features.html#a7751cb00e4a77b4f5fcd5ab733ff04ec',1,'ShotFeatures']]]
 ];

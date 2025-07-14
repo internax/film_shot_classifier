@@ -124,24 +124,45 @@ $(function(){initNavTree('_test_dataset_eval_8hpp_source.html',''); initResizabl
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
 <div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_test_dataset_eval.html">   42</a></span><span class="keyword">class </span><a class="code hl_class" href="class_test_dataset_eval.html">TestDatasetEval</a></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_test_dataset_eval.html">   42</a></span><span class="keyword">class </span>TestDatasetEval</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_test_dataset_eval.html#ac9f0fb2ccc90c9b454b7421a198c7819">   44</a></span>    std::vector&lt;classification_result&gt; <a class="code hl_variable" href="class_test_dataset_eval.html#ac9f0fb2ccc90c9b454b7421a198c7819">GroundTruth</a>; </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_test_dataset_eval.html#a81506ede54245109b6f927f6aeb3d126">   52</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_dataset_eval.html#a81506ede54245109b6f927f6aeb3d126">loadGroundTruth</a>(std::string load_path);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_test_dataset_eval.html#a2830727a817e6f6700a432d1009c573b">   58</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_dataset_eval.html#a2830727a817e6f6700a432d1009c573b">addImageSample</a>(cv::Mat Image);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_test_dataset_eval.html#ad22f6195a81ee64d7054135078fbd540">   64</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_test_dataset_eval.html#ad22f6195a81ee64d7054135078fbd540">GetEvalResult</a>();</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    ShotType desired_type;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">int</span> true_detect;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">int</span> counter;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    TestDatasetEval(ShotType type) : desired_type(type)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        true_detect = 0;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        counter = 0;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_test_dataset_eval.html#a1b31eee3e39082cf0773ef636d7223c9">   62</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_test_dataset_eval.html#a1b31eee3e39082cf0773ef636d7223c9">check</a>(ShotType input_type)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        counter ++;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">if</span>(input_type == desired_type)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            true_detect ++;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
 </div>
-<div class="ttc" id="aclass_test_dataset_eval_html"><div class="ttname"><a href="class_test_dataset_eval.html">TestDatasetEval</a></div><div class="ttdoc">Evaluates classification accuracy against a labeled test dataset.</div><div class="ttdef"><b>Definition</b> TestDatasetEval.hpp:43</div></div>
-<div class="ttc" id="aclass_test_dataset_eval_html_a2830727a817e6f6700a432d1009c573b"><div class="ttname"><a href="class_test_dataset_eval.html#a2830727a817e6f6700a432d1009c573b">TestDatasetEval::addImageSample</a></div><div class="ttdeci">void addImageSample(cv::Mat Image)</div><div class="ttdoc">Adds a predicted image classification result to the evaluation set.</div></div>
-<div class="ttc" id="aclass_test_dataset_eval_html_a81506ede54245109b6f927f6aeb3d126"><div class="ttname"><a href="class_test_dataset_eval.html#a81506ede54245109b6f927f6aeb3d126">TestDatasetEval::loadGroundTruth</a></div><div class="ttdeci">void loadGroundTruth(std::string load_path)</div><div class="ttdoc">Loads the ground truth classification labels from a file.</div></div>
-<div class="ttc" id="aclass_test_dataset_eval_html_ac9f0fb2ccc90c9b454b7421a198c7819"><div class="ttname"><a href="class_test_dataset_eval.html#ac9f0fb2ccc90c9b454b7421a198c7819">TestDatasetEval::GroundTruth</a></div><div class="ttdeci">std::vector&lt; classification_result &gt; GroundTruth</div><div class="ttdoc">Ground truth classification results for comparison.</div><div class="ttdef"><b>Definition</b> TestDatasetEval.hpp:44</div></div>
-<div class="ttc" id="aclass_test_dataset_eval_html_ad22f6195a81ee64d7054135078fbd540"><div class="ttname"><a href="class_test_dataset_eval.html#ad22f6195a81ee64d7054135078fbd540">TestDatasetEval::GetEvalResult</a></div><div class="ttdeci">double GetEvalResult()</div><div class="ttdoc">Computes and returns the evaluation result (e.g., accuracy).</div></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="class_test_dataset_eval.html#ad22f6195a81ee64d7054135078fbd540">   77</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_test_dataset_eval.html#ad22f6195a81ee64d7054135078fbd540">GetEvalResult</a>()</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(true_detect)/<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(counter);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
+</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
+</div>
+<div class="ttc" id="aclass_test_dataset_eval_html_a1b31eee3e39082cf0773ef636d7223c9"><div class="ttname"><a href="class_test_dataset_eval.html#a1b31eee3e39082cf0773ef636d7223c9">TestDatasetEval::check</a></div><div class="ttdeci">bool check(ShotType input_type)</div><div class="ttdoc">Adds a predicted image classification result to the evaluation set.</div><div class="ttdef"><b>Definition</b> TestDatasetEval.hpp:62</div></div>
+<div class="ttc" id="aclass_test_dataset_eval_html_ad22f6195a81ee64d7054135078fbd540"><div class="ttname"><a href="class_test_dataset_eval.html#ad22f6195a81ee64d7054135078fbd540">TestDatasetEval::GetEvalResult</a></div><div class="ttdeci">double GetEvalResult()</div><div class="ttdoc">Computes and returns the evaluation result (e.g., accuracy).</div><div class="ttdef"><b>Definition</b> TestDatasetEval.hpp:77</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

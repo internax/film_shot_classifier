@@ -104,6 +104,8 @@ $(function(){initNavTree('class_video_loader.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_video_loader-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">VideoLoader Class Reference</div></div>
 </div><!--header-->
@@ -125,6 +127,18 @@ Inheritance diagram for VideoLoader:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a82b87e403726cbac3db4565637121cc6" id="r_a82b87e403726cbac3db4565637121cc6"><td class="memItemLeft" align="right" valign="top"><a id="a82b87e403726cbac3db4565637121cc6" name="a82b87e403726cbac3db4565637121cc6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>VideoLoader</b> (const std::string &amp;path)</td></tr>
+<tr class="separator:a82b87e403726cbac3db4565637121cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c6676a1988b2bd8c43d31662a597c00" id="r_a6c6676a1988b2bd8c43d31662a597c00"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c6676a1988b2bd8c43d31662a597c00">hasNextFrame</a> () const override</td></tr>
+<tr class="memdesc:a6c6676a1988b2bd8c43d31662a597c00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the image is still available to be returned.  <br /></td></tr>
+<tr class="separator:a6c6676a1988b2bd8c43d31662a597c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2dfd1d7faa1a7da657b23b669321a1f" id="r_ac2dfd1d7faa1a7da657b23b669321a1f"><td class="memItemLeft" align="right" valign="top">cv::Mat &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2dfd1d7faa1a7da657b23b669321a1f">nextFrame</a> () override</td></tr>
+<tr class="memdesc:ac2dfd1d7faa1a7da657b23b669321a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the loaded image.  <br /></td></tr>
+<tr class="separator:ac2dfd1d7faa1a7da657b23b669321a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a355644db184a604d5a30759ef82b9819" id="r_a355644db184a604d5a30759ef82b9819"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a355644db184a604d5a30759ef82b9819">getCurrentTimestamp</a> () const override</td></tr>
+<tr class="memdesc:a355644db184a604d5a30759ef82b9819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the timestamp of the image (usually 0).  <br /></td></tr>
+<tr class="separator:a355644db184a604d5a30759ef82b9819"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af189bad1c5e1015d3b09227cb51d1075" id="r_af189bad1c5e1015d3b09227cb51d1075"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af189bad1c5e1015d3b09227cb51d1075">InputSource</a> (const std::string &amp;path)</td></tr>
 <tr class="memdesc:af189bad1c5e1015d3b09227cb51d1075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an input source with a file path.  <br /></td></tr>
 <tr class="separator:af189bad1c5e1015d3b09227cb51d1075"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,15 +150,27 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~InputSource</b> ()=default</td></tr>
 <tr class="memdesc:a02eec90ae2d3419c82e7fc7f09204e1f inherit pub_methods_class_input_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for polymorphic use. <br /></td></tr>
 <tr class="separator:a02eec90ae2d3419c82e7fc7f09204e1f inherit pub_methods_class_input_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abaec18bf62eec4100d689ad576b9169f inherit pub_methods_class_input_source" id="r_abaec18bf62eec4100d689ad576b9169f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_source.html#abaec18bf62eec4100d689ad576b9169f">hasNextFrame</a> () const =0</td></tr>
-<tr class="memdesc:abaec18bf62eec4100d689ad576b9169f inherit pub_methods_class_input_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether there is a next frame to process.  <br /></td></tr>
-<tr class="separator:abaec18bf62eec4100d689ad576b9169f inherit pub_methods_class_input_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46c3be398eac73b3b8d836c03ddcf351 inherit pub_methods_class_input_source" id="r_a46c3be398eac73b3b8d836c03ddcf351"><td class="memItemLeft" align="right" valign="top">virtual cv::Mat &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_source.html#a46c3be398eac73b3b8d836c03ddcf351">nextFrame</a> ()=0</td></tr>
-<tr class="memdesc:a46c3be398eac73b3b8d836c03ddcf351 inherit pub_methods_class_input_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next frame.  <br /></td></tr>
-<tr class="separator:a46c3be398eac73b3b8d836c03ddcf351 inherit pub_methods_class_input_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79cfe9f30f49bf81f53676d81645dd17 inherit pub_methods_class_input_source" id="r_a79cfe9f30f49bf81f53676d81645dd17"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_source.html#a79cfe9f30f49bf81f53676d81645dd17">getCurrentTimestamp</a> () const =0</td></tr>
-<tr class="memdesc:a79cfe9f30f49bf81f53676d81645dd17 inherit pub_methods_class_input_source"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current timestamp of the frame (in ms).  <br /></td></tr>
-<tr class="separator:a79cfe9f30f49bf81f53676d81645dd17 inherit pub_methods_class_input_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:af938a4eb537a3efff3408ab6ede028d5" id="r_af938a4eb537a3efff3408ab6ede028d5"><td class="memItemLeft" align="right" valign="top"><a id="af938a4eb537a3efff3408ab6ede028d5" name="af938a4eb537a3efff3408ab6ede028d5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>openVideoFromPath</b> (const std::string &amp;path)</td></tr>
+<tr class="separator:af938a4eb537a3efff3408ab6ede028d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ab36aa2a49eb8d90eb63d141db4c3de79" id="r_ab36aa2a49eb8d90eb63d141db4c3de79"><td class="memItemLeft" align="right" valign="top"><a id="ab36aa2a49eb8d90eb63d141db4c3de79" name="ab36aa2a49eb8d90eb63d141db4c3de79"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>video_path</b></td></tr>
+<tr class="separator:ab36aa2a49eb8d90eb63d141db4c3de79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab36c45ff1034d3610a9f08c7fbe4a6d4" id="r_ab36c45ff1034d3610a9f08c7fbe4a6d4"><td class="memItemLeft" align="right" valign="top"><a id="ab36c45ff1034d3610a9f08c7fbe4a6d4" name="ab36c45ff1034d3610a9f08c7fbe4a6d4"></a>
+cv::VideoCapture&#160;</td><td class="memItemRight" valign="bottom"><b>video</b></td></tr>
+<tr class="separator:ab36c45ff1034d3610a9f08c7fbe4a6d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81a7e48e4f6a77d7e314ea1ee2da38ed" id="r_a81a7e48e4f6a77d7e314ea1ee2da38ed"><td class="memItemLeft" align="right" valign="top"><a id="a81a7e48e4f6a77d7e314ea1ee2da38ed" name="a81a7e48e4f6a77d7e314ea1ee2da38ed"></a>
+cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><b>current_frame</b></td></tr>
+<tr class="separator:a81a7e48e4f6a77d7e314ea1ee2da38ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adedc0f35eb82a55848a9a077ffe79714" id="r_adedc0f35eb82a55848a9a077ffe79714"><td class="memItemLeft" align="right" valign="top"><a id="adedc0f35eb82a55848a9a077ffe79714" name="adedc0f35eb82a55848a9a077ffe79714"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>current_frame_index</b></td></tr>
+<tr class="separator:adedc0f35eb82a55848a9a077ffe79714"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -158,6 +184,66 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>source_path</b
 <div class="textblock"><p>Placeholder for a video-based implementation of <a class="el" href="class_input_source.html" title="Abstract base class for loading image or video input in a unified way.">InputSource</a>. </p>
 <p>This class will provide functionality to iterate over frames from a video file. Not implemented yet. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a355644db184a604d5a30759ef82b9819" name="a355644db184a604d5a30759ef82b9819"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a355644db184a604d5a30759ef82b9819">&#9670;&#160;</a></span>getCurrentTimestamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double VideoLoader::getCurrentTimestamp </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the timestamp of the image (usually 0). </p>
+<dl class="section return"><dt>Returns</dt><dd>Fixed timestamp value (e.g., 0 ms). </dd></dl>
+
+<p>Implements <a class="el" href="class_input_source.html#a79cfe9f30f49bf81f53676d81645dd17">InputSource</a>.</p>
+
+</div>
+</div>
+<a id="a6c6676a1988b2bd8c43d31662a597c00" name="a6c6676a1988b2bd8c43d31662a597c00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c6676a1988b2bd8c43d31662a597c00">&#9670;&#160;</a></span>hasNextFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool VideoLoader::hasNextFrame </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if the image is still available to be returned. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the image hasn't been returned yet. </dd></dl>
+
+<p>Implements <a class="el" href="class_input_source.html#abaec18bf62eec4100d689ad576b9169f">InputSource</a>.</p>
+
+</div>
+</div>
 <a id="af189bad1c5e1015d3b09227cb51d1075" name="af189bad1c5e1015d3b09227cb51d1075"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af189bad1c5e1015d3b09227cb51d1075">&#9670;&#160;</a></span>InputSource()</h2>
 
@@ -191,8 +277,39 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>source_path</b
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="ac2dfd1d7faa1a7da657b23b669321a1f" name="ac2dfd1d7faa1a7da657b23b669321a1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2dfd1d7faa1a7da657b23b669321a1f">&#9670;&#160;</a></span>nextFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat &amp; VideoLoader::nextFrame </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the loaded image. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the loaded image (<code>cv::Mat</code>). </dd></dl>
+
+<p>Implements <a class="el" href="class_input_source.html#a46c3be398eac73b3b8d836c03ddcf351">InputSource</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="_file_loader_8hpp_source.html">FileLoader.hpp</a></li>
+<li>src/<b>FileLoader.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

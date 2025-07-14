@@ -17,8 +17,17 @@ Provides graphical or textual output for film analysis results.
 \Hypertarget{class_result_displayer_af40587f6a393ad35316ba8c48cfabd09}\label{class_result_displayer_af40587f6a393ad35316ba8c48cfabd09} 
 {\bfseries \texorpdfstring{$\sim$}{\string~}\+Result\+Displayer} ()=default
 \begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
-\Hypertarget{class_result_displayer_a24531dbae070c96b9b0774b0a0219c44}\label{class_result_displayer_a24531dbae070c96b9b0774b0a0219c44} 
-cv\+::\+Mat {\bfseries Get\+Plot} ()
+\Hypertarget{class_result_displayer_a940b68b477f387ce279acf78b875b787}\label{class_result_displayer_a940b68b477f387ce279acf78b875b787} 
+cv\+::\+Mat {\bfseries Get\+Plot} (std\+::vector$<$ std\+::pair$<$ double, std\+::map$<$ Shot\+Type, double $>$ $>$ $>$ \&data\+\_\+series, std\+::string xlabel, std\+::string ylabel, std\+::string title)
+\item 
+\Hypertarget{class_result_displayer_af1f9e918c36fb02657118b78497be289}\label{class_result_displayer_af1f9e918c36fb02657118b78497be289} 
+cv\+::\+Mat {\bfseries Get\+Plot} (std\+::vector$<$ std\+::pair$<$ double, Shot\+Type $>$ $>$, std\+::string xlabel, std\+::string ylabel, std\+::string title)
+\item 
+\Hypertarget{class_result_displayer_a6eea9233c92239744cfafa0aaabb47bd}\label{class_result_displayer_a6eea9233c92239744cfafa0aaabb47bd} 
+cv\+::\+Mat {\bfseries Get\+Plot} (std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \&data\+\_\+series, std\+::string xlabel, std\+::string ylabel, std\+::string title)
+\item 
+\Hypertarget{class_result_displayer_a64388b8cc80baa353cb786577f5663b7}\label{class_result_displayer_a64388b8cc80baa353cb786577f5663b7} 
+cv\+::\+Mat {\bfseries Get\+Plot} (std\+::vector$<$ std\+::pair$<$ double, bool $>$ $>$ \&data\+\_\+series, std\+::string xlabel, std\+::string ylabel, std\+::string title)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -60,6 +69,7 @@ Constructs the displayer with a copy of the film statistics.
 \end{DoxyParams}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/Result\+Displayer.\+hpp\end{DoxyCompactItemize}
+include/Result\+Displayer.\+hpp\item 
+src/Result\+Displayer.\+cpp\end{DoxyCompactItemize}

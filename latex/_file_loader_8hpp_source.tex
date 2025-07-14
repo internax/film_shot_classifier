@@ -26,61 +26,110 @@
 \DoxyCodeLine{00033\ \ \ \ \ std::string\ \mbox{\hyperlink{class_input_source_a05c0b917fe5de0b326d343b07a06107e}{source\_path}};\ }
 \DoxyCodeLine{00034\ }
 \DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_input_source_af189bad1c5e1015d3b09227cb51d1075}{InputSource}}(\textcolor{keyword}{const}\ std::string\&\ path)\ :\ \mbox{\hyperlink{class_input_source_a05c0b917fe5de0b326d343b07a06107e}{source\_path}}(path)\ \{\}}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_input_source_a02eec90ae2d3419c82e7fc7f09204e1f}{\string~InputSource}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_source_abaec18bf62eec4100d689ad576b9169f}{hasNextFrame}}()\ \textcolor{keyword}{const}\ =\ 0;}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ cv::Mat\&\ \mbox{\hyperlink{class_input_source_a46c3be398eac73b3b8d836c03ddcf351}{nextFrame}}()\ =\ 0;}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_input_source_a79cfe9f30f49bf81f53676d81645dd17}{getCurrentTimestamp}}()\ \textcolor{keyword}{const}\ =\ 0;}
-\DoxyCodeLine{00064\ \};}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00073\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_image_loader}{ImageLoader}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_image_loader_af189bad1c5e1015d3b09227cb51d1075}{InputSource}}}
-\DoxyCodeLine{00074\ \{}
-\DoxyCodeLine{00075\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00076\ \ \ \ \ cv::Mat\ image;\ \textcolor{comment}{//\ Loaded\ image}}
-\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{bool}\ loaded\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{bool}\ frameReturned\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00079\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_input_source_af189bad1c5e1015d3b09227cb51d1075}{InputSource::InputSource}};}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_image_loader_a5302ba92a32276ac9a23f859b62abb51}{hasNextFrame}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00092\ \ \ \ \ cv::Mat\&\ \mbox{\hyperlink{class_image_loader_aae65387f71c9cc119c94db147b077708}{nextFrame}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00093\ }
-\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_image_loader_a15dedf31b1d1f5ce468b475018f39adc}{getCurrentTimestamp}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00099\ }
-\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{//\ Utility:\ Load\ and\ return\ sorted\ image\ paths\ from\ a\ directory}}
-\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<std::string>\ getOrderedImagePaths(\textcolor{keyword}{const}\ std::string\&\ directory);}
-\DoxyCodeLine{00102\ \};}
-\DoxyCodeLine{00103\ }
-\DoxyCodeLine{00111\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_video_loader}{VideoLoader}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_video_loader_af189bad1c5e1015d3b09227cb51d1075}{InputSource}}}
-\DoxyCodeLine{00112\ \{}
-\DoxyCodeLine{00113\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_input_source_af189bad1c5e1015d3b09227cb51d1075}{InputSource::InputSource}};}
-\DoxyCodeLine{00115\ \ \ \ \ \textcolor{comment}{//\ Implementation\ will\ follow\ similar\ to\ ImageLoader}}
-\DoxyCodeLine{00116\ \};}
-\DoxyCodeLine{00117\ }
-\DoxyCodeLine{00127\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_preprocessing_a05a35fbbde57f184aeae6648bd1f260e}{Preprocessing}}}
+\DoxyCodeLine{00036\ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_input_source_af189bad1c5e1015d3b09227cb51d1075}{InputSource}}(\textcolor{keyword}{const}\ std::string\&\ path)\ :\ \mbox{\hyperlink{class_input_source_a05c0b917fe5de0b326d343b07a06107e}{source\_path}}(path)\ \{\}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_input_source_a02eec90ae2d3419c82e7fc7f09204e1f}{\string~InputSource}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_source_abaec18bf62eec4100d689ad576b9169f}{hasNextFrame}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{virtual}\ cv::Mat\&\ \mbox{\hyperlink{class_input_source_a46c3be398eac73b3b8d836c03ddcf351}{nextFrame}}()\ =\ 0;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_input_source_a79cfe9f30f49bf81f53676d81645dd17}{getCurrentTimestamp}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00066\ \};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{class\ }ImageLoader\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_image_loader_af189bad1c5e1015d3b09227cb51d1075}{InputSource}}}
+\DoxyCodeLine{00080\ \{}
+\DoxyCodeLine{00081\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00082\ \ \ \ \ cv::Mat\ image;\ \textcolor{comment}{//\ Loaded\ image}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ loaded\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{bool}\ frameReturned\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00085\ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ std::vector<std::string>\ image\_paths;}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{int}\ current\_frame\_index\ =\ 0;\ \ \ \ \textcolor{comment}{//\ reset\ indexu}}
+\DoxyCodeLine{00088\ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ loadImagePathsFromDirectory(\textcolor{keyword}{const}\ std::string\&\ directory);}
+\DoxyCodeLine{00091\ \ \ \ \ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00093\ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_input_source_af189bad1c5e1015d3b09227cb51d1075}{InputSource::InputSource}};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ ImageLoader(\textcolor{keyword}{const}\ std::string\&\ path)\ :\ \mbox{\hyperlink{class_image_loader_af189bad1c5e1015d3b09227cb51d1075}{InputSource}}(path)\ }
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ loadImagePathsFromDirectory(path);}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_image_loader_a5302ba92a32276ac9a23f859b62abb51}{hasNextFrame}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00111\ \ \ \ \ cv::Mat\&\ \mbox{\hyperlink{class_image_loader_aae65387f71c9cc119c94db147b077708}{nextFrame}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_image_loader_a15dedf31b1d1f5ce468b475018f39adc}{getCurrentTimestamp}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00118\ \};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{class\ }VideoLoader\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_video_loader_af189bad1c5e1015d3b09227cb51d1075}{InputSource}}}
 \DoxyCodeLine{00128\ \{}
-\DoxyCodeLine{00129\ \ \ \ \ cv::Mat\ \mbox{\hyperlink{class_preprocessing_aac52479d9834ffde3b7e5964b8d31d92}{image}};\ }
-\DoxyCodeLine{00130\ }
-\DoxyCodeLine{00131\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_preprocessing_a05a35fbbde57f184aeae6648bd1f260e}{Preprocessing}}(\textcolor{keyword}{const}\ cv::Mat\ frame)\ :\ \mbox{\hyperlink{class_preprocessing_aac52479d9834ffde3b7e5964b8d31d92}{image}}(frame)\ \{\}}
-\DoxyCodeLine{00137\ }
-\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_preprocessing_ad162a3c39dd11ae2d40f00b5f5474901}{Preprocessing}}()\ \{\}}
-\DoxyCodeLine{00142\ }
-\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{class_preprocessing_a508a129b4026d6177d61ae3a2eb3c40e}{\string~Preprocessing}}();}
-\DoxyCodeLine{00147\ }
-\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_preprocessing_a396223edd2d672d14555bf5a1903f5a1}{LoadFrame}}(cv::Mat\&\ \mbox{\hyperlink{class_preprocessing_aac52479d9834ffde3b7e5964b8d31d92}{image}});}
-\DoxyCodeLine{00153\ }
-\DoxyCodeLine{00158\ \ \ \ \ cv::Mat\&\ \mbox{\hyperlink{class_preprocessing_ae121604d081216e78ec7802aa2478131}{GetProcessedImage}}();}
-\DoxyCodeLine{00159\ }
-\DoxyCodeLine{00160\ \ \ \ \ \textcolor{comment}{//\ Future:\ add\ methods\ for\ specific\ preprocessing\ steps\ (blur,\ resize,\ etc.)}}
-\DoxyCodeLine{00161\ \};}
-\DoxyCodeLine{00162\ }
-\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ FileLoader\_hpp\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00129\ \ \ \ \ std::string\ video\_path;}
+\DoxyCodeLine{00130\ \ \ \ \ cv::VideoCapture\ video;}
+\DoxyCodeLine{00131\ \ \ \ \ }
+\DoxyCodeLine{00132\ \ \ \ \ cv::Mat\ current\_frame;}
+\DoxyCodeLine{00133\ \ \ \ \ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{int}\ current\_frame\_index;}
+\DoxyCodeLine{00135\ \ \ \ \ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ openVideoFromPath(\textcolor{keyword}{const}\ std::string\ \&\ path);}
+\DoxyCodeLine{00137\ \ \ \ \ }
+\DoxyCodeLine{00138\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_input_source_af189bad1c5e1015d3b09227cb51d1075}{InputSource::InputSource}};}
+\DoxyCodeLine{00140\ \ \ \ \ }
+\DoxyCodeLine{00141\ \ \ \ \ VideoLoader(\textcolor{keyword}{const}\ std::string\&\ path)\ :\ \mbox{\hyperlink{class_video_loader_af189bad1c5e1015d3b09227cb51d1075}{InputSource}}(path)}
+\DoxyCodeLine{00142\ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ openVideoFromPath(path);}
+\DoxyCodeLine{00144\ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_video_loader_a6c6676a1988b2bd8c43d31662a597c00}{hasNextFrame}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00156\ \ \ \ \ cv::Mat\&\ \mbox{\hyperlink{class_video_loader_ac2dfd1d7faa1a7da657b23b669321a1f}{nextFrame}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_video_loader_a355644db184a604d5a30759ef82b9819}{getCurrentTimestamp}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00163\ \ \ \ \ }
+\DoxyCodeLine{00164\ \ \ \ \ }
+\DoxyCodeLine{00165\ \};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00184\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_preprocessing_a05a35fbbde57f184aeae6648bd1f260e}{Preprocessing}}}
+\DoxyCodeLine{00185\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ cv::Mat\ \mbox{\hyperlink{class_preprocessing_aac52479d9834ffde3b7e5964b8d31d92}{image}};\ }
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_preprocessing_a05a35fbbde57f184aeae6648bd1f260e}{Preprocessing}}(\textcolor{keyword}{const}\ cv::Mat\ frame)\ :\ \mbox{\hyperlink{class_preprocessing_aac52479d9834ffde3b7e5964b8d31d92}{image}}(frame)\ \{\}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_preprocessing_ad162a3c39dd11ae2d40f00b5f5474901}{Preprocessing}}()\ \{\}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00203\ \ \ \ \ \mbox{\hyperlink{class_preprocessing_a508a129b4026d6177d61ae3a2eb3c40e}{\string~Preprocessing}}();}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_preprocessing_a396223edd2d672d14555bf5a1903f5a1}{LoadFrame}}(cv::Mat\&\ \mbox{\hyperlink{class_preprocessing_aac52479d9834ffde3b7e5964b8d31d92}{image}});}
+\DoxyCodeLine{00210\ \ \ \ \ }
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_preprocessing_af013e5f3282e59441cb0a8a1f8532539}{resizeImage}}(\textcolor{keywordtype}{int}\ \textcolor{keyword}{const}\ rows,\ \textcolor{keywordtype}{int}\ \textcolor{keyword}{const}\ cols);}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_preprocessing_a9da79c2fd5b809f58004999e0d0dc0d3}{toGrayscale}}();}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_preprocessing_a31b1a8f826ca1016a4aa65b04b4edc21}{equalizeHistogram}}();}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00230\ \ \ \ \ cv::Mat\&\ \mbox{\hyperlink{class_preprocessing_ae121604d081216e78ec7802aa2478131}{GetProcessedImage}}();}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{comment}{//\ Future:\ add\ methods\ for\ specific\ preprocessing\ steps\ (blur,\ resize,\ etc.)}}
+\DoxyCodeLine{00233\ \};}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ FileLoader\_hpp\ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

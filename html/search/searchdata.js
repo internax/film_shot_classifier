@@ -2,8 +2,8 @@ var indexSectionsWithContent =
 {
   0: "123456789abcdefghilmnopqrstv~🎬📂📄",
   1: "cdfhioprstv",
-  2: "acdefghilnopr~",
-  3: "bcefgilopst",
+  2: "acdefghilnoprt~",
+  3: "bcefilopst",
   4: "cfst🎬"
 };
 

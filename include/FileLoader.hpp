@@ -208,8 +208,19 @@ public:
      */
     void LoadFrame(cv::Mat& image);
     
+    /**
+     * @brief Resizes the internal image to the specified dimensions.
+     * @param rows Desired number of rows (height).
+     * @param cols Desired number of columns (width).
+     */
     void resizeImage(int const rows, int const cols);
+    /**
+     * @brief Converts the internal image to grayscale.
+     */
     void toGrayscale();
+    /**
+     * @brief Applies histogram equalization to enhance image contrast.
+     */
     void equalizeHistogram();
 
     /**

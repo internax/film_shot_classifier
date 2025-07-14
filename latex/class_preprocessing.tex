@@ -22,6 +22,14 @@ Class responsible for applying preprocessing operations to a frame.
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_preprocessing_a396223edd2d672d14555bf5a1903f5a1}{Load\+Frame}} (cv\+::\+Mat \&\mbox{\hyperlink{class_preprocessing_aac52479d9834ffde3b7e5964b8d31d92}{image}})
 \begin{DoxyCompactList}\small\item\em Loads a new frame into the processor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_preprocessing_af013e5f3282e59441cb0a8a1f8532539}{resize\+Image}} (int const rows, int const cols)
+\begin{DoxyCompactList}\small\item\em Resizes the internal image to the specified dimensions. \end{DoxyCompactList}\item 
+\Hypertarget{class_preprocessing_a9da79c2fd5b809f58004999e0d0dc0d3}\label{class_preprocessing_a9da79c2fd5b809f58004999e0d0dc0d3} 
+void {\bfseries to\+Grayscale} ()
+\begin{DoxyCompactList}\small\item\em Converts the internal image to grayscale. \end{DoxyCompactList}\item 
+\Hypertarget{class_preprocessing_a31b1a8f826ca1016a4aa65b04b4edc21}\label{class_preprocessing_a31b1a8f826ca1016a4aa65b04b4edc21} 
+void {\bfseries equalize\+Histogram} ()
+\begin{DoxyCompactList}\small\item\em Applies histogram equalization to enhance image contrast. \end{DoxyCompactList}\item 
 cv\+::\+Mat \& \mbox{\hyperlink{class_preprocessing_ae121604d081216e78ec7802aa2478131}{Get\+Processed\+Image}} ()
 \begin{DoxyCompactList}\small\item\em Returns the processed image. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
@@ -84,6 +92,23 @@ Loads a new frame into the processor.
 
 \begin{DoxyParams}{Parameters}
 {\em image} & Frame to load for processing. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_preprocessing_af013e5f3282e59441cb0a8a1f8532539}\index{Preprocessing@{Preprocessing}!resizeImage@{resizeImage}}
+\index{resizeImage@{resizeImage}!Preprocessing@{Preprocessing}}
+\doxysubsubsection{\texorpdfstring{resizeImage()}{resizeImage()}}
+{\footnotesize\ttfamily \label{class_preprocessing_af013e5f3282e59441cb0a8a1f8532539} 
+void Preprocessing\+::resize\+Image (\begin{DoxyParamCaption}\item[{int const}]{rows}{, }\item[{int const}]{cols}{}\end{DoxyParamCaption})}
+
+
+
+Resizes the internal image to the specified dimensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & Desired number of rows (height). \\
+\hline
+{\em cols} & Desired number of columns (width). \\
 \hline
 \end{DoxyParams}
 

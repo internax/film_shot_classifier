@@ -4,17 +4,14 @@ project(FilmShotClassifier)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Find OpenCV package
 find_package(OpenCV REQUIRED)
 
-# Include directories for your headers and OpenCV headers
 include_directories(
     src
     include
     ${OpenCV_INCLUDE_DIRS}
 )
 
-# List your source files inside src/
 set(SOURCES
     src/FileLoader.cpp
     src/FilmStatisticEval.cpp
@@ -26,7 +23,6 @@ set(SOURCES
     src/UserStructs.cpp
 )
 
-# Create executables and link with OpenCV libraries
 add_executable(main_eval src/main_eval.cpp ${SOURCES})
 target_link_libraries(main_eval ${OpenCV_LIBS})
 

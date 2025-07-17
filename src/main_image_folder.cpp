@@ -31,14 +31,19 @@ std::string shotTypeToString(ShotType type) {
 
 int main(int argc, char** argv)
 {
-
-
+    if (argc < 2)
+    {
+       std::cerr << "Usage: " << argv[0] << " <image_folder_path>" << std::endl;
+       return 1;
+    }
+   
     std::string input_folder = argv[1];
+    
     cv::Mat frame;
     cv::Mat frame_eq;
 
     // Load all images from the directory
-    ImageLoader image_loader("test/wide");
+    ImageLoader image_loader(input_folder);
 
     // Haar detector paths
     std::string frontal_path = "haar/haarcascade_frontalface_alt2.xml";

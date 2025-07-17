@@ -1,4 +1,6 @@
-#include "../include/ShotEvaluator.hpp"
+// Main dev: Mateusz Miroslaw Lis
+
+#include "ShotEvaluator.hpp"
 
 
 ShotEvaluator::ShotEvaluator(HaarDetector& frontal, HaarDetector& profile, HaarDetector& eye,

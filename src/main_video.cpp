@@ -22,7 +22,6 @@
 #include "UserStructs.hpp"
 #include "FilmStatisticEval.hpp"
 #include "SceneChangeDetect.hpp"
-#include "ResultDisplayer.hpp"
 
 
 constexpr int OPTIMIZER_DISTANCE_BETWEEN_SAMPLES = 3;
@@ -44,13 +43,13 @@ int main()
     cv::Mat frame;
 
     //VideoLoader class + preprocessor init
-    VideoLoader image_loader("video/marvel.mp4");
+    VideoLoader image_loader("../video/marvel.mp4");
     Preprocessing processor;
 
     // Haar detector paths
-    std::string frontal_path = "haar/haarcascade_frontalface_alt2.xml";
-    std::string profile_path = "haar/haarcascade_profileface.xml";
-    std::string eye_path = "haar/haarcascade_eye.xml";
+    std::string frontal_path = "../haar/haarcascade_frontalface_alt2.xml";
+    std::string profile_path = "../haar/haarcascade_profileface.xml";
+    std::string eye_path = "../haar/haarcascade_eye.xml";
 
     // Initialize detectors and classifier
     HaarDetector frontal_detector(frontal_path);
@@ -104,7 +103,7 @@ int main()
         frame_history.push_back(frame);
     }
 
-    stats.exportToCSV("csv_output/output_video_marvel_opt50_60.csv");
+    stats.exportToCSV("../csv_output/output_video_marvel_opt50_60.csv");
     
     auto end_time = std::chrono::high_resolution_clock::now();
     double elapsed = std::chrono::duration<double>(end_time - start_time).count();

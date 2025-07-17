@@ -45,10 +45,11 @@ int main(int argc, char** argv)
     // Load all images from the directory
     ImageLoader image_loader(input_folder);
 
+
     // Haar detector paths
-    std::string frontal_path = "haar/haarcascade_frontalface_alt2.xml";
-    std::string profile_path = "haar/haarcascade_profileface.xml";
-    std::string eye_path = "haar/haarcascade_eye.xml";
+    std::string frontal_path = "../haar/haarcascade_frontalface_alt2.xml";
+    std::string profile_path = "../haar/haarcascade_profileface.xml";
+    std::string eye_path = "../haar/haarcascade_eye.xml";
 
     // Initialize detectors and classifier
     HaarDetector frontal_detector(frontal_path);

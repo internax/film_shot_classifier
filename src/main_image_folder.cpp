@@ -8,6 +8,9 @@
 #include "../include/ShotEvaluator.hpp"
 #include "../include/UserStructs.hpp"
 
+//for use enhanced double clasifier set DOUBLE_CLASSIFIER to 1
+#define DOUBLE_CLASSIFIER 0
+
 // Detection thresholds
 constexpr int WIDE_THRESHOLD = 10000;
 constexpr int CLOSEUP_THRESHOLD = 50000;
@@ -56,50 +59,7 @@ int main(int argc, char** argv)
     ClassificationResult classification_result_eq;
     std::vector<cv::Rect> faces, eyes;
 
-//    while (image_loader.hasNextFrame())
-//    {
-//        frame.release();
-//        frame = image_loader.nextFrame();
-//
-//        // Preprocess the frame
-//        processor.LoadFrame(frame);
-//        processor.resizeImage(RESOLUTION_WIDTH, RESOLUTION_HEIGHT);
-//        frame = processor.GetProcessedImage();
-//        processor.equalizeHistogram();
-//        frame_eq = processor.GetProcessedImage();
-//
-//        classification_result = evaluator.evaluate(frame, faces, eyes);
-//        classification_result_eq = evaluator.evaluate(frame_eq, faces, eyes);
-//        
-//        if((classification_result.predictedType == ShotType::WIDE )||(classification_result_eq.predictedType == ShotType::WIDE))
-//            classification_result_final.predictedType = ShotType::WIDE;
-//        
-//        if((classification_result.predictedType == ShotType::MEDIUM )||(classification_result_eq.predictedType == ShotType::MEDIUM))
-//            classification_result_final.predictedType = ShotType::MEDIUM;
-//        
-//        if((classification_result.predictedType == ShotType::CLOSE_UP )||(classification_result_eq.predictedType == ShotType::CLOSE_UP))
-//            classification_result_final.predictedType = ShotType::CLOSE_UP;
-//    
-//        
-//        std::cout << "Shot classification: " << shotTypeToString(classification_result_final.predictedType)
-//                  << " | Faces: " << faces.size()
-//                  << " | Eyes: " << eyes.size() << std::endl;
-//
-//        // Draw bounding boxes
-//        for (const auto& face : faces) {
-//            cv::rectangle(frame, face, cv::Scalar(0, 255, 0), 2);
-//        }
-//
-//        for (const auto& eye : eyes) {
-//            cv::rectangle(frame, eye, cv::Scalar(255, 0, 0), 2);
-//        }
-//
-//        // Show processed frame with annotations
-//        cv::imshow("Processed Image", frame);
-//        cv::waitKey(0);
-//        cv::destroyWindow("Processed Image");
-//    }
-
+#if DOUBLE_CLASSIFIER
     while (image_loader.hasNextFrame())
     {
         frame.release();
@@ -109,10 +69,23 @@ int main(int argc, char** argv)
         processor.LoadFrame(frame);
         processor.resizeImage(RESOLUTION_WIDTH, RESOLUTION_HEIGHT);
         frame = processor.GetProcessedImage();
+        processor.equalizeHistogram();
+        frame_eq = processor.GetProcessedImage();
 
         classification_result = evaluator.evaluate(frame, faces, eyes);
-       
-        std::cout << "Shot classification: " << shotTypeToString(classification_result.predictedType)
+        classification_result_eq = evaluator.evaluate(frame_eq, faces, eyes);
+        
+        if((classification_result.predictedType == ShotType::WIDE )||(classification_result_eq.predictedType == ShotType::WIDE))
+            classification_result_final.predictedType = ShotType::WIDE;
+        
+        if((classification_result.predictedType == ShotType::MEDIUM )||(classification_result_eq.predictedType == ShotType::MEDIUM))
+            classification_result_final.predictedType = ShotType::MEDIUM;
+        
+        if((classification_result.predictedType == ShotType::CLOSE_UP )||(classification_result_eq.predictedType == ShotType::CLOSE_UP))
+            classification_result_final.predictedType = ShotType::CLOSE_UP;
+    
+        
+        std::cout << "Shot classification: " << shotTypeToString(classification_result_final.predictedType)
                   << " | Faces: " << faces.size()
                   << " | Eyes: " << eyes.size() << std::endl;
 
@@ -130,6 +103,40 @@ int main(int argc, char** argv)
         cv::waitKey(0);
         cv::destroyWindow("Processed Image");
     }
+
+
+#else
+    while (image_loader.hasNextFrame())
+    {
+        frame.release();
+        frame = image_loader.nextFrame();
+        
+        // Preprocess the frame
+        processor.LoadFrame(frame);
+        processor.resizeImage(RESOLUTION_WIDTH, RESOLUTION_HEIGHT);
+        frame = processor.GetProcessedImage();
+        
+        classification_result = evaluator.evaluate(frame, faces, eyes);
+        
+        std::cout << "Shot classification: " << shotTypeToString(classification_result.predictedType)
+        << " | Faces: " << faces.size()
+        << " | Eyes: " << eyes.size() << std::endl;
+        
+        // Draw bounding boxes
+        for (const auto& face : faces) {
+            cv::rectangle(frame, face, cv::Scalar(0, 255, 0), 2);
+        }
+        
+        for (const auto& eye : eyes) {
+            cv::rectangle(frame, eye, cv::Scalar(255, 0, 0), 2);
+        }
+        
+        // Show processed frame with annotations
+        cv::imshow("Processed Image", frame);
+        cv::waitKey(0);
+        cv::destroyWindow("Processed Image");
+    }
+#endif
 
     return 0;
 }

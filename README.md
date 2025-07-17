@@ -1,5 +1,9 @@
 # 🎬 Film Shot Type Classification
 
+> [!attention] 
+>  Make a "build" folder in root, compile and run from there.
+>  To switch between simple single classifier and more accurate double classifier change macro DOUBLE_CLASSIFIER from 0 to 1
+
 This project focuses on the automatic classification of cinematic shot types (such as **close-up**, **medium**, and **wide** shots) from video or image data. The classification is based on detecting and analyzing visual features — primarily faces and objects — using classical computer vision techniques (e.g., **Haar cascades**) and handcrafted feature extraction.
 
 The motivation for this tool is to support tasks such as:

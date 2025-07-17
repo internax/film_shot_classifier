@@ -1,0 +1,25 @@
+Metrics for closeup:
+Precision: 0.888889
+Recall: 0.8
+F1 Score: 0.842105
+Accuracy: 0.9
+
+Metrics for medium:
+Precision: 0.8
+Recall: 0.8
+F1 Score: 0.8
+Accuracy: 0.866667
+
+Metrics for wide:
+Precision: 0.727273
+Recall: 0.8
+F1 Score: 0.761905
+Accuracy: 0.833333
+
+Overall accuracy: 0.8
+
+Confusion Matrix:
+Actual \ Predicted	closeup	medium	wide
+closeup		8		0		2
+medium		1		8		1
+wide		0		2		8

@@ -82,10 +82,10 @@ struct ClassificationResult {
  */
 struct FilmStatisticsEvalConfig {
     size_t input_step = 1;                          ///< Frame step size – how many frames to skip during analysis (e.g., 1 = every frame, 2 = every second frame)
-    size_t input_oversample = 1;                    ///< Number of frames to buffer for oversampling before producing aggregate result
+    size_t input_oversample = 30;                    ///< Number of frames to buffer for oversampling before producing aggregate result
 
-    size_t entropy_window_size = 20;                ///< Window size for calculating mean entropy over time
-    size_t entropy_variance_window_size = 30;       ///< Window size for entropy variance calculation (0 = disabled)
+    size_t entropy_window_size = 1;                ///< Window size for calculating mean entropy over time
+    size_t entropy_variance_window_size = 1;       ///< Window size for entropy variance calculation (0 = disabled)
 
     double cut_detect_entropy_threshold = 1;        ///< Threshold value for absolute entropy to trigger cut detection
 

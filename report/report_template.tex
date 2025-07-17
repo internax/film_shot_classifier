@@ -65,8 +65,7 @@
 	\begin{center}
 		\vspace{2cm}
 		\begin{Large} Marek Tatýrek  \\
-					Mateusz Miroslaw Lis   \\
-					Abioye Obaloluwa Peter \\
+					Mateusz Miroslaw Lis \\
 		\end{Large} \vspace{2cm}
 		\begin{Large} Academic Year 2024-2025 \end{Large}
 		\par\end{center}
@@ -144,7 +143,7 @@ We also used Doxygen documentation so for detailed description you can check it 
 			\end{itemize}
 			Names on methods are describing function sufficiently.
 
-	\subsection{SceneChangeDetect}
+	\subsection{SceneChangeDetect} \label{optimizer}
 		\paragraph{}
 			This file contains single function for optimizing processing of Viola \& Johnes detector.
 			As an input we take two frames, we compute how much they are different and return boolean value.
@@ -174,7 +173,7 @@ We also used Doxygen documentation so for detailed description you can check it 
 				\item \texttt{getEvalResults()} After all images are processed we call this method and it returns accuracy.
 			\end{itemize}
 
-	\subsection{FilmStatistics}
+	\subsection{FilmStatistics} \label{filmstats}
 		\paragraph{}
 			Class is mainly designed for video. As input it takes class probabilities and it outputs \texttt{.csv} file with
 			statictical data. Constructor takes one argument - structure \texttt{FilmStatisticsEvalConfig}, which is used to set up all the parameters
@@ -200,16 +199,369 @@ We also used Doxygen documentation so for detailed description you can check it 
 			we setting bigger window sizes. Delay is different for each statistical parameter timeseries. Class handle this situation and starts
 			outputing data when all of the parameters are valid, with correct timestamp.
 
+	\subsection{Main video}
+		\paragraph{}
+			Puropuse of this main is to classify video. At first we initialize all the classes and time measurements.
+			Then we run main while loop, until we run out of frames. We can see the main loop on scheme \ref{fig:video_main}
 
-\section{Evaluation}
+					\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.5\textwidth]{figures/video_main_scheme.jpg}
+			\caption{Classification with Viola\&Johnes}
+			\label{fig:video_main}
+		\end{figure}
+
+	\section{Evaluation}
+		\subsection{Quantitative Evaluation}
+			Evaluating our classifier system on the test dataset can be done by running \texttt{main\_eval.cpp} from the submitted archive. Evaluation is done by computing one-vs-all precision, recall, F1 score, accuracy and the confusion matrix.
+
+
+			\begin{table}[h!]
+			\centering
+				\begin{tabular}{|l|c|c|c|c|}
+					\hline
+						\textbf{Shot Type} & \textbf{Precision} & \textbf{Recall} & \textbf{F1 Score} & \textbf{Accuracy} \\
+						\hline
+						Close-up & 0.8889 & 0.8000 & 0.8421 & 0.9000 \\
+						Medium   & 0.8000 & 0.8000 & 0.8000 & 0.8667 \\
+						Wide     & 0.7273 & 0.8000 & 0.7619 & 0.8333 \\
+					\hline
+				\end{tabular}
+				\caption{Per-class performance metrics for shot type classification}
+			\end{table}
+
+		\noindent\textbf{Overall Accuracy:} 0.8000
+
+		\vspace{1em}
+
+			\begin{table}[h!]
+				\centering
+					\begin{tabular}{|l|c|c|c|}
+						\hline
+							\textbf{Actual \textbackslash\ Predicted} & \textbf{Close-up} & \textbf{Medium} & \textbf{Wide} \\
+							\hline
+							Close-up & 8 & 0 & 2 \\
+							Medium   & 1 & 8 & 1 \\
+							Wide     & 0 & 2 & 8 \\
+						\hline
+					\end{tabular}
+				\caption{Confusion matrix of the shot type classifier}
+			\end{table}
+
+	
+
+		\subsubsection{Close up shots}
+        \begin{figure}[H]
+            \centering
+
+            \subfloat[CLOSE\_UP]{%
+                \includegraphics[width=0.32\textwidth]{result_images/closeup/ss1}
+            }
+            \hfill
+            \subfloat[CLOSE\_UP]{%
+                \includegraphics[width=0.32\textwidth]{result_images/closeup/ss2}
+            }
+            \hfill
+            \subfloat[CLOSE\_UP]{%
+                \includegraphics[width=0.32\textwidth]{result_images/closeup/ss3}
+            }
+
+            \vspace{1em}
+
+            \subfloat[CLOSE\_UP]{%
+                \includegraphics[width=0.32\textwidth]{result_images/closeup/ss4}
+            }
+            \hfill
+            \subfloat[CLOSE\_UP]{%
+                \includegraphics[width=0.32\textwidth]{result_images/closeup/ss5}
+            }
+            \hfill
+            \subfloat[WIDE]{%
+                \includegraphics[width=0.32\textwidth]{result_images/closeup/ss6}
+            }
+
+            \vspace{1em}
+
+            \subfloat[CLOSE\_UP]{%
+                \includegraphics[width=0.32\textwidth]{result_images/closeup/ss7}
+            }
+            \hfill
+            \subfloat[CLOSE\_UP]{%
+                \includegraphics[width=0.32\textwidth]{result_images/closeup/ss8}
+            }
+            \hfill
+            \subfloat[CLOSE\_UP]{%
+                \includegraphics[width=0.32\textwidth]{result_images/closeup/ss9}
+            }
+
+            \vspace{1em}
+
+            \subfloat[CLOSE\_UP]{%
+                \includegraphics[width=0.32\textwidth]{result_images/closeup/ss10}
+            }
+
+            \caption{Examples of close-up shots with classification}
+        \end{figure}
+
+
+		\subsubsection{Medium shots}
+		 \begin{figure}[H]
+            \centering
+
+            \subfloat[MEDIUM]{%
+                \includegraphics[width=0.32\textwidth]{result_images/medium/ss1}
+            }
+            \hfill
+            \subfloat[MEDIUM]{%
+                \includegraphics[width=0.32\textwidth]{result_images/medium/ss2}
+            }
+            \hfill
+            \subfloat[MEDIUM]{%
+                \includegraphics[width=0.32\textwidth]{result_images/medium/ss3}
+            }
+
+            \vspace{1em}
+
+            \subfloat[CLOSE\_UP]{%
+                \includegraphics[width=0.32\textwidth]{result_images/medium/ss4}
+            }
+            \hfill
+            \subfloat[MEDIUM]{%
+                \includegraphics[width=0.32\textwidth]{result_images/medium/ss5}
+            }
+            \hfill
+            \subfloat[MEDIUM]{%
+                \includegraphics[width=0.32\textwidth]{result_images/medium/ss6}
+            }
+
+            \vspace{1em}
+
+            \subfloat[MEDIUM]{%
+                \includegraphics[width=0.32\textwidth]{result_images/medium/ss7}
+            }
+            \hfill
+            \subfloat[MEDIUM]{%
+                \includegraphics[width=0.32\textwidth]{result_images/medium/ss8}
+            }
+            \hfill
+            \subfloat[WIDE]{%
+                \includegraphics[width=0.32\textwidth]{result_images/medium/ss9}
+            }
+
+            \vspace{1em}
+
+            \subfloat[MEDIUM]{%
+                \includegraphics[width=0.32\textwidth]{result_images/medium/ss10}
+            }
+
+            \caption{Examples of medium shots with classification}
+        \end{figure}
+
+	\subsubsection{Wide shots}
+		 \begin{figure}[H]
+            \centering
+
+            \subfloat[WIDE]{%
+                \includegraphics[width=0.32\textwidth]{result_images/wide/ss1}
+            }
+            \hfill
+            \subfloat[WIDE]{%
+                \includegraphics[width=0.32\textwidth]{result_images/wide/ss2}
+            }
+            \hfill
+            \subfloat[WIDE]{%
+                \includegraphics[width=0.32\textwidth]{result_images/wide/ss3}
+            }
+
+            \vspace{1em}
+
+            \subfloat[MEDIUM]{%
+                \includegraphics[width=0.32\textwidth]{result_images/wide/ss4}
+            }
+            \hfill
+            \subfloat[WIDE]{%
+                \includegraphics[width=0.32\textwidth]{result_images/wide/ss5}
+            }
+            \hfill
+            \subfloat[WIDE]{%
+                \includegraphics[width=0.32\textwidth]{result_images/wide/ss6}
+            }
+
+            \vspace{1em}
+
+            \subfloat[WIDE]{%
+                \includegraphics[width=0.32\textwidth]{result_images/wide/ss7}
+            }
+            \hfill
+            \subfloat[WIDE]{%
+                \includegraphics[width=0.32\textwidth]{result_images/wide/ss8}
+            }
+            \hfill
+            \subfloat[WIDE]{%
+                \includegraphics[width=0.32\textwidth]{result_images/wide/ss9}
+            }
+
+            \vspace{1em}
+
+            \subfloat[WIDE]{%
+                \includegraphics[width=0.32\textwidth]{result_images/wide/ss10}
+            }
+
+            \caption{Examples of wide shots with classification}
+        \end{figure}
+
+
+	\subsection{Video Evaluation}
+		\paragraph{}
+			With video we have more parameters to evaluate such as detection times and we can also
+			have a look on some statistics.
+
+		\paragraph{}
+			As testing video we used triler for Avengers \cite{marvel}. We choose this type of video, because
+			we wanted to get diverse dataset and triler are full of cuts and differents shot types.
+			We also aimed fort short video because altrough Viola\&Johnes is effective algorithm, appliing it 
+			on the video was computationally expansoive and takes significan amount of time. The sample video duration is 2:24.
+
+		\paragraph{}
+			We used time measurements for optimizing our algorithm, but as every machine is unique, we cant provide
+			processing time as metric. So processing time is only to imagine how long it to compute.
+			For reference tests were ran on Macbook 14 pro 2021 (8 CPU, 14 GPU).
+
+			But we can demonstrate here how well is our optimizer working
+		
+		\subsubsection{Accuracy}
+			\paragraph{}
+			We are gonna analyze first 30 seconds of our video. As reference we have manually classified data. It is important to mention
+			the setup of algorithm, we can see it at pricture \ref{fig:video_setup}.
+
+			\paragraph{}
+			Parameters of optimizer are described at \ref{optimizer}, resolution parameters are for resizing the image and last 3 treshold are tresholds for classification.
+			We also use histogram equalization in preprocessing stage.
+
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.5\textwidth]{figures/video setup.jpg}
+				\caption{Algorithm setup for video classification}
+				\label{fig:video_setup}
+			\end{figure}
+
+
+		
+		% \begin{table}[H]
+		% 	\centering
+		% 	\begin{tabular}{|l|l|lll}
+		% 		\cline{1-2}
+		% 		Time {[}ms{]} & Shot Type &  &  &  \\ \cline{1-2}
+		% 		0             & WIDE      &  &  &  \\ \cline{1-2}
+		% 		4840          & CLOSE     &  &  &  \\ \cline{1-2}
+		% 		7760          & WIDE      &  &  &  \\ \cline{1-2}
+		% 		8800          & MEDIUM    &  &  &  \\ \cline{1-2}
+		% 		10000         & MEDIUM    &  &  &  \\ \cline{1-2}
+		% 		12700         & WIDE      &  &  &  \\ \cline{1-2}
+		% 		15300         & CLOSE     &  &  &  \\ \cline{1-2}
+		% 		17000         & CLOSE     &  &  &  \\ \cline{1-2}
+		% 		19000         & WIDE      &  &  &  \\ \cline{1-2}
+		% 		25300         & MEDUIM    &  &  &  \\ \cline{1-2}
+		% 		26900         & CLOSE     &  &  &  \\ \cline{1-2}
+		% 		28500         & WIDE      &  &  &  \\ \cline{1-2}
+		% 	\end{tabular}
+		% 	\caption{Manual classification of first 30s of sample video}
+		% \end{table}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\textwidth]{figures/marvel_ref_graph.jpg}
+			\caption{Manually classified video \cite{marvel}}
+			\label{fig:marvel_ref}
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\textwidth]{figures/marvel_real_graph.jpg}
+			\caption{Classification with Viola\&Johnes}
+			\label{fig:marvel_real}
+		\end{figure}
+
+		Notice that Viola\&Johnes classification has small delay, described in \ref{filmstats}.
+
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|l|l|l|l|}
+				\hline
+				\textbf{actual/predicted} & \textbf{close} & \textbf{medium} & \textbf{wide} \\ \hline
+				\textbf{close}            & 1841,4         & 40,5            & 1858,6        \\ \hline
+				\textbf{medium}           & 0,0            & 3624,5          & 25,5          \\ \hline
+				\textbf{wide}             & 2997,2         & 1835,0          & 17777,3       \\ \hline
+			\end{tabular}
+			\caption{Confusion matrix of first 30s of video \cite{marvel}}
+			\label{fig:marvel_confusion}
+		\end{table}
+
+
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|l|l|l|l|}
+				\hline
+				\textbf{}            & \textbf{close} & \textbf{medium} & \textbf{wide} \\ \hline
+				\textbf{Precision}   & 0,3806         & 0,6590          & 0,9042        \\ \hline
+				\textbf{Recall}      & 0,4923         & 0,9930          & 0,7863        \\ \hline
+				\textbf{Accuracy}    & 0,8260         & 0,9244          & 0,7758        \\ \hline
+				\textbf{F1 score}    & 0,4293         & 0,7922          & 0,8411        \\ \hline
+				\textbf{Specificity} & 0,8772         & 0,9127          & 0,7437        \\ \hline
+			\end{tabular}
+			\caption{Scores of classification of first 30s of video \cite{marvel}}
+			\label{fig:marvel_stats}
+		\end{table}
+
+	\subsubsection{Optimizer}
+		\paragraph{}
+			Optimizer significantly improves the performance of the algorithm as we can see in table \ref{marvel_opt}. It 
+			also makes classification more stable. See the difference betwen figure \ref{fig:marvel_raw} ad \ref{fig:marvel_real}
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|l|l|l|l|l|}
+				\hline
+				\textbf{}                  & \textbf{Processed} & \textbf{Total} & \textbf{Ratio} & \textbf{Runtime [s]} \\ \hline
+				\textbf{with optimizer}    & 235                & 3455           & 0,0680174      & 49,6446          \\ \hline
+				\textbf{without optimizer} & 3455               & 3455           & 1              & 601,69           \\ \hline
+			\end{tabular}
+			\caption{Optimizer performance}
+			\label{marvel_opt}
+		\end{table}
+
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.8\textwidth]{figures/marvel_raw_graph.jpg}
+				\caption{Classification with Viola\&Johnes without the optimizer}
+				\label{fig:marvel_raw}
+			\end{figure}
+
+		\paragraph{}
+			We adding graph, with oversampling turned on to demonstrate function of this feature and also
+			make data without optimizer more readable.
+
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.8\textwidth]{figures/marvel_oversampled_graph.jpg}
+				\caption{Classification with Viola\&Johnes without the optimizer and with oversampling}
+				\label{fig:marvel_raw}
+			\end{figure}
+
+	
+
+
+
+
 
 \section{Dataset description}
+Miroslaw
 
 \section{Results summary}
-
+Miroslaw
 \section{Individual contributions}
-
+both
 \section{Conclusion}
+Marek
 
 
 \begin{thebibliography}{1}
@@ -327,7 +679,12 @@ We also used Doxygen documentation so for detailed description you can check it 
 % 		\end{figure}
 
 		
+\begin{thebibliography}{1}
 	
+	\bibitem{marvel}
+	Marvel Studios' Avengers: Infinity War Official Trailer [online]. 2018. [accessed 2025-7-14]. Available at: https://www.youtube.com/watch?v=6ZfuNTqbHE8
+	
+\end{thebibliography}	
 		
 
 

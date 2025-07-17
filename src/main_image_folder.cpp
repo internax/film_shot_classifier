@@ -9,11 +9,12 @@
 #include "../include/UserStructs.hpp"
 
 // Detection thresholds
-int WIDE_THRESHOLD = 3000;
-int CLOSEUP_THRESHOLD = 50000;
-int EYE_THRESHOLD = 2000;
+constexpr int WIDE_THRESHOLD = 10000;
+constexpr int CLOSEUP_THRESHOLD = 50000;
+constexpr int EYE_THRESHOLD = 2000;
 
-
+constexpr int RESOLUTION_WIDTH = 1280;
+constexpr int RESOLUTION_HEIGHT = 720;
 
 std::string shotTypeToString(ShotType type) {
     switch (type) {
@@ -28,21 +29,19 @@ std::string shotTypeToString(ShotType type) {
 
 int main(int argc, char** argv)
 {
-    if (argc < 2) {
-        std::cerr << "Usage: " << argv[0] << " <image_folder_path>" << std::endl;
-        return 1;
-    }
+
 
     std::string input_folder = argv[1];
     cv::Mat frame;
+    cv::Mat frame_eq;
 
     // Load all images from the directory
-    ImageLoader image_loader(input_folder);
+    ImageLoader image_loader("test/wide");
 
     // Haar detector paths
-    std::string frontal_path = "../haar/haarcascade_frontalface_alt2.xml";
-    std::string profile_path = "../haar/haarcascade_profileface.xml";
-    std::string eye_path = "../haar/haarcascade_eye.xml";
+    std::string frontal_path = "haar/haarcascade_frontalface_alt2.xml";
+    std::string profile_path = "haar/haarcascade_profileface.xml";
+    std::string eye_path = "haar/haarcascade_eye.xml";
 
     // Initialize detectors and classifier
     HaarDetector frontal_detector(frontal_path);
@@ -50,46 +49,85 @@ int main(int argc, char** argv)
     HaarDetector eye_detector(eye_path);
     ShotClassifier face_classifier(WIDE_THRESHOLD, CLOSEUP_THRESHOLD);
     ShotEvaluator evaluator(frontal_detector, profile_detector, eye_detector, face_classifier, EYE_THRESHOLD);
+    
+    Preprocessing processor;
+    ClassificationResult classification_result_final;
+    ClassificationResult classification_result;
+    ClassificationResult classification_result_eq;
+    std::vector<cv::Rect> faces, eyes;
+
+//    while (image_loader.hasNextFrame())
+//    {
+//        frame.release();
+//        frame = image_loader.nextFrame();
+//
+//        // Preprocess the frame
+//        processor.LoadFrame(frame);
+//        processor.resizeImage(RESOLUTION_WIDTH, RESOLUTION_HEIGHT);
+//        frame = processor.GetProcessedImage();
+//        processor.equalizeHistogram();
+//        frame_eq = processor.GetProcessedImage();
+//
+//        classification_result = evaluator.evaluate(frame, faces, eyes);
+//        classification_result_eq = evaluator.evaluate(frame_eq, faces, eyes);
+//        
+//        if((classification_result.predictedType == ShotType::WIDE )||(classification_result_eq.predictedType == ShotType::WIDE))
+//            classification_result_final.predictedType = ShotType::WIDE;
+//        
+//        if((classification_result.predictedType == ShotType::MEDIUM )||(classification_result_eq.predictedType == ShotType::MEDIUM))
+//            classification_result_final.predictedType = ShotType::MEDIUM;
+//        
+//        if((classification_result.predictedType == ShotType::CLOSE_UP )||(classification_result_eq.predictedType == ShotType::CLOSE_UP))
+//            classification_result_final.predictedType = ShotType::CLOSE_UP;
+//    
+//        
+//        std::cout << "Shot classification: " << shotTypeToString(classification_result_final.predictedType)
+//                  << " | Faces: " << faces.size()
+//                  << " | Eyes: " << eyes.size() << std::endl;
+//
+//        // Draw bounding boxes
+//        for (const auto& face : faces) {
+//            cv::rectangle(frame, face, cv::Scalar(0, 255, 0), 2);
+//        }
+//
+//        for (const auto& eye : eyes) {
+//            cv::rectangle(frame, eye, cv::Scalar(255, 0, 0), 2);
+//        }
+//
+//        // Show processed frame with annotations
+//        cv::imshow("Processed Image", frame);
+//        cv::waitKey(0);
+//        cv::destroyWindow("Processed Image");
+//    }
 
     while (image_loader.hasNextFrame())
     {
         frame.release();
         frame = image_loader.nextFrame();
 
-        if (frame.empty()) {
-            std::cerr << "Error: Empty frame encountered." << std::endl;
-            continue;
-        }
-
         // Preprocess the frame
-        Preprocessing processor;
         processor.LoadFrame(frame);
-        cv::Mat processed = processor.GetProcessedImage();
+        processor.resizeImage(RESOLUTION_WIDTH, RESOLUTION_HEIGHT);
+        frame = processor.GetProcessedImage();
 
-        if (processed.empty()) {
-            std::cerr << "Error: Processed frame is empty." << std::endl;
-            continue;
-        }
-
-        std::vector<cv::Rect> faces, eyes;
-        ClassificationResult classification_result = evaluator.evaluate(processed, faces, eyes);
-
-        std::cout << "Shot classification: " << shotTypeToString(classification_result.predictedType) 
-                  << " | Faces: " << faces.size() 
+        classification_result = evaluator.evaluate(frame, faces, eyes);
+       
+        std::cout << "Shot classification: " << shotTypeToString(classification_result.predictedType)
+                  << " | Faces: " << faces.size()
                   << " | Eyes: " << eyes.size() << std::endl;
 
         // Draw bounding boxes
         for (const auto& face : faces) {
-            cv::rectangle(processed, face, cv::Scalar(0, 255, 0), 2);
+            cv::rectangle(frame, face, cv::Scalar(0, 255, 0), 2);
         }
 
         for (const auto& eye : eyes) {
-            cv::rectangle(processed, eye, cv::Scalar(255, 0, 0), 2);
+            cv::rectangle(frame, eye, cv::Scalar(255, 0, 0), 2);
         }
 
         // Show processed frame with annotations
-        cv::imshow("Processed Image", processed);
-        cv::waitKey(500);
+        cv::imshow("Processed Image", frame);
+        cv::waitKey(0);
         cv::destroyWindow("Processed Image");
     }
 

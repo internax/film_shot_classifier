@@ -386,3 +386,28 @@ void FilmStatistics::exportToCSV(const std::string& path) const
     file.close();
     std::cout << "Exported CSV to " << path << std::endl;
 }
+
+
+void FilmStatistics::printSummary() const
+{
+    std::map<ShotType, int> shot_type_counts;
+    
+    std::cout << "total_frames:" << total_frames << "\n" << std::endl;
+    std::cout << "evaluated_frames:" << evaluated_frames << "\n" << std::endl;
+    
+    for (const auto& entry : shot_type_timeline) {
+        ShotType type = entry.second;
+        shot_type_counts[type]++;
+    }
+    
+    for (const auto& [type, count] : shot_type_counts) {
+        std::string typeStr;
+        switch (type) {
+            case ShotType::CLOSE_UP: typeStr = "CLOSE_UP"; break;
+            case ShotType::MEDIUM:   typeStr = "MEDIUM";   break;
+            case ShotType::WIDE:     typeStr = "WIDE";     break;
+            default:                 typeStr = "UNKNOWN";  break;
+        }
+        std::cout << typeStr << ": " << count << std::endl;
+    }
+}

@@ -25,8 +25,24 @@
 \contentsline {paragraph}{}{3}{section*.18}%
 \contentsline {paragraph}{}{3}{section*.19}%
 \contentsline {paragraph}{}{4}{section*.20}%
-\contentsline {section}{\numberline {4}Evaluation}{4}{section.4}%
-\contentsline {section}{\numberline {5}Dataset description}{4}{section.5}%
-\contentsline {section}{\numberline {6}Results summary}{4}{section.6}%
-\contentsline {section}{\numberline {7}Individual contributions}{4}{section.7}%
-\contentsline {section}{\numberline {8}Conclusion}{4}{section.8}%
+\contentsline {subsection}{\numberline {3.5}Main video}{4}{subsection.3.5}%
+\contentsline {paragraph}{}{4}{section*.21}%
+\contentsline {section}{\numberline {4}Evaluation}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Quantitative Evaluation}{6}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Close up shots}{7}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Medium shots}{8}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Wide shots}{9}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}Video Evaluation}{9}{subsection.4.2}%
+\contentsline {paragraph}{}{9}{section*.28}%
+\contentsline {paragraph}{}{9}{section*.29}%
+\contentsline {paragraph}{}{9}{section*.30}%
+\contentsline {subsubsection}{\numberline {4.2.1}Accuracy}{10}{subsubsection.4.2.1}%
+\contentsline {paragraph}{}{10}{section*.31}%
+\contentsline {paragraph}{}{10}{section*.32}%
+\contentsline {subsubsection}{\numberline {4.2.2}Optimizer}{11}{subsubsection.4.2.2}%
+\contentsline {paragraph}{}{11}{section*.38}%
+\contentsline {paragraph}{}{11}{section*.41}%
+\contentsline {section}{\numberline {5}Dataset description}{12}{section.5}%
+\contentsline {section}{\numberline {6}Results summary}{12}{section.6}%
+\contentsline {section}{\numberline {7}Individual contributions}{12}{section.7}%
+\contentsline {section}{\numberline {8}Conclusion}{12}{section.8}%

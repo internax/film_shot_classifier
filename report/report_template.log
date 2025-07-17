@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.14)  14 JUL 2025 15:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.14)  15 JUL 2025 14:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -395,7 +395,11 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count311
 \l__pdf_internal_box=\box59
-) (/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.aux)
+) (/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.aux
+
+LaTeX Warning: Label `fig:marvel_raw' multiply defined.
+
+)
 \openout1 = `report_template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
@@ -489,7 +493,7 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count319
-<figures/unipd-logo.png, id=56, 399.4925pt x 401.5pt>
+<figures/unipd-logo.png, id=88, 399.4925pt x 401.5pt>
 File: figures/unipd-logo.png Graphic file (type png)
 <use figures/unipd-logo.png>
 Package pdftex.def Info: figures/unipd-logo.png  used on input line 59.
@@ -506,32 +510,221 @@ File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.77 \newpage
+l.76 \newpage
               [1]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 84.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 83.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) [2]
+<figures/video_main_scheme.jpg, id=144, 279.0425pt x 785.93625pt>
+File: figures/video_main_scheme.jpg Graphic file (type jpg)
+<use figures/video_main_scheme.jpg>
+Package pdftex.def Info: figures/video_main_scheme.jpg  used on input line 209.
+(pdftex.def)             Requested size: 241.84843pt x 681.19264pt.
+ [3] [4] [5 </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/figures/video_main_scheme.jpg>]
+<result_images/closeup/ss1.jpg, id=169, 1397.22pt x 863.225pt>
+File: result_images/closeup/ss1.jpg Graphic file (type jpg)
+<use result_images/closeup/ss1.jpg>
+Package pdftex.def Info: result_images/closeup/ss1.jpg  used on input line 259.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/closeup/ss2.jpg, id=170, 1397.22pt x 863.225pt>
+File: result_images/closeup/ss2.jpg Graphic file (type jpg)
+<use result_images/closeup/ss2.jpg>
+Package pdftex.def Info: result_images/closeup/ss2.jpg  used on input line 263.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/closeup/ss3.jpg, id=171, 1397.22pt x 863.225pt>
+File: result_images/closeup/ss3.jpg Graphic file (type jpg)
+<use result_images/closeup/ss3.jpg>
+Package pdftex.def Info: result_images/closeup/ss3.jpg  used on input line 267.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/closeup/ss4.jpg, id=172, 1397.22pt x 863.225pt>
+File: result_images/closeup/ss4.jpg Graphic file (type jpg)
+<use result_images/closeup/ss4.jpg>
+Package pdftex.def Info: result_images/closeup/ss4.jpg  used on input line 273.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/closeup/ss5.jpg, id=173, 1397.22pt x 863.225pt>
+File: result_images/closeup/ss5.jpg Graphic file (type jpg)
+<use result_images/closeup/ss5.jpg>
+Package pdftex.def Info: result_images/closeup/ss5.jpg  used on input line 277.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/closeup/ss6.jpg, id=174, 1397.22pt x 863.225pt>
+File: result_images/closeup/ss6.jpg Graphic file (type jpg)
+<use result_images/closeup/ss6.jpg>
+Package pdftex.def Info: result_images/closeup/ss6.jpg  used on input line 281.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/closeup/ss7.jpg, id=175, 1397.22pt x 863.225pt>
+File: result_images/closeup/ss7.jpg Graphic file (type jpg)
+<use result_images/closeup/ss7.jpg>
+Package pdftex.def Info: result_images/closeup/ss7.jpg  used on input line 287.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/closeup/ss8.jpg, id=176, 1397.22pt x 863.225pt>
+File: result_images/closeup/ss8.jpg Graphic file (type jpg)
+<use result_images/closeup/ss8.jpg>
+Package pdftex.def Info: result_images/closeup/ss8.jpg  used on input line 291.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/closeup/ss9.jpg, id=177, 1397.22pt x 863.225pt>
+File: result_images/closeup/ss9.jpg Graphic file (type jpg)
+<use result_images/closeup/ss9.jpg>
+Package pdftex.def Info: result_images/closeup/ss9.jpg  used on input line 295.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/closeup/ss10.jpg, id=178, 1397.22pt x 863.225pt>
+File: result_images/closeup/ss10.jpg Graphic file (type jpg)
+<use result_images/closeup/ss10.jpg>
+Package pdftex.def Info: result_images/closeup/ss10.jpg  used on input line 301.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+ [6]
+<result_images/medium/ss1.jpg, id=186, 1397.22pt x 863.225pt>
+File: result_images/medium/ss1.jpg Graphic file (type jpg)
+<use result_images/medium/ss1.jpg>
+Package pdftex.def Info: result_images/medium/ss1.jpg  used on input line 313.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/medium/ss2.jpg, id=187, 1397.22pt x 863.225pt>
+File: result_images/medium/ss2.jpg Graphic file (type jpg)
+<use result_images/medium/ss2.jpg>
+Package pdftex.def Info: result_images/medium/ss2.jpg  used on input line 317.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/medium/ss3.jpg, id=188, 1397.22pt x 863.225pt>
+File: result_images/medium/ss3.jpg Graphic file (type jpg)
+<use result_images/medium/ss3.jpg>
+Package pdftex.def Info: result_images/medium/ss3.jpg  used on input line 321.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/medium/ss4.jpg, id=189, 1397.22pt x 863.225pt>
+File: result_images/medium/ss4.jpg Graphic file (type jpg)
+<use result_images/medium/ss4.jpg>
+Package pdftex.def Info: result_images/medium/ss4.jpg  used on input line 327.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/medium/ss5.jpg, id=190, 1397.22pt x 863.225pt>
+File: result_images/medium/ss5.jpg Graphic file (type jpg)
+<use result_images/medium/ss5.jpg>
+Package pdftex.def Info: result_images/medium/ss5.jpg  used on input line 331.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/medium/ss6.jpg, id=191, 1397.22pt x 863.225pt>
+File: result_images/medium/ss6.jpg Graphic file (type jpg)
+<use result_images/medium/ss6.jpg>
+Package pdftex.def Info: result_images/medium/ss6.jpg  used on input line 335.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/medium/ss7.jpg, id=192, 1397.22pt x 863.225pt>
+File: result_images/medium/ss7.jpg Graphic file (type jpg)
+<use result_images/medium/ss7.jpg>
+Package pdftex.def Info: result_images/medium/ss7.jpg  used on input line 341.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/medium/ss8.jpg, id=193, 1397.22pt x 863.225pt>
+File: result_images/medium/ss8.jpg Graphic file (type jpg)
+<use result_images/medium/ss8.jpg>
+Package pdftex.def Info: result_images/medium/ss8.jpg  used on input line 345.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/medium/ss9.jpg, id=194, 1397.22pt x 863.225pt>
+File: result_images/medium/ss9.jpg Graphic file (type jpg)
+<use result_images/medium/ss9.jpg>
+Package pdftex.def Info: result_images/medium/ss9.jpg  used on input line 349.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/medium/ss10.jpg, id=195, 1397.22pt x 863.225pt>
+File: result_images/medium/ss10.jpg Graphic file (type jpg)
+<use result_images/medium/ss10.jpg>
+Package pdftex.def Info: result_images/medium/ss10.jpg  used on input line 355.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+ [7 </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/closeup/ss1.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/closeup/ss2.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/closeup/ss3.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/closeup/ss4.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/closeup/ss5.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/closeup/ss6.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/closeup/ss7.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/closeup/ss8.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/closeup/ss9.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/closeup/ss10.jpg>]
+<result_images/wide/ss1.jpg, id=212, 1397.22pt x 863.225pt>
+File: result_images/wide/ss1.jpg Graphic file (type jpg)
+<use result_images/wide/ss1.jpg>
+Package pdftex.def Info: result_images/wide/ss1.jpg  used on input line 366.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/wide/ss2.jpg, id=213, 1397.22pt x 863.225pt>
+File: result_images/wide/ss2.jpg Graphic file (type jpg)
+<use result_images/wide/ss2.jpg>
+Package pdftex.def Info: result_images/wide/ss2.jpg  used on input line 370.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/wide/ss3.jpg, id=214, 1397.22pt x 863.225pt>
+File: result_images/wide/ss3.jpg Graphic file (type jpg)
+<use result_images/wide/ss3.jpg>
+Package pdftex.def Info: result_images/wide/ss3.jpg  used on input line 374.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/wide/ss4.jpg, id=215, 1397.22pt x 863.225pt>
+File: result_images/wide/ss4.jpg Graphic file (type jpg)
+<use result_images/wide/ss4.jpg>
+Package pdftex.def Info: result_images/wide/ss4.jpg  used on input line 380.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/wide/ss5.jpg, id=216, 1397.22pt x 863.225pt>
+File: result_images/wide/ss5.jpg Graphic file (type jpg)
+<use result_images/wide/ss5.jpg>
+Package pdftex.def Info: result_images/wide/ss5.jpg  used on input line 384.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/wide/ss6.jpg, id=217, 1397.22pt x 863.225pt>
+File: result_images/wide/ss6.jpg Graphic file (type jpg)
+<use result_images/wide/ss6.jpg>
+Package pdftex.def Info: result_images/wide/ss6.jpg  used on input line 388.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/wide/ss7.jpg, id=218, 1397.22pt x 863.225pt>
+File: result_images/wide/ss7.jpg Graphic file (type jpg)
+<use result_images/wide/ss7.jpg>
+Package pdftex.def Info: result_images/wide/ss7.jpg  used on input line 394.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/wide/ss8.jpg, id=219, 1397.22pt x 863.225pt>
+File: result_images/wide/ss8.jpg Graphic file (type jpg)
+<use result_images/wide/ss8.jpg>
+Package pdftex.def Info: result_images/wide/ss8.jpg  used on input line 398.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/wide/ss9.jpg, id=220, 1397.22pt x 863.225pt>
+File: result_images/wide/ss9.jpg Graphic file (type jpg)
+<use result_images/wide/ss9.jpg>
+Package pdftex.def Info: result_images/wide/ss9.jpg  used on input line 402.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+<result_images/wide/ss10.jpg, id=221, 1397.22pt x 863.225pt>
+File: result_images/wide/ss10.jpg Graphic file (type jpg)
+<use result_images/wide/ss10.jpg>
+Package pdftex.def Info: result_images/wide/ss10.jpg  used on input line 408.
+(pdftex.def)             Requested size: 154.78653pt x 95.6268pt.
+ [8 </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/medium/ss1.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/medium/ss2.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/medium/ss3.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/medium/ss4.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/medium/ss5.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/medium/ss6.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/medium/ss7.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/medium/ss8.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/medium/ss9.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/medium/ss10.jpg>] [9 </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/wide/ss1.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/wide/ss2.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/wide/ss3.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/wide/ss4.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/wide/ss5.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/wide/ss6.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/wide/ss7.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/wide/ss8.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/wide/ss9.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/result_images/wide/ss10.jpg>]
+<figures/video setup.jpg, id=259, 430.60875pt x 199.74625pt>
+File: figures/video setup.jpg Graphic file (type jpg)
+<use figures/video setup.jpg>
+Package pdftex.def Info: figures/video setup.jpg  used on input line 443.
+(pdftex.def)             Requested size: 241.84843pt x 112.18935pt.
+<figures/marvel_ref_graph.jpg, id=260, 1190.4475pt x 584.1825pt>
+File: figures/marvel_ref_graph.jpg Graphic file (type jpg)
+<use figures/marvel_ref_graph.jpg>
+Package pdftex.def Info: figures/marvel_ref_graph.jpg  used on input line 473.
+(pdftex.def)             Requested size: 386.95897pt x 189.88379pt.
+<figures/marvel_real_graph.jpg, id=263, 1175.39125pt x 579.16376pt>
+File: figures/marvel_real_graph.jpg Graphic file (type jpg)
+<use figures/marvel_real_graph.jpg>
+Package pdftex.def Info: figures/marvel_real_graph.jpg  used on input line 480.
+(pdftex.def)             Requested size: 386.95897pt x 190.66508pt.
+ [10 </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/figures/video setup.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/figures/marvel_ref_graph.jpg> </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/figures/marvel_real_graph.jpg>]
+<figures/marvel_raw_graph.jpg, id=281, 1173.38374pt x 575.14874pt>
+File: figures/marvel_raw_graph.jpg Graphic file (type jpg)
+<use figures/marvel_raw_graph.jpg>
+Package pdftex.def Info: figures/marvel_raw_graph.jpg  used on input line 534.
+(pdftex.def)             Requested size: 386.95897pt x 189.66803pt.
+<figures/marvel_oversampled_graph.jpg, id=282, 1179.40625pt x 576.1525pt>
+File: figures/marvel_oversampled_graph.jpg Graphic file (type jpg)
+<use figures/marvel_oversampled_graph.jpg>
+Package pdftex.def Info: figures/marvel_oversampled_graph.jpg  used on input line 545.
+(pdftex.def)             Requested size: 386.95897pt x 189.03198pt.
+ [11 </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/figures/marvel_raw_graph.jpg>]
 
-LaTeX Warning: Empty `thebibliography' environment on input line 223.
+LaTeX Warning: Empty `thebibliography' environment on input line 575.
 
-[3] [4] (/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.aux)
+[12 </Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/figures/marvel_oversampled_graph.jpg>] (/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `report_template.out' has not changed.
-(rerunfilecheck)             Checksum: D1F7E2EBFF1CBCBBE60B6638DD7A7436;1550.
+(rerunfilecheck)             Checksum: 18527D1E35F240CAEF006AA3C01069B4;2595.
  ) 
 Here is how much of TeX's memory you used:
- 15276 strings out of 478268
- 244728 string characters out of 5846347
- 566789 words of memory out of 5000000
- 33255 multiletter control sequences out of 15000+600000
- 474983 words of font info for 38 fonts, out of 8000000 for 9000
+ 15792 strings out of 478268
+ 259488 string characters out of 5846347
+ 567558 words of memory out of 5000000
+ 33680 multiletter control sequences out of 15000+600000
+ 475747 words of font info for 39 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 69i,6n,79p,476b,603s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.pdf" (5 pages, 315240 bytes).
+ 69i,10n,79p,476b,603s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on "/Users/marektatyrek/SynologyDrive/TECHNIC/SCHOOL/VUT/PŘEDMĚTY/8.SEMESTR/COMPUTER VISION/FINAL_PROJECT/FILM_SHOT_TYPE_CLASSIFICATION/report/report_template.pdf" (13 pages, 6355212 bytes).
 PDF statistics:
- 164 PDF objects out of 1000 (max. 8388607)
- 140 compressed objects within 2 object streams
- 39 named destinations out of 1000 (max. 500000)
- 110 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 363 PDF objects out of 1000 (max. 8388607)
+ 289 compressed objects within 3 object streams
+ 109 named destinations out of 1000 (max. 500000)
+ 354 words of extra memory for PDF output out of 10000 (max. 10000000)
 

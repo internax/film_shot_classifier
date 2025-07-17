@@ -1,9 +1,12 @@
-#include <opencv2/opencv.hpp>
+//
+//  main_video.cpp
+//
+//  Developed by Marek Tatýrek 
+//
 #include <iostream>
-//#include <opencvi2/highgui.hpp>
-//#include <opencv2/imgproc.hpp>
+
+#include <opencv2/imgproc.hpp>
 #include <filesystem>
-//#include "FilmShotClassifier.hpp"
 #include "FileLoader.hpp"
 
 #include <vector>
@@ -51,7 +54,7 @@ int main()
 
     // Initialize detectors and classifier
     HaarDetector frontal_detector(frontal_path);
-//    HaarDetector profile_detector(profile_path);
+    HaarDetector profile_detector(profile_path);
     HaarDetector eye_detector(eye_path);
     
     //Viola & Johnes classifier init
@@ -115,11 +118,5 @@ int main()
 
     stats.printSummary();
     
-    
-//    ResultDisplayer displayer(stats);
-//    cv::Mat plot = displayer.GetPlot(stats.getProbTimeline(), "x", "y", "graph");
-//    cv::imshow("plot", plot);
-//    cv::waitKey(0);
-
     return 0;
 }

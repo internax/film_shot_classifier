@@ -1,12 +1,12 @@
 // Main dev: Mateusz Miroslaw Lis
 
-#include <opencv2/opencv.hpp>
+#include <opencv2/imgproc.hpp>
 #include <iostream>
-#include "../include/FileLoader.hpp"
-#include "../include/HaarDetector.hpp"
-#include "../include/ShotClassifier.hpp"
-#include "../include/ShotEvaluator.hpp"
-#include "../include/UserStructs.hpp"
+#include "FileLoader.hpp"
+#include "HaarDetector.hpp"
+#include "ShotClassifier.hpp"
+#include "ShotEvaluator.hpp"
+#include "UserStructs.hpp"
 
 //for use enhanced double clasifier set DOUBLE_CLASSIFIER to 1
 #define DOUBLE_CLASSIFIER 0
@@ -24,7 +24,6 @@ std::string shotTypeToString(ShotType type) {
         case ShotType::CLOSE_UP: return "CLOSE_UP";
         case ShotType::MEDIUM: return "MEDIUM";
         case ShotType::WIDE: return "WIDE";
-        case ShotType::UNKNOWN:
         default: return "UNKNOWN";
     }
 }
@@ -100,7 +99,7 @@ int main(int argc, char** argv)
 
         // Show processed frame with annotations
         cv::imshow("Processed Image", frame);
-        cv::waitKey(0);
+        cv::waitKey(500);
         cv::destroyWindow("Processed Image");
     }
 
@@ -133,7 +132,7 @@ int main(int argc, char** argv)
         
         // Show processed frame with annotations
         cv::imshow("Processed Image", frame);
-        cv::waitKey(0);
+        cv::waitKey(500);
         cv::destroyWindow("Processed Image");
     }
 #endif

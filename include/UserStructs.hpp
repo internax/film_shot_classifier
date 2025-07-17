@@ -2,7 +2,7 @@
 //  UserStructs.hpp
 //  Film_type_classifier
 //
-//  Created by Marek Tatýrek on 06.06.2025.
+//  Developed by Marek Tatýrek
 //
 
 #ifndef UserStructs_hpp

@@ -2,7 +2,7 @@
 //  sceneChangeDetector.hpp
 //  Film_type_classifier
 //
-//  Created by Marek Tatýrek on 14.07.2025.
+//  Developed by Marek Tatýrek
 //
 
 #ifndef sceneChangeDetector_hpp

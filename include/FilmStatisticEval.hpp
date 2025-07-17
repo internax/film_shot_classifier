@@ -2,7 +2,7 @@
 //  FilmStatisticEval.hpp
 //  Film_type_classifier
 //
-//  Created by Marek Tatýrek on 21.05.2025.
+//  Developed by Marek Tatýrek
 //
 
 #ifndef FilmStatisticEval_hpp

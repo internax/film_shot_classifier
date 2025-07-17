@@ -2,7 +2,7 @@
 //  FileLoader.hpp
 //  Film_type_classifier
 //
-//  Created by Peter ... on 20.05.2025.
+//  Developed by Marek Tatýrek
 //
 
 #ifndef FileLoader_hpp

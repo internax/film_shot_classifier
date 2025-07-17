@@ -38,12 +38,12 @@ int main(int argc, char** argv)
     cv::Mat frame_eq;
 
     // Load all images from the directory
-    ImageLoader image_loader("test/wide");
+    ImageLoader image_loader("../test/wide");
 
     // Haar detector paths
-    std::string frontal_path = "haar/haarcascade_frontalface_alt2.xml";
-    std::string profile_path = "haar/haarcascade_profileface.xml";
-    std::string eye_path = "haar/haarcascade_eye.xml";
+    std::string frontal_path = "../haar/haarcascade_frontalface_alt2.xml";
+    std::string profile_path = "../haar/haarcascade_profileface.xml";
+    std::string eye_path = "../haar/haarcascade_eye.xml";
 
     // Initialize detectors and classifier
     HaarDetector frontal_detector(frontal_path);

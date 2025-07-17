@@ -99,12 +99,12 @@ constexpr int RESOLUTION_HEIGHT = 720;
 int main() {
 
     // Test dataset, as contained in archive
-    std::string base_path = "test";
+    std::string base_path = "../test";
 
     // Haar detectors, as contained in archive
-    std::string frontal_path = "haar/haarcascade_frontalface_alt2.xml";
-    std::string profile_path = "haar/haarcascade_profileface.xml";
-    std::string eye_path = "haar/haarcascade_eye.xml";
+    std::string frontal_path = "../haar/haarcascade_frontalface_alt2.xml";
+    std::string profile_path = "../haar/haarcascade_profileface.xml";
+    std::string eye_path = "../haar/haarcascade_eye.xml";
 
     // Create objects for detection and classification
     HaarDetector frontal_detector(frontal_path);
@@ -217,12 +217,12 @@ constexpr int RESOLUTION_HEIGHT = 720;
 int main() {
 
     // Test dataset, as contained in archive
-    std::string base_path = "test";
+    std::string base_path = "../test";
 
     // Haar detectors, as contained in archive
-    std::string frontal_path = "haar/haarcascade_frontalface_alt2.xml";
-    std::string profile_path = "haar/haarcascade_profileface.xml";
-    std::string eye_path = "haar/haarcascade_eye.xml";
+    std::string frontal_path = "../haar/haarcascade_frontalface_alt2.xml";
+    std::string profile_path = "../haar/haarcascade_profileface.xml";
+    std::string eye_path = "../haar/haarcascade_eye.xml";
 
     // Create objects for detection and classification
     HaarDetector frontal_detector(frontal_path);

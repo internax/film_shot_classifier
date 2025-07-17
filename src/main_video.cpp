@@ -22,7 +22,6 @@
 #include "UserStructs.hpp"
 #include "FilmStatisticEval.hpp"
 #include "SceneChangeDetect.hpp"
-#include "ResultDisplayer.hpp"
 
 
 constexpr int OPTIMIZER_DISTANCE_BETWEEN_SAMPLES = 3;

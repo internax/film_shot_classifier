@@ -103,7 +103,7 @@ int main()
         frame_history.push_back(frame);
     }
 
-    stats.exportToCSV("../csv_output/output_video_marvel_opt50_60.csv");
+    stats.exportToCSV("../csv_output/output_video_marvel.csv");
     
     auto end_time = std::chrono::high_resolution_clock::now();
     double elapsed = std::chrono::duration<double>(end_time - start_time).count();
